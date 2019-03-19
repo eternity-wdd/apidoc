@@ -1,0 +1,269 @@
+@charset "utf-8";
+/* CSS Document */
+.bg{
+	width: 100%;
+	height: 100%;
+	max-width: 640px;
+	background-color: #333;
+	opacity: 0.3;
+	position: fixed;
+	z-index: 101;
+	display: none;
+	}
+.order_main{
+	max-width: 640px;
+	min-width: 305px;
+	height: auto;
+	/*ie6下不支持最大最小宽度*/
+	_width:expression(document.body.clientWidth < 320 ? "320px" : "auto");
+	_width:expression(document.body.clientWidth > 640 ? "640px" : "auto");
+	margin: 0 auto;
+
+	}
+.signmain{
+	overflow-y: scroll;
+	}
+.signmain .receiveInfo{
+	position: relative;
+	margin: 7px 0px;
+	padding: 10px 0px 10px 20px;
+	background-color: #FFFAF3;
+	font-size: 14px;
+	
+	}
+.receiveInfo .s_borderT{
+	position: absolute;
+	top: 1px;
+	left: 0px;
+	height: 3px;
+	width: 100%;
+	background: url(../images/border.png) repeat-x;
+	background-size: 64px 3px;
+	}
+.receiveInfo .s_borderB{
+	position: absolute;
+	bottom: 1px;
+	left: 0px;
+	height: 3px;
+	width: 100%;
+	background: url(../images/border.png) repeat-x;
+	background-size: 64px 3px;
+	}
+.receiveInfo .good_receiver{
+	background: url(../images/receiver.png) no-repeat left 8px;
+	background-size: 16px 16px;
+	padding-left: 20px;
+	line-height: 30px;
+	font-size: 15px;
+	color: #000;
+	}
+.receiveInfo .good_tel{
+	background: url(../images/phoneone.png) no-repeat left center;
+	background-size: 11px 16px;
+	padding-left: 15px;
+	line-height: 30px;
+	font-size: 15px;
+	color: #000;
+	}
+.signmain .good_items{
+	width: 100%;
+	height: 140px;
+	padding-top: 10px;
+	padding-left: 10px;
+	border-bottom: thin solid #E0E0E0;
+	}
+.good_items .good_pic{
+	width: 100px;
+	height: 100px;
+	border: thin solid #efefef;
+	}
+.good_items .good_pic img{
+	width: 100%;
+	height: 100%;
+	}
+.good_items .good_msg{
+	padding-left: 10px;
+	}
+.good_msg .good_name{
+	line-height: 30px;
+	min-height: 30px;
+	max-height: 60px;
+	font-size: 14px;
+	color: #666;
+	font-weight: 500;
+	overflow: hidden;
+
+	}
+.good_msg .good_type{
+	height: 50px;
+	line-height: 50px;
+	position: relative;
+	}
+.good_type .good_price{
+	display: inline-block;
+	font-size: 15px;
+	color: #F16353;
+	font-weight: 500;
+	}
+.good_type .good_num{
+	display: inline-block;
+	color: #7F7FB8;
+	font-size: 15px;
+	position: absolute;
+	right: 20px;
+	}
+.signmain .good_info{
+	color: #666;
+	font-size: 15px;
+	font-weight: 500;
+	}
+.good_info .good_carriage,.good_info .good_words,.good_info .good_payment,.good_info .good_orderdetail{
+	padding-left: 20px;
+	border-bottom: thin solid #E0E0E0;
+	}
+.good_info .good_orderdetail{
+	padding-top: 10px;
+	padding-bottom: 10px;
+	}
+.good_orderdetail .order_total,.good_orderdetail .order_mallcoin{
+	color: #F16353; 
+	}
+.good_info .good_carriage,.good_info .good_payment{
+	height: 50px;
+	line-height: 50px;
+	}
+.good_info .good_words{
+	height: 70px;
+	}
+.good_words .textarea{
+	width: 100%;
+	height: 50px;
+	margin: 10px 0px;
+	border: thin solid #e5e5e5;
+	overflow: hidden;
+	resize: none;
+	}
+.good_payment .payment{
+	background: url(../images/right.png) no-repeat 93% center;
+	}
+
+.good_orderdetail> div >div{
+	padding: 0px;
+	}
+.good_receinfo .good_address{
+	background: url(../images/right.png) no-repeat 97% top;
+	padding-right: 26px;
+	line-height: 25px;
+	overflow: hidden;
+	word-break:break-all;
+	font-size: 12px;
+	}
+.good_address .tactivity{
+	padding: 0px 6px;
+    background: #f15353;
+    color: #fff;
+    border-radius: 3px;
+    font-size: 11px;
+	}
+.footer{
+	width: 100%;
+	height: 70px;
+	max-width: 640px;
+	min-width: 320px;
+	padding-left: 10px;
+	border-top: thin solid #efefef;
+	position: fixed;
+	bottom: 0px;
+	z-index: 100;
+	background-color: #323232;
+	}
+.footer .total{
+	font-size: 13px;
+	color: #F3F3F3;
+	line-height: 60px;
+	font-weight: bold;
+	}
+.total .real_total{
+	font-size: 17px;
+	}
+.footer .confirm{
+	height: 55px;
+	text-align: right;
+	}
+.footer .confirm a{
+	width: 100%;
+	height: 100%;
+	display: inline-block;
+	line-height: 55px;
+	background-color: #F15353;
+	text-align: center;
+	font-size: 16px;
+	color: #F3F3F3;
+	font-weight: 600;
+	letter-spacing: 2px;
+	}
+.payment_method{
+	position: absolute;
+	width: 170px;
+	border: thin solid #ccc;
+	text-align: center;
+	background-color: #fff;
+	z-index: 102;
+	display: none;
+	}
+.payment_method dl{
+	margin-bottom: 0px;
+	}
+.payment_method dt{
+	height: 40px;
+	line-height: 40px;	
+	background-color: #33A3FF;
+	color: #fff;
+	}
+.payment_method dd{
+	height: 40px;
+	line-height: 40px;
+	border-top: thin solid #ccc;
+	}
+.payment_method dd:active{
+	background-color: #F60;
+	color: #fff
+	}
+/*业务人员工号*/
+#staff_num{
+	height: 35px;
+	line-height: 35px;
+	width: 90%; 
+	border: thin solid #efefef;
+	padding-left: 10px;
+	font-size: 14px;
+}
+/*红包列表*/
+.redpacketlist ul{
+	overflow: hidden;
+	}
+.redpacketlist ul li{
+	float: left;
+	overflow: hidden;
+	margin-right: 10px;
+	margin-left: 10px;
+	}
+/*猫币*/
+#mallcoin{
+	border: thin solid #ccc;
+	height: 30px; 
+	line-height: 30px; 
+	width: 100%; 
+	padding-left: 10px;
+	}
+.mallCoininput{
+	position: absolute;
+	width: 170px;
+	border: thin solid #ccc;
+	text-align: center;
+	background-color: #fff;
+	z-index: 102;	
+	}
+.mallCoininput .mallcointext{
+	background-color: #F90;
+	}

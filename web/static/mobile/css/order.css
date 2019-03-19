@@ -1,0 +1,355 @@
+@charset "utf-8";
+/* CSS Document */
+body{
+	font-family:"微软雅黑";
+	font-size: 13px;
+	color: #333;
+	}
+a{
+	color: #333;
+	text-decoration: none;
+	}
+a:hover{
+	color: red;
+	text-decoration: underline;
+	}
+img{
+	vertical-align: top;
+	}
+/*返回顶部*/
+.gopage{
+	position: fixed;
+	left: 0px;
+	bottom: 5px;
+	z-index: 100;
+	background-color: transparent;
+	}
+/*分页*/
+.pagination{
+	width: 100%;
+	padding: 15px 5px 15px 10px;
+	margin: 0px;
+	background-color: #efefef;
+	border-bottom: thin solid #efefef;
+	}
+/*分页 位置固定*/
+.container .pagination{
+	position: fixed;
+	top: 50px;
+	left: 0px;
+	z-index: 99;
+	}
+.pagination>li>a, .pagination>li>span{
+	padding: 6px 3px;
+	}
+/*页数隐藏*/
+.pagination .paginate_button{
+	display: none;
+	}
+.pagination .next,.pagination .last,.pagination .first,.pagination .previous{
+	display: block;
+	}
+/*订单编号*/
+h3{
+	font-size: 15px;
+	font-weight: 400;
+	display: inline-block;
+	line-height: 25px;
+	margin: 0px;
+}
+ul{
+	list-style-type: none;
+	padding: 0px;
+	}
+input:focus{
+	outline: none;
+	}
+/*商品名称*/
+h4{
+	font-size: 15px;
+	word-break: break-all;
+	line-height: 24px;
+	text-overflow: ellipsis;
+	margin-top: 15px;
+	}
+.row{
+	margin: 0px;
+	}
+.row>div{
+	padding: 0px;
+	}
+/*背景*/
+.bg{
+	width: 100%;
+	height: 100%;
+	background-color: #333;
+	opacity: 0.3;
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	z-index: 100;
+	display: none;
+	}
+.container{
+	min-width: 320px;
+	width: 100%;
+	padding: 0px;
+	}
+/*头部*/
+.container .top{
+	background-color: #F1063A;
+	width: 100%;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	z-index: 99;
+	
+	 }
+/*返回上一页 图片*/
+.top .titleimg{
+	position: absolute;
+    left: 10px;
+    top: 14px;
+	z-index: 99;
+	}
+/*输入框*/
+.top .topfilter{
+	width: 80%;
+	height: 50px;
+	line-height: 48px;
+	display: inline-block;
+	}
+/*.topfilter .input{
+	height: 45px;
+	line-height: 45px;
+	width: 80%;
+	background-color: #FFE2E2;
+	font-size: 15px;
+	padding-left: 5px;
+	border-radius: 5px;
+	border: none;
+	color: #666;
+	margin-right: 10px;
+	}*/
+/*标题*/
+.topfilter .toptitle{	
+	width: 83%;
+	height:100%;
+	font-size: 23px;
+	display: inline-block;
+	color: #fff;
+	}
+/*筛选*/
+.topfilter .filter{
+	display: inline-block;
+	width: 15%;
+	height: 48px;
+	text-align: right;
+	}
+.filter img{
+	vertical-align: middle;
+	}
+
+.good_items{
+	background-color: #DEDEDE;
+	overflow: hidden;
+	margin-top: 50px;
+	 }
+/*订单列表*/
+.good_items .goods_list{
+	margin-bottom: 5px;
+	background-color: #fff;
+	padding: 0px;
+	}
+.goods_list>.row{
+	padding-left: 10px;
+	}
+
+/*订单编号和状态*/
+.goods_list .titlename{
+	line-height: 50px;
+	}
+/*订单编号*/
+.ordernum{
+	font-size: 14px;
+	color: #666;
+	}
+/*订单状态*/
+.titlename .orderstat{
+	text-align: right;
+	padding-right: 10px;
+	}
+/*订单信息*/
+.order{
+	border: thin solid #efefef;
+	background-color: #F8F8F8;	
+	margin-bottom: 10px;
+	}
+.order>div{
+	padding-right: 7px;
+	padding-left: 5px;
+	}
+/*地址。。电话。。*/
+.order .orderitem{
+	line-height: 35px;
+	padding-right: 5px;
+	color: #999;
+	}
+.goodinfo span{
+	color: #999;
+	font-size: 13px;
+	line-height: 25px;
+	}
+/*字体颜色：灰色*/
+.container .fontcolorgray{
+	color: #666;
+	}
+/*收货人*/
+.goodinfo .buyer{
+	overflow: hidden;
+	}
+
+/*按钮div*/
+.goods_list .but{
+	padding-right: 6px;
+	line-height: 45px;
+	background-color: #fff;
+	}
+/*合计*/
+.total{
+	margin: 10px 0px;
+	background-color: #fff;
+	line-height: 35px;
+	border-bottom: thin solid #efefef;
+	}
+/*.total .totalnum{
+	padding-right: 10px;
+	}*/
+/*合计金额*/
+.totalprice .price{
+	font-weight: 600;
+	}
+.totalprice span{
+	padding: 0px;
+	}
+/*按钮*/
+.goods_list .but .btn{
+	margin-left: 3px;
+	height: 31px;
+	font-size: 14px;
+	padding: 6px;
+	}
+
+/*.dropdown{
+	margin-top: 10px;
+	margin-left: 32px;
+	}
+.dropdown-menu{
+	min-width: 100px;
+	}
+.dropdown .btn{
+	border-radius: 0px;
+	margin-left: -10px;
+	}
+.o_order .commcontent{
+	word-wrap: break-word;
+	
+	}*/
+/*筛选div*/
+.filtersort{
+	width: 85%;
+	background-color: #fff;
+	position: absolute;
+	top: 0px;
+	z-index: 101;
+	}
+.filtersort .row{
+	padding-bottom: 15px;
+	border-bottom: thin solid #efefef;
+	}
+/*.filtersort .row:last-child{
+	border: none;
+	}*/
+/*名称*/
+.filtersort .filtername{
+	height: 50px;
+	line-height: 50px;
+	padding-left: 10px;
+	font-size: 15px;
+	color: #666;
+	}
+/*列表*/
+.filterlist li{
+	width: 29%;
+	height: 35px;
+	line-height: 35px;
+	text-align: center;
+	float: left;
+	background-color: #F5F5F5;
+	border-radius: 5px;
+	margin: 6px;
+	font-size: 14px;
+	}
+.filterlist .filterlisthover{
+	background-color: #F63;
+	color: #fff;
+	}
+
+/*输入框*/
+.filterinput input,.filterinput select{
+	width: 90%;
+	margin-left: 5%;
+	height: 40px;
+	line-height: 40px;
+	padding-left: 5px;
+	border: thin solid #ccc;
+	}
+
+.filterinput .filterinputhover{
+	border-radius: 5px;
+	border: thin solid #F63;
+	}
+.filterinput .to{
+	display: block;
+	margin: 5px 0px;
+	}
+/*查询按钮*/
+.filtersort .filterbutton,.filtersort .resetbutton{
+	text-align: center;
+	padding: 15px 0px 0px 0px;
+	}
+.filterbutton .butt,.resetbutton .butt{
+	width: 90%;
+	height: 40px;
+	font-size: 16px;
+	color: #fff;
+	background-color: #DD2727;
+	}
+/*重置按钮*/
+.resetbutton .btn-primary{
+	background-color: #367FA9;
+	}
+/*字体颜色：红色*/
+.fontcolorred,.goodinfo .fontcolorred {
+	color: #DE727E;
+	}
+/*字体颜色：棕色*/
+.fontcolororange,.goodinfo .fontcolororange{
+	color: #BD650D;
+	}
+/*删除按钮*/
+.delete a{
+	color: #fff;
+	}
+/*向下的箭头*/
+.down{
+	 background: url(/static/mobile/images/down.png) no-repeat 90% center;
+	 }
+/*向上的箭头*/
+.up
+	{
+	 background: url(/static/mobile/images/up.png) no-repeat 90% center;
+	 }

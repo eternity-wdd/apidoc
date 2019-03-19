@@ -1,0 +1,113 @@
+@charset "utf-8";
+/* CSS Document */
+
+.bankpay_main{
+	max-width: 640px;
+	min-width: 305px;
+	height: auto;
+	/*ie6下不支持最大最小宽度*/
+	_width:expression(document.body.clientWidth < 320 ? "320px" : "auto");
+	_width:expression(document.body.clientWidth > 640 ? "640px" : "auto");
+	margin: 0px auto;
+	}
+.signmain .payitem{
+	height: 50px;
+	padding-left: 15px;
+	line-height: 50px;
+	color: #999;
+	font-size: 17px;
+	font-weight: 500;
+	border-bottom: thin solid #ccc;
+	}
+.payitem .paymethod{
+	color: #000;
+	overflow: hidden;
+	white-space: nowrap;
+	}
+.signmain .account_bala,.signmain .int_bankpay{
+	color: #000;
+	font-size: 16px;
+	}
+.account_bala .account_name,.int_bankpay .int_name{
+	padding: 0px 15px;
+	height: 40px;
+	line-height: 40px;
+	background-color: #F1F1F1;
+	border-bottom: thin solid #ccc;
+	}
+.fontcolorgray{
+	color: #666;
+	text-align: right;
+	}
+.account_bala .account_cont{
+	color: #999;
+	padding: 0px 15px;
+	height: 60px;
+	line-height: 55px;
+	border-bottom: thin solid #ccc;
+	}
+.no{
+	background: url(../images/no.png) no-repeat right center;
+	}
+.yes{
+	background: url(../images/yes.png) no-repeat right center;
+	}
+.fontcolorgreen{
+	color: #0A850A;
+	text-align: right;
+	}
+.banklist .bankitem{
+	height: 70px;
+	line-height: 70px;
+	padding: 0px 15px;
+	border-bottom: thin solid #ccc;
+	}
+.bankitem .bankinfo{
+	line-height: 25px;
+	padding: 0px 0px 0px 10px;
+	padding-top: 15px;
+	color: #333;
+	background: url(../images/right.png) no-repeat right center;
+	overflow: hidden;
+	white-space: nowrap;
+	}
+.bankinfo .bankname{
+	font-size: 18px;
+	}
+.bankinfo .bankaddr{
+	font-size: 14px;
+	display: inline-block;
+	}
+.signmain .account_info{
+	display: none;
+	}
+.account_info .account_item{
+	height: 55px;
+	line-height: 55px;
+	color: #999;
+	font-size: 17px;
+	font-weight: 500;
+	padding-left: 15px;
+	border-bottom: thin solid #ccc;
+	}
+.acc_input input{
+	width: 100%;
+	height: 35px;
+	border: thin solid #ccc;
+	border-radius: 5px;
+	line-height: 35px;
+	padding-left: 5px;
+	}
+.account_info .account_login{
+	margin: 20px 10px 10px 10px;
+	}
+.account_login input{
+	width: 100%;
+	height: 50px;
+	line-height: 50px;
+	background-color: #DB4C3C;
+	color: #fff;
+	font-size: 17px;
+	font-weight: 500;
+	border-radius: 5px;
+	}

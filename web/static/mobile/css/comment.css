@@ -1,0 +1,53 @@
+@charset "utf-8";
+/* CSS Document */
+/*商品名称 评论星级*/
+.commentinfo{
+	margin: 10px 0px 35px 0px;
+	}
+.commentinfo>div{
+	padding-left: 0px;
+	}
+.goodinfo>div{
+	padding: 0px;
+	}
+.comment_main{
+	margin-top: 50px;
+	}
+.comment_main .order{
+	padding-left: 15px;
+	}
+.goodinfo .commcontent{
+	padding-right: 10px;
+	}
+/*标题*/
+.goodlist_title{
+	height: 50px;
+	line-height: 50px;
+	padding-left: 10px;
+	border-top: 2px solid #D2D6DE;
+	font-size: 16px;
+	color: #666;
+	font-weight: 600;
+	}
+/*星级*/
+.commentinfo .star{
+	width: 80px;
+	height: 17px;
+	display: inline-block;
+	background: url(../images/star2.png);
+	}
+.commentinfo .g-star1{
+	width: 16px;
+	}
+.commentinfo .g-star2{
+	width: 32px;
+	}
+.commentinfo .g-star3{
+	width: 47px;
+	}
+.commentinfo .g-star4{
+	width: 62px;
+	}
+.commentinfo .g-star5{
+	width: 80px;
+	}

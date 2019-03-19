@@ -1,0 +1,9 @@
+@charset "utf-8";
+/* CSS Document */
+.form-group-img label {
+	text-align: left;
+	}
+/*保存按钮*/
+.save input{
+	width: 93%;
+	}

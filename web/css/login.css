@@ -1,0 +1,147 @@
+@charset "utf-8";
+/* CSS Document */
+*{
+	margin: 0px;
+	padding: 0px;
+	border: 0px;
+	}
+body{
+	font-size: 13px;
+	font-family: "微软雅黑";
+	color: #333;
+	background: url(../images/01.png) no-repeat top left;
+	background-size: 100%;
+	overflow: hidden;
+	}
+img{
+	vertical-align: middle;
+	}
+.login_main{
+	margin: 0 auto;
+	max-width: 800px;
+	min-width: 320px;
+	}
+
+.login_main .container{	
+	width: 100%;
+	padding-top: 25px;
+	}
+.container .title{
+	text-align: center;
+	}
+.container .content{
+	margin: 0px auto;
+	margin-top: 30px;
+	width: 95%;
+	
+	}
+.container .content .row {
+	margin: 0px;
+	}
+.content .username,.content .password{
+	position: relative;
+	border-bottom: 1px solid #fff;
+	height: 35px;
+	padding-left: 15px;
+	}
+.content .username{
+	margin-bottom: 5px;
+	}
+.row >div{
+	margin-bottom: 5px;
+	}
+
+.fontcolorred{
+	color: #F15353;
+	}
+.hide{
+	display: none;
+	}
+.content .user_emp,.content .pass_emp{
+	padding-left: 64px;
+	}
+.container .input{
+	height: 30px;
+	*height: 34px;
+	line-height: 30px;
+	color: #fff;
+	font-size: 16px;
+	position: absolute;
+	left: 50px;
+	top: 0px;
+	*top: 1px;
+	padding-left: 5px;
+	background: none;
+	border-left: thin solid #fff;
+
+	}
+.container .input:focus{
+	outline: none;
+	}
+.content .l_login,.content .r_register{
+	margin-bottom: 15px;
+	position: relative;
+	}
+
+.container .btn{
+	width: 100%;
+	height: 40px;
+	padding: 0px;
+	line-height: 40px;
+	font-size: 18px;
+	color: #fff;
+	}
+.l_login .btn{
+	background-color: #8CE8ED;
+	border: none;
+	}
+/*正在加载图片*/
+.l_login .loading{
+	position: absolute;
+	top: 5px;
+	left: 44%;
+	display: none;
+	}
+.r_register .btn{
+	background: none;
+	border: thin solid #ccc;
+	}
+.content .remberpass{
+	height: 20px;
+	line-height: 20px;
+	font-size: 12px;
+	color: #666;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	position: relative;
+	
+	
+	}
+.content .che span{
+	background: url(../images/che.png) no-repeat left center;
+	background-size: 12px 12px;	
+	}
+.content .unche span{
+	background:url(../images/unche.png) no-repeat left center;
+	background-size: 12px 12px;
+	 }
+.remberpass .repass{
+	display: inline-block;
+	width: 65px;
+	height: 20px;
+	line-height: 20px;
+	text-align: center;
+	color: #e5e5e5;
+	padding-left: 12px;
+	position: absolute;
+	right: 0px;	
+	}
+.container .foot{
+	width: 100%;
+	height: 35px;
+	margin-top: 6px;
+	line-height: 35px;
+	text-align: center;
+	color: #fff;
+	font-size:15px;
+	}

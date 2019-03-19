@@ -1,0 +1,151 @@
+@charset "utf-8";
+/* CSS Document */
+a{
+	color: #333;
+	text-decoration: none;
+	}
+a:hover{
+	color: red;
+	text-decoration: underline;
+	}
+img{
+	vertical-align: top;
+	}
+h3{
+	font-weight: 400;
+	display: inline-block;
+	line-height: 30px;
+}
+ul{
+	list-style-type: none;
+	padding: 0px;
+	}
+input:focus{
+	outline: none;
+	}
+.row{
+	margin: 0px;
+	}
+
+.container{
+	width: 100%;
+	padding: 0px;
+	background-color: #fff;
+	}
+/*标题：客审 。。*/
+.good_main .good_title{ 
+	padding: 0px 10px;
+	}
+.good_title a{
+	font-size: 15px;
+	}
+.good_list{
+	padding: 0px;
+	float: none;
+	}
+/*信息div*/
+.good_list >.row>div{
+	/*border: thin solid #efefef;
+	border-radius: 5px;
+	padding-bottom: 10px;*/
+	margin: 0px 15px 15px 0px;
+	}
+
+/*内容*/
+.good_list .goodlist_info{
+	min-height: 20px;
+	line-height: 40px;
+	font-size: 15px;
+	margin: 0px 10px 0px 10px;
+	border: thin solid #efefef;
+	border-width: 1px 1px 0px 1px;
+	}
+.good_list .goodlist_info:last-child{
+	border-width: 1px;
+	}
+.goodlist_info>div{
+	padding-left: 5px;
+	}
+/*内容 标题*/
+.goodlist_info .goodlist_name{
+	color: #000;
+	font-weight: 600;
+	text-align: center;
+	}
+/*右边框*/
+.goodlist_info .goodlist_name{
+	border-right: thin solid #f5f5f5;
+	}
+/*按钮外边距*/
+.good_title .btn{
+	margin: 10px 3px;
+	}
+/*下外边距*/
+.good_list .order{
+	margin-bottom: 5px;
+	}
+/*商品图片*/
+.goodpic{
+	border: thin solid #ccc;
+	width: 90px;
+	height: 90px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	position: relative;
+	overflow: hidden;
+	}
+.goodpic img{
+	width: 100%;
+	height: 100%;
+	}
+/*金额  数量总计*/
+.order .totalitem{
+	font-size: 15px;
+	font-weight: 500;
+	padding-right: 5px;
+	}
+.totalitem > span{
+	font-size: 13px;
+	line-height: 30px;
+	display: block;
+	}
+/*总额*/
+.totalitem .p_price{
+	color: #969; 
+	margin-top: 10px;
+	}
+/*数量  小计*/
+.totalitem .p_num,.totalitem .p_amount{ 
+	line-height: 26px;
+	}
+/*数量 */
+.totalitem .p_num{
+	color:#C60;
+	}
+/* 小计*/
+.totalitem .p_amount{
+	color: #9A710D;
+	}
+.p_price .price,.p_num .num,.p_amount .amount{
+	font-size: 14px;
+	font-weight:500;
+	 }
+/*商品总额统计*/
+.good_list .total{
+	line-height: 35px;
+	}
+.good_list .row .totalprice{
+	border-width: 0px;
+	border-top: 2px solid #D2D6DE;
+	}
+.total .totalprice>div{
+	padding: 0px 10px 0px 15px;
+	border-bottom: dotted thin #ccc;
+	height: 36px;
+	}
+@media screen and (min-width:768px){
+	.totalitem > span{
+		display: inline-block;
+		margin-left: 15%;
+		}
+	}

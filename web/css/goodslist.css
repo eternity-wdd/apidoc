@@ -1,0 +1,159 @@
+@charset "utf-8";
+/* CSS Document */
+.goods_main{
+	max-width: 640px;
+	min-width: 305px;
+	height: auto;
+	/*ie6下不支持最大最小宽度*/
+	_width:expression(document.body.clientWidth < 320 ? "320px" : "auto");
+	_width:expression(document.body.clientWidth > 640 ? "640px" : "auto");
+	margin: 0 auto;
+	}
+.signmain{
+	width: 100%;
+	position: relative;
+	margin-bottom: 20px;
+
+	}
+.signmain .typesort{
+	height: 50px;
+	padding: 0px;
+	border-bottom: thin solid #ccc;
+	}
+.typesort .type,.typesort .sort{
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	font-size: 18px;
+	font-weight: 500;
+	color: #666;
+	}
+.type .tydo,.sort .sodo{
+	width: 40%;
+	margin: 0px auto;
+	}
+.typesort b{
+	width: 15px;
+	height: 9px;
+	display: inline-block;
+	
+	}
+.down{
+	background: url(../images/down.png)  no-repeat;
+	}
+.up{
+	background: url(../images/up.png)  no-repeat;
+	}
+.signmain .typelist{
+	width: 100%;
+	display: none;
+	position: absolute;
+	top: 50px;
+	background-color: #fff;
+	z-index: 1000;
+	overflow-y: scroll;
+	border-bottom: thin solid #ccc;
+	}
+
+.typename ul li{
+	height: 60px;
+	text-align: center;
+	font-size: 16px;
+	line-height: 60px;
+	background-color: #F5F5F5;
+	border: thin solid #ccc;
+	}
+.typename ul li:first-child{
+	border-width: 0px 1px 1px 1px;
+	}
+.typename ul .current{
+	background-color: #fff;
+	border: none;
+	color: #3EA8FF;
+	}
+.fontcolorblue{
+	color: #3EA8FF;
+	}
+.typelist .typecontent>div{
+	padding: 0px;
+	}
+
+.typelist .typecontent dt{
+	text-align: left;
+	color: #666;
+	font-size: 16px;
+	height: 60px;
+	line-height: 60px;
+	padding-left: 20px;
+	position: relative;
+	}
+.typelist .typecontent dt b{
+	width: 9px;
+	height: 15px;
+	position: absolute;
+	right: 15px;
+	top: 20px;
+	background-image:url(../images/right.png);
+	}
+.typelist .typecontent .name{
+	height: 70px;
+	line-height: 70px;
+	padding-left: 20px;
+	border: thin solid #efefef;
+	border-width: 1px 0px 1px 1px;
+	}
+.typelist .typecontent dd{
+	width: 30%;
+	display: inline-block;
+	text-align: left;
+	color: #666;
+	font-size: 15px;
+	}
+.sort .sortlist{
+	text-align: left;
+	display: none;
+	background-color: #fff;
+	position: relative;
+	z-index: 1000;
+	margin-top: 1px;
+	}
+.sort .sortlist ul li{
+	border: thin solid #efefef;
+	border-width: 0px 1px 1px 1px;
+	padding-left: 20px;
+	padding-right: 10px;
+	font-size: 15px;
+	color: #000;
+	}
+.sort .sortlist ul li:active{
+	background-color: #F63;
+	}
+/*商品列表*/
+.goodslist{
+	width: 100%;
+	}
+.goodslist .goods{
+	height: 120px;
+	border-bottom: thin solid #ccc;
+	}
+.goods .goodsimg{
+	height: 100%;
+	padding-top: 15px;
+	}
+.goods .goodsinfo{
+	height: 100%;
+	padding: 5px 0px 0px 15px;
+	}
+.goodsinfo .goodsname,.goodsinfo .goodsprice,.goodsinfo .goodssum{
+	height: 30px;
+	line-height: 40px;
+	color: #666;
+	font-weight: 500;
+	font-size: 15px;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	}
+.goodsinfo .goodsname{
+	font-size: 18px;
+	}

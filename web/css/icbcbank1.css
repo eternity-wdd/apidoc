@@ -1,0 +1,121 @@
+@charset "utf-8";
+/* CSS Document */
+
+.icbcbank_main{
+	max-width: 640px;
+	min-width: 305px;
+	height: auto;
+	/*ie6下不支持最大最小宽度*/
+	_width:expression(document.body.clientWidth < 320 ? "320px" : "auto");
+	_width:expression(document.body.clientWidth > 640 ? "640px" : "auto");
+	margin: 0px auto;
+	}
+.signmain{
+	background-color: #F1F1F1;
+	}
+.signmain .listicon{
+	position: relative;
+	}
+.listicon .back{
+	position: absolute;
+	top: 30%;
+	left: 10px;
+	z-index: 10;}
+.listicon .icon{
+	width: 100%;
+	}
+.listicon .nexts{
+	position: absolute;
+	top: 30%;
+	right: 15px;
+	color: #fff;
+	font-size: 17px;
+	font-weight: 500;
+	}
+.signmain .listinfo{
+	padding: 20px 15px 20px 10%;
+	color: #666;
+	font-size: 15px;
+	font-weight: 500;
+	background-color: #F9F9EB;
+	position: relative;
+	}
+.listinfo .arrow{
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	position: absolute;
+	right: 10px;
+	bottom: 10px;
+	}
+.down{
+	background: url(../images/down.png) no-repeat 97% 95%;
+	}
+.up{
+	background: url(../images/up.png) no-repeat 97% 95%;
+	}
+.mallname div,.ordertotal div,.ordernum div,.orderdate div{
+	float: left;
+	line-height: 26px;
+	}
+.mallname .nameicon,.ordericon{
+	width: 27%;
+	text-align: right;}
+.mallname .name,.ordertotal .total,.ordernum .num,.orderdate .date{
+	width: 70%;
+	padding-left: 5px;
+	color: #000;
+	}
+.signmain .listitems{
+	color: #666;
+	font-size: 15px;
+	}
+.ordernum,.orderdate{
+	display: none;
+	}
+.listitems .itemname{
+	height: 35px;
+	line-height: 35px;
+	border-bottom: thin solid #ccc;
+	padding-left: 15px;
+	}
+.listitems .tel,.listitems .cardnum{
+	border-bottom: thin solid #ccc;
+	height: 55px;
+	line-height: 55px;
+	padding-left: 15px;
+	color: #000;
+	background-color: #fff;
+	}
+.tel input,.cardnum input{
+	width: 35%;
+	border: none;
+	text-align: right;
+	height: 53px;
+	line-height: 53px;
+	float: right;
+	padding-right: 25px;
+	}
+.listitems .explain{
+	color: red;
+	font-size: 16px;
+	font-weight: 500;
+	padding-right: 10px;
+	}
+.signmain .reminder{
+	padding: 20px 0px 10px 20px;
+	line-height: 26px;
+	}
+.reminder .remintip{
+	color: #000;
+	font-size: 16px;
+	padding-bottom: 10px;
+	}
+.reminder .remincontent{
+	color: #666;
+	font-size: 15px;
+
+	}
+.remincontent div{
+	padding: 0px;
+	}

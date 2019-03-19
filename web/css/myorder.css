@@ -1,0 +1,58 @@
+@charset "utf-8";
+/* CSS Document */
+
+.myorder_main{
+	max-width: 640px;
+	min-width: 305px;
+	height: auto;
+	/*ie6下不支持最大最小宽度*/
+	_width:expression(document.body.clientWidth < 320 ? "320px" : "auto");
+	_width:expression(document.body.clientWidth > 640 ? "640px" : "auto");
+	margin: 0 auto;
+	}
+.signmain{
+	overflow-y: scroll;
+	background-color: #f5f5f5;
+	}
+
+.signmain .accountinfo{
+	font-size: 18px;
+	font-weight: 500;
+	color: #333;
+	text-align: center;
+	height: 50px;
+	line-height: 50px;
+	background-color: #fff;
+	border-bottom: thin solid #ccc;
+	overflow: hidden;
+	white-space: nowrap;
+	}
+.signmain .account_list{
+	border-bottom: thin solid #ccc;	
+	background-color: #fff;
+	}
+.account_list .account_items{
+	padding-left: 15px;
+	height: 60px;
+	line-height: 60px;
+
+	}
+.account_items .account_name{
+	display: inline-block;
+	width: 83%;
+	padding-left: 15px;
+	font-size: 16px;
+	font-weight: 600;
+	color: #666;
+	background: url(../images/right.png) no-repeat 98% center;
+	border-bottom: thin solid #ccc;
+	position: relative;
+	}
+.account_name .order_num{
+	display: inline-block;
+	position: absolute;
+	top: 0px;
+	right: 10%;}
+.account_items:last-child .account_name{
+	border-bottom: none;
+	}

@@ -1,0 +1,31 @@
+@CHARSET "UTF-8";
+
+#loading-state{
+	width:260px;
+}
+
+.goods-list th{
+	text-align:center;
+}
+.goods-list td{
+	text-align:center;
+}
+
+.form-group-img label{
+	display:inline-block;
+	min-width:100px;
+	text-align:right;
+}
+.form-group-img img{
+	border:solid 1px #aaa;
+}
+
+div.ui-tabs .ui-tabs-hide{
+	display:none;
+}
+
+.box .box-body .dataTable-wrap{
+	height: 250px;
+	overflow:scroll;
+	overflow-x:hidden;
+}

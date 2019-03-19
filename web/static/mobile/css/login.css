@@ -1,0 +1,169 @@
+@charset "utf-8";
+/* CSS Document */
+*{
+	margin: 0px;
+	padding: 0px;
+	border: 0px;
+	}
+body{
+	font-size: 14px;
+	font-family: "微软雅黑";
+	color: #333;
+	}
+a{
+	color: #666;
+	}
+a:hover{
+	text-decoration: none;
+	}
+img{
+	vertical-align: middle;
+	}
+.login_main{
+	max-width: 640px;
+	min-width: 320px;
+	/*ie6下不支持最大最小宽度*/
+	_width:expression(document.body.clientWidth < 320 ? "320px" : "auto");
+	_width:expression(document.body.clientWidth > 640 ? "640px" : "auto");
+	margin: 0 auto;
+	background: url(../images/01.png) no-repeat center center;
+	background-size: 100%;
+	
+	}
+
+.login_main .container{	
+	width: 100%;
+	padding-top: 30px;
+	background-color: #fff;
+	background: url(../images/01.png) no-repeat center center;
+	background-size: 100%;
+	}
+.container .title{
+	text-align: center;
+	}
+.container .content{
+	margin-top: 60px;
+	}
+.container .content .row {
+	margin: 0px;
+	}
+.content .username,.content .password{
+	position: relative;
+	border-bottom: 1px solid #fff;
+	height: 40px;
+	padding-left: 15px;
+	}
+.content .username{
+	margin-bottom: 10px;
+	}
+.row >div{
+	margin-bottom: 8px;
+	}
+
+.fontcolorred{
+	color: red;
+	}
+.hide{
+	display: none;
+	}
+
+.container .input{
+	width: 100%;
+	height: 30px;
+	*height: 34px;
+	line-height: 30px;
+	color: #fff;
+	font-size: 15px;
+	position: absolute;
+	left: 50px;
+	top: 0px;
+	*top: 1px;
+	padding-left: 5px;
+	background: none;
+	border-left: thin solid #fff;
+
+	}
+.container .input:focus{
+	outline: none;
+	}
+.content .l_login,.content .r_register{
+	margin-top: 30px;
+	margin-bottom: 15px;
+	}
+.container .btn{
+	width: 100%;
+	height: 45px;
+	padding: 0px;
+	line-height: 45px;
+	font-size: 18px;
+	color: #fff;
+	}
+.l_login .btn{
+	background-color: #8CE8ED;
+	border: none;
+	}
+.r_register .btn{
+	background: none;
+	border: thin solid #ccc;
+	}
+.content .remberpass{
+	height: 20px;
+	line-height: 20px;
+	font-size: 12px;
+	color: #666;
+	margin-bottom: 10px;
+	
+	}
+.content .che{
+	background: url(../images/che.png) no-repeat left center;
+	background-size: 12px 12px;
+	}
+.content .unche{
+	background:url(../images/unche.png) no-repeat left center;
+	background-size: 12px 12px;
+	 }
+.remberpass .repass{
+	display: inline-block;
+	height: 20px;
+	line-height: 20px;
+	margin-left: 15px;
+	
+	}
+.content .validateCode{
+	width: 100%;
+	height: 40px;
+	margin-top: 20px;
+	
+	}
+.container .inputstyle{
+	left: 0px;
+	width: 100%;
+	border: thin solid #ccc;
+	width: 88%;
+	height: 40px;
+	
+	}
+.validateCode .verifycodeimg{
+	display: inline-block;
+	width: 100%;
+    height: 40px;
+    line-height: 40px;
+	
+	}
+.verifycodeimg img {
+	height: 40px;
+	}
+.verifycodeimg a{
+	display: inline-block;
+	height: 40px;
+	line-height: 40px;
+	margin-left: 10px;
+	}
+.container .foot{
+	width: 100%;
+	margin-top: 20px;
+	margin-bottom: 30px;
+	text-align: center;
+	color: #fff;
+	font-size:12px;
+	}

@@ -1,0 +1,94 @@
+@charset "utf-8";
+/* CSS Document */
+.myaccount_main{
+	max-width: 640px;
+	min-width: 305px;
+	height: auto;
+	/*ie6下不支持最大最小宽度*/
+	_width:expression(document.body.clientWidth < 320 ? "320px" : "auto");
+	_width:expression(document.body.clientWidth > 640 ? "640px" : "auto");
+	margin: 0 auto;
+	}
+.signmain{
+	overflow-y: scroll;
+	background: #f5f5f5;
+	}
+
+.signmain .accountinfo{
+	font-size: 16px;
+	font-weight: 500;
+	color: #333;
+	text-align: center;
+	height: 50px;
+	line-height: 50px;
+	background-color: #fff;
+	border-bottom: thin solid #ccc;
+	}
+.accountinfo div{
+	overflow: hidden;
+	white-space: nowrap;
+	}
+.signmain .account_list{
+	border-bottom: thin solid #ccc;
+	background-color: #fff;	
+	}
+.account_list .account_items{
+	padding-left: 15px;
+	height: 53px;
+	line-height: 53px;
+	}
+.account_items .account_name{
+	display: inline-block;
+	width: 83%;
+	padding-left: 15px;
+	font-size: 15px;
+	font-weight: 400;
+	color: #666;
+	background: url(../images/right.png) no-repeat 98% center;
+	border-bottom: thin solid #DEDEDE;
+	}
+
+.signmain .exitlogin{
+	margin: 40px 0px 10px 0px;
+	width: 100%;
+	height: 50px;
+	text-align: center;
+	 }
+.signmain .exitlogin .exit{
+	width: 95%;
+	height: 100%;
+	background-color: #33A3FF;
+	line-height: 100%;
+	color: #fff;
+	font-size: 18px;
+	}
+/*版权声明*/
+.cr_state{
+	width: 60%;
+	max-width: 640px;
+	min-width: 300px;
+	border-radius: 8px;
+	border: thin solid #ccc;
+	position: absolute;
+	z-index: 120;
+	background-color: #fff;
+	display: none;
+	}
+.cr_state .comp{
+	text-align: center;
+	height: 90px;
+	line-height: 35px;
+	margin: 15px 0px 0px 0px;
+	color: #848689;
+	font-size: 14px;
+	font-weight: 500;
+	border-bottom: thin solid #ccc;
+	}
+.cr_state .confirm{
+	height: 60px;
+	text-align: center;
+	line-height: 60px;
+	font-size: 19px;
+	color: #3AA6FF;
+	font-weight: 500;
+	}

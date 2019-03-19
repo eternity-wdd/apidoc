@@ -1,0 +1,92 @@
+@charset "utf-8";
+/* CSS Document */
+
+.info_main{
+	max-width: 640px;
+	min-width: 305px;
+	height: auto;
+	/*ie6下不支持最大最小宽度*/
+	_width:expression(document.body.clientWidth < 320 ? "320px" : "auto");
+	_width:expression(document.body.clientWidth > 640 ? "640px" : "auto");
+	margin: 0 auto;
+	}
+.signmain{
+	overflow-y: scroll;
+	background-color: #fff;
+	}
+
+.signmain .accou_user{
+	height: 60px;
+	line-height: 60px;
+	margin-left: 15px;
+	margin-right: 15px;
+	color: #666;
+	font-size: 18px;
+	font-weight: 500;
+	border-bottom: thin solid #ccc;
+	overflow: hidden;
+	white-space: nowrap;
+	}
+.signmain .listname{
+	width: 100%;
+	height: 50px;
+	line-height: 50px;
+	
+	}
+.signmain .listname ul li{
+	float:left;
+	width: 50%;
+	text-align: center;
+	color: #ccc;
+	font-size: 17px;
+	}
+.signmain .listname ul li a{
+	display: inline-block;
+	width: 95%;
+	height: 48px;
+	color: #666;
+	border-bottom: 1px solid #ccc;
+	}
+.signmain .listname ul li .current{
+	color: #33A3FF;
+	border-bottom: 2px solid #33A3FF;
+	}
+.signmain .list{
+	width: 100%;
+	color: #000;
+	font-size: 17px;
+	font-weight: 500;
+	padding-left: 10px;
+	line-height: 50px;
+	border-bottom: 2px solid #ccc;
+	
+	}
+.contact_way .tel,.prov_way .prov, .address_way .addr{
+	color: #666;
+	font-size: 16px;
+	overflow: hidden;
+	}
+.mod_info .contact_way,.mod_info .prov_way,.mod_pass .or_pass{
+	border-bottom: thin solid #ccc;
+	}
+.list .mod_pass{
+	display: none;
+	}
+.mod_pass .or_pass input,.mod_pass .new_pass input{
+	font-size: 15px;
+	}
+/*确认按钮*/
+.signmain .confirm{
+	margin: 30px 0px 20px 0px;
+	width: 100%;
+	height: 50px;
+	text-align: center;
+	 }
+.signmain .confirm input{
+	width: 95%;
+	height: 100%;
+	background-color: #33A3FF;
+	line-height: 100%;
+	color: #fff;
+	font-size: 18px;
+	}

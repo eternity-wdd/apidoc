@@ -1,0 +1,22 @@
+@charset "utf-8";
+/* CSS Document */
+/*商品列表*/
+.product_list>.row{
+	padding-left: 10px;
+	}
+/*待审核图标*/
+.goodicon{
+	position: absolute;
+	top: 9px;
+	left: -17px;
+	transform: rotate(-45deg);
+	-webkit-transform: rotate(-45deg);
+	display: inline-block;
+	width: 70px;
+	height: 17px;
+	background-color: #F36;
+	color: #fff;
+	text-align: center;
+	line-height: 20px;
+	font-weight: 600;
+	}

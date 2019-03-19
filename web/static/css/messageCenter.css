@@ -1,0 +1,154 @@
+
+/* 消息中心按钮*/
+.message-center{
+	font-size: 13px;
+	box-shadow:none;
+}
+.message-center .table {
+    background: #FFF;
+    font-size: 12px;
+    border-top: 1px solid #e1e6eb;
+    border: 1px solid #e1e6eb;
+}
+.message-center .state-selector-item {
+    width: 115px;
+    text-align: center;
+}
+.message-center .ng-isolate-scope{
+	padding: 20px 0 10px 0;
+	border-top:  1px solid #DDD;
+}
+.nav-pills li a, .nav-pills li a:focus, .nav-pills li button, .nav-pills li button:focus {
+    padding: 6px 12px;
+    border-radius: 0px;
+    border: 1px solid #D9DEE4;
+    background-color: #D9DEE4;
+    color: #666;
+    line-height: 20px;
+    height: 32px;
+    margin-left: 2px;
+	font-size: 13px;
+}
+.nav-pills li a:hover, .nav-pills li a:focus:hover, .nav-pills li button:hover, .nav-pills li button:focus:hover {
+    border: 1px solid #D9DEE4;
+    background-color: #DCE2E7;
+    color: #444;
+}
+.nav-pills li.active a, .nav-pills li.active a:hover, .nav-pills li.active a:focus, .nav-pills li.active button, .nav-pills li.active button:hover, .nav-pills li.active button:focus {
+    border: 1px solid #546478;
+    background-color: #546478;
+    color: #FFFFFF;
+}
+.table thead tr th {
+    padding: 8px 8px;
+    font-weight: normal;
+    color: #999;
+    border-bottom: 1px solid #e1e6eb;
+    background-color: #F5F6FA;
+}
+.table tbody tr td {
+    border: none;
+    border-bottom: 1px solid #e1e6eb;
+    vertical-align: middle;
+}
+.message-center .title-column {
+    width: 50%;
+}
+.message-center .date-column{
+	width: 20%;
+}
+.message-center .state-column {
+    width: 18px;
+    padding-left: 4px;
+    padding-right: 4px;
+}
+.message-center .state-column .state-unread {
+    font-size: 16px;
+    color: #428bca;
+}
+.message-center .title-read {
+    color: #999;
+}
+.message-center .title-unread {
+    color: #000;
+}
+.message-center .title-read:hover {
+    color: #06c;
+	text-decoration: underline;
+}
+.message-center .column-text {
+    color: #999;
+}
+.table tfoot tr td {
+    padding: 12px 8px;
+    border-bottom: 1px solid #e1e6eb;
+    vertical-align: middle;
+}
+.table tfoot tr td .btn{
+	font-size: 13px;
+}
+.table tfoot .btn-default {
+    color: #333;
+    border: 1px solid #ddd;
+    background-color: #f7f7f7;
+}
+.table tfoot .btn.disabled, .table tfoot .btn[disabled] {
+    text-shadow: none;
+    filter: none;
+    opacity: 1;
+    color: #bbb;
+    border: 1px solid #ddd;
+    background-color: #f7f7f7;
+}
+.table tfoot .pagination{
+	margin:0;
+}
+/*消息详情页*/
+
+.btn-xs {
+    font-size: 12px;
+    padding: 2px 8px;
+    height: 20px;
+    line-height: 14px;
+}
+.btn-toinstlist {
+    border: 1px solid #BBB;
+    color: #666;
+    text-shadow: none;
+    vertical-align: middle;
+    margin-top: 7px;
+}
+.message-center .btn-toinstlist {
+    margin-top: -2px;
+}
+.message-center .message-detail-container {
+    padding: 16px 74px;
+    font-size: 14px;
+    line-height: 24px;
+    margin-bottom: 20px;
+}
+.console-title-border {
+    border-bottom: 1px solid #DDD;
+}
+.console-box-border {
+    border: 1px solid #E1E6EB;
+}
+.margin-top-3 {
+    margin-top: 24px !important;
+}
+.message-detail-container h4{
+	font-family: "Helvetica Neue", "Luxi Sans", "DejaVu Sans", Tahoma, "Hiragino Sans GB", STHeiti, "Microsoft YaHei";
+}
+.breakall {
+    word-break: break-all;
+    word-wrap: break-word;
+}
+.margin-top-2 {
+    margin-top: 16px !important;
+}
+.detail-content .ng-binding p{
+	font-size: 14px;
+	font-family: 微软雅黑;
+	text-indent: 2em;
+	margin-bottom: 15px;
+}

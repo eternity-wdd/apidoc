@@ -1,0 +1,175 @@
+@charset "utf-8";
+/* CSS Document */
+.bg{
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 102;
+	background-color: #333;
+	opacity: 0.5;
+	filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=50); 
+	display: none;
+	}
+.shop_main{
+	max-width: 640px;
+	min-width: 305px;
+	height: auto;
+	/*ie6下不支持最大最小宽度*/
+	_width:expression(document.body.clientWidth < 320 ? "320px" : "auto");
+	_width:expression(document.body.clientWidth > 640 ? "640px" : "auto");
+	margin: 0 auto;
+	}
+.signmain{
+	background-color: #F7F7F7;
+	overflow-y: scroll;
+	}
+.signmain .good_items{
+	width: 100%;
+	height: 130px;
+	padding-top: 10px;
+	padding-left: 10px;
+	background-color: #fff;
+	border-bottom: thin solid #efefef;
+	}
+.signmain .good_items:last-child{
+	border-bottom: none;
+	}
+.good_items .good_pic{
+	width: 90px;
+	height: 90px;
+	border: thin solid #efefef;  
+	}
+.good_items .good_pic img{
+	width: 100%;
+	height: 100%;
+	}
+.good_items .good_msg{
+	padding-left: 10px;
+	min-width: 200px;
+	}
+.good_msg .good_name,.good_msg .good_num{
+	min-height: 35px;
+	line-height: 24px;
+	font-size: 13px;
+	color: #000;
+	position: relative;
+	overflow: hidden;
+
+	}
+ .good_msg .good_price{
+	display: inline-block;
+	font-size: 14px;
+	color: #666;
+	}
+.good_ope{
+	width: 70%;
+	height: 30px;
+	position: absolute;
+	top: 6px;
+	left: 2px;
+	font-weight: 400;
+	}
+.good_ope .ope,.good_ope .goodnum{
+	float: left;
+	}
+.good_ope .ope{
+	width: 40px;
+	height: 25px;
+	background-color: #e8e8e8;
+	border: thin solid #ccc;
+	text-align: center;
+	line-height: 25px;
+	color: #888;
+	font-size: 18px;
+	}
+.good_ope .goodnum{
+	width: 22%;
+	height: 25px;
+	line-height: 25px;
+	text-align: center;
+	color: #000;
+	border: thin solid #ccc;
+	border-width: 1px 0px 1px 0px;
+	}
+.good_msg .del{
+	display: inline-block;
+	width: 22px;
+	height: 22px;
+	position: absolute;
+	top: 5px;
+	right: 7px;	
+	background: url(../images/delete.png) 0 0 no-repeat;
+	background-size: 22px;
+	}
+.good_total{
+	width: 100%;
+	max-width: 640px;
+	min-width: 320px;
+	height: 70px;
+	border-top: thin solid #ccc;
+	position: fixed;
+	bottom: 0px;
+	z-index: 107;
+	padding-left: 20px;
+	background-color: #333333;
+	}
+.good_total .total{
+	color: #F4F4F4;
+	font-size: 17px;
+	font-weight: 500;
+	line-height: 60px;
+	}
+.good_total .buyer{
+	width: 40%;
+	height: 60px;
+	line-height: 60px;
+	background-color: #F15353;
+	text-align: center;
+	color: #fff;
+	font-size: 18px;
+	position:absolute;
+	right: 0px;
+	top: 0px;
+	}
+/*删除商品*/
+.del_good{
+	position: absolute;
+	width: 272px;
+	text-align: center;
+	background-color: #fff;
+	z-index: 102;
+	display: none;
+	border-radius: 5px;
+	
+	}
+.del_good .confirm_delete{
+	line-height: 74px;
+	color: #4d4d4d;
+	font-size: 18px;
+	}
+.del_good .ifdelete{
+	overflow: hidden;
+	text-align: center;
+	padding: 16px 25px;
+	}
+.del_good .remove,.del_good .cancel{
+	display: inline-block;
+	width: 100px;
+	border-radius: 5px;
+	height: 37px;
+	line-height: 37px;
+	font-size: 15px;
+	}
+.del_good .remove{
+	background-color: #F35656;
+	float: right;
+	border: thin solid #F35656;
+	color: #fff
+	}
+.del_good .cancel{
+	border: thin solid #ccc;
+	float: left;
+	color: #4d4d4d;
+		}

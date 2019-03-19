@@ -1,0 +1,373 @@
+@charset "utf-8";
+/* CSS Document */
+
+*{
+	margin: 0px;
+	padding: 0px;
+	border: 0px;
+	}
+body{
+	font-size: 13px;
+	font-family: "微软雅黑";
+	color: #333;
+
+	}
+img{
+	vertical-align: middle;
+	}
+input:focus{
+	outline: none;
+	}
+ul{
+	list-style-type: none;
+	}
+a{
+	color: #ccc;
+	}
+a:link{
+	font-weight: 500;
+	}
+.home_main{
+	max-width: 640px;
+	min-width: 305px;
+	/*ie6下不支持最大最小宽度*/
+	_width:expression(document.body.clientWidth < 320 ? "320px" : "auto");
+	_width:expression(document.body.clientWidth > 640 ? "640px" : "auto");
+	margin: 0 auto;
+	}
+.home_main .container{	
+	width: 100%;
+	height: auto;
+	padding: 0px;
+	}
+
+.container .hometop{
+	max-width: 640px;
+	min-width: 305px;
+    width:100%;
+	padding: 20px 6% 10px 2%;
+	background: url(../images/01.png) no-repeat center;
+	background-size: 100%;
+	z-index: 101;
+	position: fixed;
+	top: 0px;
+	}
+.hometop>div{
+	padding: 0px;
+	}
+.hometop .homesearch{
+	position: relative;
+	display: inline-block;
+	width: 74%;
+	margin-left: 1%;
+	}
+.hometop .input{
+	display: inline-block;
+	width: 100%;
+	height: 30px;
+	margin-left:5px;
+	line-height: 30px;
+	background-color: #F4FBFE;
+	text-align:left;
+	color: #888989;
+	font-size: 15px;
+	border-radius: 5px;
+	padding-left: 7px;
+	}
+.hometop .search{
+	position: absolute;
+	top: 2px;
+	right: 5px;
+	}
+.hometop .homeuser{
+	display: inline-block;
+	position: absolute;
+	right: 3px;
+	}
+.empty{
+	width: 100%;
+	height: 60px;
+	top: 0px;
+	}
+.container .homemain{
+	width: 100%;
+	
+	overflow-x: hidden;
+	}
+.container .homemid{
+	border-bottom: 3px solid #e5e5e5;
+	}
+.container .row{
+	margin: 0px;
+	}
+.container .homecarou,.container .homelist{
+	padding:0px;
+	background-color: #fff;
+	width: 100%;
+	}
+.homecarou ul{
+	margin: 0px;
+	}
+.container .homecarou img{
+	width: 100%;
+	}
+
+
+.homelist .list{
+	width: 21%;
+	margin: -5px 2% 15px 2%;
+	text-align: center;
+	float: left;
+	}
+.list .listimg img{
+	width: 75%;
+	}
+.list .listspan{
+	font-size: 13px;
+	color: #767676;
+	margin-top: 5px;
+	}
+.homeexcl .swiper-container{
+	height: 40px;	
+	}
+.container .homeexcl{
+	background-color: #fff;
+	border-bottom: 3px solid #e5e5e5;
+	}
+.homemain>div>div{
+	padding: 0px;
+	}
+.homepic .newhui,.homeexcl .jnexcl,.hometheme .jntheme{
+	padding: 7px 0px 5px 10px;
+	color: #7F7F7F;
+	font-size: 15px;
+	}
+.homemain .icon{
+	display: inline-block;
+	width: 3px;
+	height: 12px;
+	background-color: #D8505C;
+	margin-right: 3px;
+	}
+.homeexcl .excllist ul{
+	list-style-type: none;
+	}
+.homeexcl .excllist ul li{
+	float: left;
+	width: 25%;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	font-size: 15px;
+	font-weight: 500;
+	}
+.homeexcl .excllist ul li a{
+	width: 100%;
+	line-height: 15px;
+	height: 15px;
+	display: inline-block;
+	color: #767676;
+	border-left: thin solid #666;
+	}
+.homeexcl .excllist .swiper-slide-active a {
+	border-left: none;
+	}
+.shop .shoplist{
+	width: 45%;
+	margin: 3px 3% 5px 2%;
+	position: relative;
+	border: thin solid #e5e5e5;
+	float: left;
+	}
+.shoplist .shopicon{
+	padding: 3px 3px 0px 0px;
+	height: 30px;
+	text-align: right;
+	position: relative;
+	z-index: 100;
+	}
+.shopicon span{
+	display: inline-block;
+	width: 40px;
+	height: 40px;
+	border-radius: 20px;
+	background-color: #FF0E7F;
+	text-align: center;
+	line-height: 40px;
+	color: #fff;
+	}
+.shoplist .shopimg img{
+	width: 100%;
+	}
+.shoplist .shopname{
+	height: 25px;
+	margin-top: 5px;
+	border-bottom: thin solid #f5f5f5;
+	padding-left: 10px;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	}
+.shopname a{
+	color: #767676;
+	}
+.shoplist .shopprice{
+	color: #FF0000;
+	padding-left: 10px;
+	font-weight: 500;
+	font-size: 16px;
+	}
+.hometheme>div{
+	padding: 0px;
+	}
+.hometheme .themegoods{
+	width: 100%;
+	}
+.themegoods ul li{
+	width: 33.3%;
+	text-align: center;
+	border: thin solid #EFEFEF;
+	float: left;
+	}
+.themegoods ul li img{
+	width: 100%;
+	}
+.themegoods .goodname{
+	font-size: 16px;
+	font-weight: 500;
+	color: #797979;
+	display: inline-block;
+	margin-top: 3px;
+	}
+#backtop{
+	display: inline-block;
+	width: 44px;
+	height: 44px;
+	background: url(../images/backtop.png);
+	background-size: 44px 44px;
+	position: fixed;
+	bottom: 10px;
+	right: 10px;
+	z-index: 100;
+	}
+.bg{
+	width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 102;
+    background-color: #333;
+    opacity: 0.5;
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
+    display: none;
+	}
+.bg p{
+	background-color: transparent;
+	width: 15px;
+	position: absolute;
+	right: 10px;
+	top: 47%;
+	z-index: 100;
+	font-size: 13px;
+	color: #b5b5b5;
+	line-height: 14px;
+	}
+.bg p span{
+	display: block;
+	width: 15px;
+	height: 15px;
+	background: url(../images/backh.png) no-repeat center;
+	background-size: 100%;
+	margin-top: 10px; 
+	}
+.signmain .row{
+	margin: 0px;
+	}
+.signmain .row>div{
+	padding: 0px;
+	}
+a:active{
+	color: #F90;
+	}
+dl{
+	margin-bottom: 0px;
+	}
+.signmain .typelist{
+	max-width: 640px;
+	min-width: 305px;
+	width: 88%;
+	display: none;
+	position: absolute;
+	top: 0px;
+	background-color: #fff;
+	z-index: 1000;
+	overflow-y: scroll;
+	border-bottom: thin solid #ccc;
+	}
+.typename ul li{
+	height: 60px;
+	text-align: center;
+	font-size: 14px;
+	line-height: 60px;
+	background-color: #F5F5F5;
+	border-bottom: thin solid #e1e1e1;
+	border-right: thin solid #e1e1e1;
+	overflow: hidden;
+	}
+
+.typename ul .current{
+	background-color: #fff;
+	color: #F16868;
+	border-right: thin solid #fff;
+	}
+.fontcolorblue{
+	color: #3EA8FF;
+	}
+.typelist .typecontent{
+	overflow: scroll;
+	}
+.typelist .typecontent>div{
+	padding: 0px;
+	border-left: thin solid #efefef;
+	}
+
+.typelist .typecontent dt{
+	text-align: left;
+	color: #9B9B9B;
+	font-size: 14px;
+	height: 60px;
+	line-height: 60px;
+	padding-left: 20px;
+	position: relative;
+	border-right: thin solid #fff;
+	}
+.typelist .typecontent dt b{
+	width: 16px;
+	height: 16px;
+	position: absolute;
+	right: 15px;
+	top: 20px;
+	/*background-image:url(../images/right.png);*/
+	}
+.typelist .typecontent .name{
+	padding-left: 20px;
+	border: thin  dotted #efefef;
+	border-width: 0px 0px 1px 0px;
+	}
+.typelist .typecontent>div dl:last-child .name{
+	border-bottom: thin solid #efefef;
+	}
+.typelist .typecontent dd{
+	width: 47%;
+	display: inline-block;
+	line-height: 53px;
+	text-align: left;
+	color: #8B6F54;
+	font-size: 14px;
+	overflow: hidden;
+	
+	}
+.typelist .name a{
+	color: #8B6F54;
+	}

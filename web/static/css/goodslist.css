@@ -1,0 +1,98 @@
+@charset "utf-8";
+/* CSS Document */
+
+.goodslist{
+	height: auto;
+	overflow: hidden;
+	background-color: #fff;
+	}
+.goodslist .list{
+	width: 100%;
+	}
+.goodslist .list ul{
+	overflow: hidden;
+	padding: 0px;
+	}
+.goodslist .list.list_title{
+	height: 40px;
+	line-height: 40px;
+	font-weight: bold;
+	border: thin solid #efefef;
+	overflow: hidden;
+	}
+.goodslist .list.list_content{
+	overflow: hidden;
+	border: thin solid #efefef;
+	border-width: 0px 1px 0px 1px;
+	}
+.goodslist .list.list_content .content_ul .content_ul_li{
+	border-bottom: thin solid #efefef;
+	height: 60px;
+	}
+.goodslist .list.list_content .content_ul .content_ul_li:hover{
+	background-color: #efefef;
+	}
+.goodslist .list.list_content .content_ul ul li{
+	padding-top: 5px;
+	height: 57px;
+	line-height: 27px;
+	}
+.goodslist .list ul{
+	width: 100%;
+	list-style-type: none;
+	}
+.goodslist .list ul .item{
+	float: left;
+	padding-left: 1%;
+	border-right: thin solid #efefef;
+	}
+.goodslist .list.list_title .item{
+	height: 40px;
+	}
+.goodslist .list ul .checkbox{
+	margin: 0px;
+	}
+.goodslist .list ul .checkbox input{
+	margin: 0px;
+	}
+.goodslist .list ul .item:last-child{
+	border: none;
+	}
+.goodslist .list ul .item.checkbox{
+	width: 4%;
+	}
+.goodslist .list ul .item.goods_pic{
+	width: 9%;	
+	}
+.goodslist .list.list_content .goods_pic img{
+	width: 47px;
+	height: 47px;
+	border: thin solid #ccc;
+	}
+.goodslist .list ul .item.goods_name{
+	width: 21%;
+	}	
+.goodslist .list ul .item.goods_brand{
+	width: 10%;
+	}
+.goodslist .list ul .item.goods_type{
+	width: 10%;
+	}
+.goodslist .list ul .item.goods_price{
+	width: 7%;
+	}
+.goodslist .list ul .item.goods_store{
+	width: 7%;
+	}
+.goodslist .list ul .item.goods_shelve{
+	width: 5%;
+	}
+.goodslist .list ul .item.goods_sort{
+	width: 7%;
+	}
+.goodslist .list ul .item.goods_check{
+	width: 10%;
+	}
+.goodslist .list ul .item.goods_ope{
+	width: 9%;
+	}

@@ -1,0 +1,228 @@
+@charset "utf-8";
+/* CSS Document */
+.slidesjs-pagination{
+	display: none;
+	}
+.goods_detail{
+	max-width: 640px;
+	min-width: 280px;
+	height: auto;
+	/*ie6下不支持最大最小宽度*/
+	_width:expression(document.body.clientWidth < 320 ? "320px" : "auto");
+	_width:expression(document.body.clientWidth > 640 ? "640px" : "auto");
+	margin: 0 auto;
+	}
+.signmain{
+	width: 100%;
+	position: relative;
+	margin-bottom: 20px;
+	overflow-y: scroll;
+	}
+.signmain .goodscarou{
+	text-align: center;
+	border-bottom: thin solid #E3E3E5;
+	}
+.signmain .goodscarou img{
+	width: 60%;
+	height: 30%;
+	}
+.signmain .goodinfo{
+	font-size: 14px;
+	font-weight: 500;
+	color: #8B8D90;
+	}
+.goodinfo .goodnameprice{
+	border-bottom: 1px solid #E3E3E5;
+	}
+.goodnameprice .goodname{
+	height: 60px;
+	line-height: 30px;	
+	padding-left: 10px;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	color: #252525;
+	font-size: 16px;
+	}
+.goodnameprice .goodprice{
+	height: 40px;	
+	line-height: 40px;
+	padding-left: 10px;
+	font-size: 19px;
+	font-weight: 600;
+	color: #F15353;
+	}
+.signmain .goodprop{
+	line-height: 37px;
+	padding: 10px 0px 10px 0px;
+	border-bottom: 1px solid #E4E3E5;
+	overflow: hidden;
+	white-space: nowrap;
+	background-color: #F1F1F5;
+	}
+.goodprop .goodpropdetail{
+	background-color: #fff;
+	border: 1px solid #E4E3E5;
+	border-width: 1px 0px 1px 0px;
+	padding-top: 10px;
+	}
+.goodprop .ope,.goodprop .goodnum{
+	float: left;
+	margin-top: 5px;
+	}
+.goodprop .ope{
+	width: 30px;
+	height: 30px;
+	background-color: #F2F4F5;
+	border: thin solid #ccc;
+	text-align: center;
+	line-height: 30px;
+	}
+.goodprop .goodnum{
+	width: 25%;
+	height: 30px;
+	text-align: center;
+	color: #000;
+	border: thin solid #ccc;
+	border-width: 1px 0px 1px 0px;
+	}
+.goodinfo .paraspec{
+	border-bottom:1px solid #E4E3E5;
+	 }
+.goodpropdetail>div{
+	height: 37px;
+	}
+.goodpropdetail>div>div{
+	padding: 0px 0px 0px 10px;
+	}
+.paraspec .detailcomm,.goodinfo .star{
+	height: 50px;
+	line-height: 50px;
+	padding-left: 10px;	
+	}
+.paraspec .detailcomm{
+	background: url(../images/downhover.png) no-repeat 95% center;
+	}
+.goodinfo .comment{
+	padding: 10px 0px 10px 0px;
+	border-bottom: 1px solid #E4E3E5;
+	background-color: #F1F1F5;
+	}
+.goodinfo .star{
+	background: url(../images/right.png) no-repeat 95% center;
+	background-color: #fff;
+	border: 1px solid #E4E3E5;
+	border-width: 1px 0px 1px 0px;
+	}
+.detailhover .detailcomm{
+	background: url(../images/uphover.png) no-repeat 95% center;
+	}
+.fontcolorred{
+	color: #F03;
+	}
+.paraspec .detaildp{
+	height: 50px;
+	line-height: 50px;
+	border-top: 1px solid #DBDBDB;
+	margin-left: 15px;
+	margin-right: 20px;
+	color: #F63;
+	display: none;
+	}
+/*店铺详情*/
+.paraspec .shopdp{
+	line-height: 30px;
+	height: 75px;
+	}
+.shopdp .tb-shop-info-ft a{	
+	display: inline-block;
+    width: 70px;
+    height: 27px;
+	line-height: 25px;
+	color: #777;
+    background-color: #F3F3F3;
+    border: thin solid #ddd;
+    border-radius: 3px;
+	text-align: center;
+	margin-left: 30px;
+}
+/*评价*/
+.star .comnum{
+	color: #33A3FF;
+	}
+.star .starnum{
+	width: 125px;
+	height: 40px;
+	background: url(../images/star1.png) repeat-x left center;
+	}
+.starnum .g-star0{
+	width: 0px;
+	}
+.starnum .g-star1{
+	width: 25px;
+	height: 100%;
+	background: url(../images/star.png) repeat-x left center ;
+	}
+.starnum .g-star2{
+	width: 50px;
+	height: 100%;
+	background: url(../images/star.png) repeat-x left center;
+	}
+.starnum .g-star3{
+	width: 75px;
+	height: 100%;
+	background: url(../images/star.png) repeat-x left center;
+	}
+.starnum .g-star4{
+	width: 100px;
+	height: 100%;
+	background: url(../images/star.png) repeat-x left center;
+	}
+.starnum .g-star5{
+	width: 125px;
+	height: 100%;
+	background: url(../images/star.png) repeat-x left center;
+	}
+/*按钮*/
+.goodinfo .btnbar{
+	margin-top:20px;
+	text-align: center;
+	
+	}
+.btnbar .joincar,.btnbar .buybtn{
+	display: inline-block;
+	width: 80%;
+	height: 100%;
+	}
+.btnbar .joincar img,.btnbar .buybtn img{
+	width:100%;
+	}
+.goodinfo .tip{
+	text-align: center;
+	color: #900;
+	height: 30px;
+	line-height: 30px;
+	border-top:  thin solid #ccc;
+	display:none;
+	}
+/*加入购物车*/
+.commbut{
+	width: 100%;
+	height: 60px;
+	display: inline-block;
+	line-height: 60px;
+	background-color: #E54B4B;
+	color: #fff;
+	font-size: 15px;
+	text-align: center;
+	letter-spacing: 2px;
+	}
+.commbut:link,.commbut:visited{
+	color: #fff;
+	}
+#joincart{
+	background-color: #FFB03F;
+	 }
+#buyer{
+	background-color: #F15353;
+	 }

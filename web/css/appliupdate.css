@@ -1,0 +1,102 @@
+@charset "utf-8";
+/* CSS Document */
+*{
+	margin: 0px;
+	padding: 0px;
+	border: 0px;
+	}
+body{
+	font-size: 13px;
+	font-family: "微软雅黑";
+	color: #333;
+	}
+img{
+	vertical-align: middle;
+	}
+input:focus{
+	outline: none;
+	}
+ul{
+	list-style-type: none;
+	}
+a{
+	color: #000;
+	}
+a:link{
+	font-weight: 500;
+	}
+input:focus ,textarea:focus{
+	outline: none;
+	}
+a:hover{
+	text-decoration: none;
+	}
+.row{
+	margin: 0px;
+	}
+.row>div{
+	padding: 0px;
+	}
+.container{	
+	width: 100%;
+	padding: 0px;
+	position: relative;
+	}
+.container .title{
+	width: 100%;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	background-color: #00BAFF;
+	background-size: 100%;
+	z-index: 100;
+	max-width: 640px;
+	min-width: 320px;
+	
+	}
+.title .titleimg{
+	position: absolute;
+	left: 10px;
+	top: 14px;
+	}
+.title .signtip{
+	color: #fff;
+	font-size: 18px;
+	font-weight: bold;
+	display: inline-block;
+	letter-spacing: 2px;
+	}
+.appliupdate_main{
+	max-width: 640px;
+	min-width: 305px;
+	height: auto;
+	/*ie6下不支持最大最小宽度*/
+	_width:expression(document.body.clientWidth < 320 ? "320px" : "auto");
+	_width:expression(document.body.clientWidth > 640 ? "640px" : "auto");
+	margin: 0 auto;
+	}
+.appliupdate_main .signmain{
+	width: 100%;
+	background-color: #25F7FF;
+	position: relative;
+	}
+.signmain img{
+	width: 100%;
+	}
+.signmain .footer{
+	width: 100%;
+	height: 55px;
+	position: absolute;
+	bottom: 10px;
+	background-color: #25F7FF;
+	}
+.footer input{
+	width: 80%;
+	margin-left: 10%;
+	margin-top: 10px;
+	height: 40px;
+	background-color: #33A3FF;
+	color: #fff;
+	font-size: 16px;
+	border-radius: 5px;
+	}

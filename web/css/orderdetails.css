@@ -1,0 +1,77 @@
+@charset "utf-8";
+/* CSS Document */
+
+.orderdetail_main{
+	max-width: 640px;
+	min-width: 305px;
+	height: auto;
+	/*ie6下不支持最大最小宽度*/
+	_width:expression(document.body.clientWidth < 320 ? "320px" : "auto");
+	_width:expression(document.body.clientWidth > 640 ? "640px" : "auto");
+	margin: 0 auto;
+	}
+.signmain{
+	overflow-y: scroll;
+	background-color: #fff;
+	}
+
+.signmain .orderitems{
+	padding: 7px;
+	color: #666;
+	font-size: 15px;
+	font-weight: 500;
+	border-bottom: thin solid #ccc;
+	}
+.orderitems .goodbase{
+	border-bottom: thin solid #e5e5e5;
+		}
+.orderitems .goodimg{
+	width: 120px;
+	height: 120px;
+	}
+.orderitems .goodimg img {
+	width: 100%;
+	height: 100%;
+	}
+.goodmess .goodname,.goodmess .goodnum,.goodmess .goodprice{
+	height: 35px;
+	line-height: 35px;
+	}
+.goodmess .goodprice{
+	color: #FF1143;
+	}
+.goodbase .goodmess{
+	padding-left: 10px;
+	}
+.goodmess .goodname{
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	}
+.orderitems .goodprop{
+	padding: 10px 0px 10px 7px;
+	border-bottom: thin solid #e5e5e5;
+	}
+.goodprop div{
+	height: 32px;
+	line-height: 32px;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	}
+
+.good_receinfo .good_receiver,.good_receinfo .good_tel{
+	height: 60px;
+	line-height: 60px;
+	padding: 0px;
+	}
+.good_receinfo .good_receiver{
+	background: url(../images/receiver.png) no-repeat left center;
+    background-size: 16px 16px;
+    padding-left: 22px;
+	}
+.good_receinfo .good_tel{
+	background: url(../images/phoneone.png) no-repeat left center;
+    background-size: 11px 16px;
+    padding-left: 15px;
+	}

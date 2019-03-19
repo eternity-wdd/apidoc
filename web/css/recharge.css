@@ -1,0 +1,119 @@
+@charset "utf-8";
+/* CSS Document */
+
+.recharge_main{
+	max-width: 640px;
+	min-width: 305px;
+	height: auto;
+	/*ie6下不支持最大最小宽度*/
+	_width:expression(document.body.clientWidth < 320 ? "320px" : "auto");
+	_width:expression(document.body.clientWidth > 640 ? "640px" : "auto");
+	margin: 0 auto;
+	}
+.signmain .recharge_info{
+	color: #666;
+	line-height: 60px;
+	padding-left: 15px;
+	border-bottom: 2px solid #D6D6D6;
+	}
+.recharge_info .recharge_user{
+	height: 60px;
+	font-size: 16px;
+	font-weight: 500;
+	border-bottom: thin solid #D6D6D6;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	}
+.recharge_info .recharge_account{
+	height: 60px;
+	font-size: 15px;
+	font-weight: 500;
+	}
+.recharge_account .account{
+	color: #FF0137;
+	}
+.signmain .message{
+	padding-left: 20px;
+	position: relative;
+	border-bottom: thin solid #ccc;
+	}
+.message .textarea{
+	width: 96%;
+	height: 50px;
+	line-height: 50px;
+	font-size: 15px;
+	padding-left: 5px;
+	margin: 10px 0px;
+	border: thin solid #e5e5e5;
+	overflow: hidden;
+	resize: none;
+	}
+.message .icon{
+	position: absolute;
+	top: 40px;
+	right: 30px;
+
+	}
+.message .amount{
+	width: 130px;
+	position: absolute;
+	right: 0px;
+	top: 60px;
+	background-color: #fff;
+	z-index: 100;
+	display: none;
+	}
+.amount ul li{
+	border: thin solid #ccc;
+	border-width: 1px 1px 0px 1px;
+	width: 100%;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	font-size: 16px;
+	color: #666;
+	}
+.amount ul li:active{
+	background-color: #F90;
+	color: #fff;
+	}
+.amount ul li:last-child{
+	border-width: 1px;
+	}
+.signmain .payment{
+	font-size: 15px;
+	font-weight: 500;
+	margin-top: 10px;
+	margin-left: 10px;
+	padding-left: 5px;
+	border-bottom: 2px solid #D6D6D6;
+	}
+.signmain .payment div{
+	height: 40px;
+	line-height: 40px;
+	}
+.payment .payment_method{
+	width: 100%;
+	padding-left: 5px;
+	position: relative;
+	}
+.payment_method .icon1{
+	position: absolute;
+	right: 30px;
+	bottom: 5px;
+	}
+.signmain .confirm{
+	margin: 30px 0px 20px 0px;
+	width: 100%;
+	height: 50px;
+	text-align: center;
+	 }
+.signmain .confirm input{
+	width: 90%;
+	height: 100%;
+	background-color: #33A3FF;
+	line-height: 100%;
+	color: #fff;
+	font-size: 18px;
+	}

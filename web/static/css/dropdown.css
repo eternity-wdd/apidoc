@@ -1,0 +1,33 @@
+@charset "utf-8";
+/* CSS Document */
+.content{
+	padding: 15px 10px;
+}
+.content .box-body .dropdown-menu{
+	width: 293px;
+	min-width: 293px;
+	left: auto;
+	right: 0px;
+	padding-left: 3px; 
+	background-color: #fbf9f9;	
+	}
+.content .box-body .dropdown-menu >li{
+	float: right;
+	width: 84px;
+	border: thin solid #ececec;
+	margin: 5px 7px 5px 5px;
+	text-align: center;
+	height: 30px;
+	border-radius: 3px;
+	background-color: #e1f1f5;
+
+	}
+.content .box-body .dropdown-menu >li>a{
+	padding: 0px;
+	font-size: 13px;
+	line-height: 30px;
+	}
+.content .box-body .dropdown-menu >li>a:hover{
+	background-color: #3C8DBC;
+	color: #fff;
+	}

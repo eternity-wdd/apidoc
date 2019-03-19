@@ -1,0 +1,126 @@
+@charset "utf-8";
+/* CSS Document */
+
+.comment_main{
+	max-width: 640px;
+	min-width: 305px;
+	height: auto;
+	/*ie6下不支持最大最小宽度*/
+	_width:expression(document.body.clientWidth < 320 ? "320px" : "auto");
+	_width:expression(document.body.clientWidth > 640 ? "640px" : "auto");
+	margin: 0 auto;
+	}
+
+.signmain{
+	overflow-y: scroll;
+	background-color: #fff;
+	}
+.signmain .good_items{
+	width: 100%;
+	height: 140px;
+	padding-top: 10px;
+	padding-left: 10px;
+	border-bottom: thin solid #ccc;
+	}
+.good_items .good_pic{
+	width: 100px;
+	height: 100px;
+	}
+.good_items .good_pic img{
+	width: 100%;
+	height: 100%;
+	}
+.good_items .good_msg{
+	padding-left: 10px;
+	}
+.good_msg .good_name{
+	line-height: 30px;
+    min-height: 30px;
+    max-height: 60px;
+    font-size: 14px;
+    color: #666;
+    font-weight: 500;
+    overflow: hidden;
+	}
+.good_type .good_price{
+	display: inline-block;
+    font-size: 15px;
+    color: #F16353;
+    font-weight: 500;
+	}
+.good_msg .good_type{
+	height: 50px;
+    line-height: 50px;
+    position: relative;
+	}
+.comm_list .comm_items{
+	padding: 15px 15px;
+	border-bottom: thin solid #ccc;
+	color: #666666;
+	font-size: 15px;
+	font-weight: 500;
+	}
+.comm_items .comm_info{
+	border-bottom: thin solid #efefef;
+	height: 40px;
+	line-height: 20px;
+	}
+.comm_items .comm_user,.comm_items .comm_date{
+	float: left;
+	width: 50%;
+	text-align: left;
+	padding-left: 15px;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	}
+.comm_items .comm_date{
+	text-align: center;
+	color: #CC6600;
+	font-size: 13px;
+	}
+/*星级评论*/
+.comm_items .comm_star{
+	padding-left: 15px;
+	margin-top: 15px;
+	}
+.comm_star .starnum{
+	width: 125px;
+	height: 40px;
+	background: url(../images/star1.png) repeat-x left center;
+	}
+.starnum .g-star0{
+	width: 0px;
+	}
+.starnum .g-star1{
+	width: 25px;
+	height: 100%;
+	background: url(../images/star.png) repeat-x left center ;
+	}
+.starnum .g-star2{
+	width: 50px;
+	height: 100%;
+	background: url(../images/star.png) repeat-x left center;
+	}
+.starnum .g-star3{
+	width: 75px;
+	height: 100%;
+	background: url(../images/star.png) repeat-x left center;
+	}
+.starnum .g-star4{
+	width: 100px;
+	height: 100%;
+	background: url(../images/star.png) repeat-x left center;
+	}
+.starnum .g-star5{
+	width: 125px;
+	height: 100%;
+	background: url(../images/star.png) repeat-x left center;
+	}
+.comm_items .comm_words{
+	padding-left: 15px;
+	margin-top: 6px;
+	margin-bottom: 10px;
+	word-break:break-all;
+	font-size: 13px;
+	}

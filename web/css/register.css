@@ -1,0 +1,146 @@
+@charset "utf-8";
+/* CSS Document */
+
+.register_main{
+	max-width: 640px;
+	min-width: 320px;
+	/*ie6下不支持最大最小宽度*/
+	_width:expression(document.body.clientWidth < 320 ? "320px" : "auto");
+	_width:expression(document.body.clientWidth > 640 ? "640px" : "auto");
+	margin: 0 auto;
+	}
+
+.container .signmain{
+	background-color: #fff;
+	width: 100%;
+	overflow-y: scroll;
+	overflow-x: hidden;
+	padding-left: 15px;
+	}
+.row{
+	margin: 0px;
+	}
+.signmain .form_body{
+	margin: 0px;
+	padding-bottom:20px;
+	*padding-bottom: 0px;
+	background: url(../images/line.png) no-repeat center bottom;
+	
+	}
+.form_body .icon{
+	width: 23px;
+	height: 25px;
+	display: inline-block;
+	}
+.form_body .inp{
+	width: 88%;
+	display: inline-block;
+	*display: inline;
+	*zoom:1;
+	height: 50px;
+	margin-left: 2px;
+	border-bottom: 1px solid #e5e5e5;
+	position: relative;
+	}
+.form_body .passw{
+	width: 88%;
+	height: 48px;
+	
+	}
+.inp .input,.usertype{
+	width: 100%;
+	height: 48px;
+	line-height: 48px;
+	font-size: 14px;
+	color: #999;
+	}
+
+.inp #pass{
+	width: 80%;
+	}
+.signmain .butt{
+	margin-top: 20px;
+	margin-bottom: 20px;
+	}
+.butt .subm{
+	width: 100%;
+	height: 40px;
+	background-color: #33A3FF;
+	text-align: center;
+	line-height: 40px;
+	font-size: 16px;
+	color: #fff;
+	}
+.signmain .checkrule{
+	height: 30px;
+	margin-top: 15px;	
+	}
+.signmain .check{
+	background: url(../images/gouxuan.png) no-repeat 20% center ;
+	}
+.signmain .uncheck{
+	background: url(../images/gouxuanqian.png) no-repeat 20% center ;
+	}
+.butt .rules{
+	display: inline-block;
+	padding-left: 23%;
+	height: 30px;
+	line-height: 30px;
+	font-size: 13px;
+	}
+.inp .select{
+	position: absolute;
+	left: 110px;
+	top: 22px;
+	}
+.inp .location{
+	display: inline-block;
+	width: 40px;
+	height: 22px;
+	line-height: 22px;
+	background-color: #33A3FF;
+	border-radius: 3px;
+	color: #fff;
+	position: absolute;
+	right: 5%;
+	top: 15px;
+	text-align: center;
+	}
+.inp .utype{
+	position: absolute;
+	left: 100px;
+	top: 40px;
+	z-index: 10;
+	background-color: #fff;
+	width: 80px;
+	display: none;
+	}
+.inp .utype li{
+	text-align: center;
+	height: 40px;
+	line-height: 40px;
+	border: thin solid #ccc;
+	border-width: 1px 1px 0px 1px;
+	}
+.inp .utype li:hover{
+	cursor: pointer;
+	}
+.inp .utype li:active{
+	background-color: #F93;
+	}
+.inp .utype li:last-child{
+	border-width: 1px;
+	}
+.form_body .quainfo{
+	margin-left: 20px;
+	}
+.quainfo .tapho{
+	width: 70px;
+	height: 70px;
+	background-color: #fff;
+	border: thin solid #ccc;
+	text-align: center;
+	color: #CCC;
+	float: left;
+	margin-right: 5%;
+	}

@@ -1,0 +1,11 @@
+@charset "utf-8";
+/* CSS Document */
+
+.contentSub .jbxx_title{
+	display:inline-block;
+	min-width:350px;
+	color:#222;
+	height:30px;
+	line-height:30px;
+	font-size:14px;
+}

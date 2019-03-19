@@ -1,0 +1,82 @@
+@charset "utf-8";
+/* CSS Document */
+.layout_lm .content .contentSub .toc {
+    margin: 15px 55px 35px 0;
+	color: #000;
+}
+.toc td {
+    font-size: 12px;
+    border-left: 3px solid #d7d9e2;
+    padding-right: 10px;
+    min-width: 220px;
+    background-color: #fff;
+}
+.toc #toctitle {
+    height: 37px;
+    line-height: 37px;
+}
+#toctitle h2 {
+    font-size: 16px;
+    margin: 0 0 0 15px;
+}
+.layout_lm .content .contentSub #bodyContent .toctoggle {
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+    line-height: 25px;
+    position: absolute;
+    right: 20px;
+    top: 0;
+    _top: 10px;
+}
+.layout_lm .content .contentSub #bodyContent .toctoggle a.internal {
+    color: #5f940a;
+}
+.toc ul {
+    list-style: none;
+    padding-left: 1em;
+    font-family: Tahoma,"SimSun";
+}
+.layout_lm .content .contentSub .toc li {
+    color: #5f940a;
+}
+.toc li {
+    line-height: 21px;
+}
+.printfooter, .tocnumber {
+    display: none;
+}
+.layout_lm .content h2 {
+    margin: 0;
+    margin-top: 20px;
+    height: 37px;
+    line-height: 37px;
+    font-size: 18px;
+    color: #000;
+    font-family: "Microsoft Yahei";
+}
+.layout_lm h3 {
+    margin: 0;
+    margin-top: -9px;
+    color: #000;
+    font-family: "Microsoft Yahei";
+    font-size: 20px;
+    height: 37px;
+    line-height: 30px;
+}
+div#bodyContent table.t td {
+    padding: 10px 0;
+    padding-left: 10px;
+}
+div#bodyContent table.t tr td, div#bodyContent table.t tr td * {
+    line-height: 18px;
+}
+.code {
+    font-size: 14px;
+    color: #595959;
+    border: 1px dashed #cecfcf;
+    background-color: #f5f6f7;
+    padding: 6px 12px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}

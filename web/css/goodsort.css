@@ -1,0 +1,93 @@
+@charset "utf-8";
+/* CSS Document */
+a:active{
+	color: #F90;
+	}
+dl{
+	margin-bottom: 0px;
+	}
+.goods_sort{
+	max-width: 640px;
+	min-width: 305px;
+	height: auto;
+	/*ie6下不支持最大最小宽度*/
+	_width:expression(document.body.clientWidth < 320 ? "320px" : "auto");
+	_width:expression(document.body.clientWidth > 640 ? "640px" : "auto");
+	margin: 0 auto;
+	}
+.signmain .typelist{
+	width: 100%;
+	display: none;
+	position: absolute;
+	top: 50px;
+	background-color: #fff;
+	z-index: 1000;
+	overflow-y: scroll;
+	border-bottom: thin solid #ccc;
+	}
+.typename ul li{
+	height: 60px;
+	text-align: center;
+	font-size: 14px;
+	line-height: 60px;
+	background-color: #F5F5F5;
+	border-bottom: thin solid #e1e1e1;
+	border-right: thin solid #e1e1e1;
+	overflow: hidden;
+	}
+
+.typename ul .current{
+	background-color: #fff;
+	color: #F16868;
+	border-right: thin solid #fff;
+	}
+.fontcolorblue{
+	color: #3EA8FF;
+	}
+.typelist .typecontent{
+	overflow: scroll;
+	}
+.typelist .typecontent>div{
+	padding: 0px;
+	border-left: thin solid #efefef;
+	}
+
+.typelist .typecontent dt{
+	text-align: left;
+	color: #9B9B9B;
+	font-size: 14px;
+	height: 60px;
+	line-height: 60px;
+	padding-left: 20px;
+	position: relative;
+	border-right: thin solid #fff;
+	}
+.typelist .typecontent dt b{
+	width: 16px;
+	height: 16px;
+	position: absolute;
+	right: 15px;
+	top: 20px;
+	/*background-image:url(../images/right.png);*/
+	}
+.typelist .typecontent .name{
+	padding-left: 20px;
+	border: thin  dotted #efefef;
+	border-width: 0px 0px 1px 0px;
+	}
+.typelist .typecontent>div dl:last-child .name{
+	border-bottom: thin solid #efefef;
+	}
+.typelist .typecontent dd{
+	width: 47%;
+	display: inline-block;
+	line-height: 53px;
+	text-align: left;
+	color: #8B6F54;
+	font-size: 14px;
+	overflow: hidden;
+	
+	}
+.typelist .name a{
+	color: #8B6F54;
+	}

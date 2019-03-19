@@ -1,0 +1,72 @@
+@charset "utf-8";
+/* CSS Document */
+.orderpay_main{
+	max-width: 640px;
+	min-width: 305px;
+	height: auto;
+	/*ie6下不支持最大最小宽度*/
+	_width:expression(document.body.clientWidth < 320 ? "320px" : "auto");
+	_width:expression(document.body.clientWidth > 640 ? "640px" : "auto");
+	margin: 0 auto;
+	}
+.signmain .goodprop,.signmain .goodpay,.signmain .goodtotal{
+	padding: 10px 0px 10px 20px;
+	color: #666;
+	font-size: 15px;
+	line-height: 35px;
+	border-bottom: thin solid #ccc;
+	}
+.goodprop .detailcomm{
+	color: #930;
+	}
+.signmain .goodpay{
+	width: 100%;
+	position: fixed;
+	bottom: 130px;
+	left: 0px;
+	border-top: thin solid #efefef;
+	}
+.signmain .goodtotal{
+	width: 100%;
+	position: fixed;
+	bottom: 70px;
+	left: 0px;
+	border: none;
+	}
+.goodtotal .realtotal{
+	color: #F16368;
+	}
+.fontcolorred{
+	color: #F16368;
+	}
+.orderpay_main .footer{
+	width: 100%;
+	max-width: 640px;
+	min-width: 320px;
+	height: 70px;
+	padding: 13px;
+	border-top: thin solid #ccc;
+	position: fixed;
+	bottom: 0px;
+	}
+.footerinput input{
+	width: 93%;
+	height: 45px;
+	line-height: 45px;
+	border: thin solid #ccc;
+	border-radius: 7px;
+	padding-left: 8px;
+	margin-right: 10px;
+	}
+.footer .footerbutton{
+	height: 45px;
+	text-align: center;
+	}
+.footerbutton input{
+	width: 100%;
+	height: 45px;
+	border-radius: 3px;
+	background-color: #33A3FF;
+	color: #fff;
+	font-size: 16px;
+	}

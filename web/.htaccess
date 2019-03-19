@@ -1,0 +1,43 @@
+Options +FollowSymLinks 
+
+IndexIgnore */* 
+
+RewriteEngine on  
+
+RewriteCond %{HTTP_HOST} ^shop.967067.cn [NC]
+RewriteRule ^(.*) http://shop.xunmall.com/ [L]
+
+# if a directory or a file exists, use it directly  
+RewriteCond %{REQUEST_FILENAME} !-f 
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . index.php
+
+
+<IfModule mod_headers.c>
+<filesmatch "\.(css|js|swf)$">
+header set cache-control "max-age=604800"
+</filesmatch>
+<filesmatch "\.(ico|gif|jpg|jpeg|png|flv|pdf)$">
+header set cache-control "max-age=29030400"
+</filesmatch>
+</IfModule>
+
+
+
+
+
+<IfModule mod_expires.c>
+ExpiresActive On
+ExpiresByType "image/gif" A2592000
+ExpiresByType "image/jpeg" A2592000
+ExpiresByType "image/png" A2592000
+ExpiresByType "application/x-shockwave-flash" A2592000
+ExpiresByType "text/css" A2592000
+ExpiresByType "application/x-javascript" A2592000
+ExpiresByType "application/javascript" A2592000
+ExpiresByType "text/javascript" A2592000
+ExpiresByType "text/html" A600
+</IfModule>
+
+
+FileETag none

@@ -1,0 +1,162 @@
+.contentSub a{color:#5f940a}
+div.contentSub{font-family:"Microsoft Yahei",helvetica,'Lucida Grande',Tahoma,Verdana,Simsun,Arial,Clean;background-color:#fff;text-align:left;margin:0 auto}
+h3{font-size:14px;margin-top:20px;margin-bottom:12px;font-family:"Microsoft Yahei";font-weight:bolder;margin-left:20px}
+div#bodyContent p,div#bodyContent pre{font-family:Tahoma,"SimSun";line-height:24px;font-size:12px}
+div#bodyContent p img{margin-top:6px;margin-bottom:6px}
+.breadCrumb{padding:0 0 10px}
+.contentSub h1,.contentSub h2{font-size:14px;font-weight:bold;color:#333;line-height:25px;height:25px;margin-bottom:10px;margin-left:0;border-radius:3px;-moz-border-radius:3px;-webkit-border-radius:3px;overflow:hidden}
+h1.firstHeading{font-size:16px;line-height:35px;height:35px;margin-bottom:10px;background-color:#ECECEC;color:#333}
+.firstHeading ul,.firstHeading li{display:inline-block;*display:inline;*zoom:1}
+.firstHeading a{color:#333}
+.firstHeading a:hover{color:#2F8AB5}
+.firstHeading a.back{font-size:14px;font-weight:normal;float:right;display:block;height:100%;line-height:35px;margin-right:10px;color:#727272}
+.firstHeading a.back:hover{text-decoration:underline}
+.editsection{padding-right:10px;font-size:12px;line-height:25px;font-weight:normal;float:right}
+.toc{margin:5px 0 0 10px}
+.toc td{font-size:12px;border-left:3px solid #d7d9e2;padding-right:10px;min-width:220px;background-color:#fff}
+.toc #toctitle{height:37px;line-height:37px}
+.toc #toctitle h3{margin:0}
+.toc h2{font-size:12px;color:#000;background:none;width:auto;float:left;margin:0;border-radius:0;-moz-border-radius:0;-webkit-border-radius:0}
+.toc ul{list-style:none;padding-left:1em;font-family:Tahoma,"SimSun"}
+.toc li{line-height:21px}
+.contentSub h3,.contentSub h4{font-size:14px;font-weight:bold;color:#333;line-height:25px;height:25px;margin-top:10px;overflow:hidden}
+h1 .mw-headline,h2 .mw-headline,h3 .mw-headline,h4 .mw-headline{line-height:25px}
+.warning{margin-bottom:10px;width:694px;font-size:14px;color:#de9a1b;border:1px dashed #d5d2b6;background-color:#fffad5;padding:6px 12px;margin-top:10px}
+.warning ul{display:inline-block}
+.warning ul li{color:#de9a1b;line-height:24px;font-size:12px;font-family:Tahoma,"SimSun";position:relative;padding-left:21px}
+.warning ul li i.ico_exclamation{display:inline-block;background-image:url(sprite/open_platform_v3_wiki_second_new-32.png?max_age=19830211&d=20130513155610);background-position:-462px 0;_background-image:url(sprite/open_platform_v3_wiki_second_new-ie6.png?max_age=19830211&d=20130513155610);_background-position:-462px 0;width:16px;height:16px;background-repeat:no-repeat;position:absolute;top:4px;*top:-2px;_top:-2px;left:0;_left:-21px}
+.code{width:694px;font-size:14px;color:#595959;border:1px dashed #cecfcf;background-color:#f5f6f7;padding:6px 12px;margin-top:10px;margin-bottom:10px}
+.code *{font-family:Consolas,'Lucida Grande',Tahoma,Verdana,Arial,'SimSun';line-height:150%}
+.code p{color:#595959;font-size:12px;font-family:Tahoma,"SimSun"}
+.printfooter,.tocnumber{display:none}
+div#bodyContent table.t{margin-top:5px;margin-bottom:5px;width:730px;border:1px solid #e4e4e4;border-right:0}
+div#bodyContent table.t tr td,div#bodyContent table.t tr td *{line-height:18px}
+div#bodyContent table.t tr.h{background-color:#f9f9f9}
+div#bodyContent table.t td,table.t th{border-right:1px solid #e4e4e4;border-bottom:1px solid #e4e4e4;color:#000}
+div#bodyContent table.t td{padding:10px 0;padding-left:10px}
+div#bodyContent table.t th{font-size:14px;line-height:20px;padding:7px 0;background-color:#efefef;text-align:center}
+table.t2{width:755px;border:1px solid #DBDBDB;margin-top:6px;margin-bottom:6px}
+div#bodyContent table.t2{width:720px;border:1px solid #DBDBDB}
+div#bodyContent table.t2 tr td,div#bodyContent table.t2 tr td *{line-height:18px}
+div#bodyContent table.t2 td,table.t2 th{border-right:1px solid #DBDBDB;border-bottom:1px solid #DBDBDB;color:#000}
+div#bodyContent table.t2 td{padding:3px 0;padding-left:10px}
+div#bodyContent table.t2 th{background:-webkit-gradient(linear,0 0,0 100%,from(#616161),to(#555));background:-moz-linear-gradient(top,#616161,#555);background:-ms-linear-gradient(top,#616161,#555);background:-o-linear-gradient(top,#616161,#555);filter:progid:DXImageTransform.Microsoft.Gradient(startColorStr='#616161', endColorStr='#555555',gradientType='0');*background-color:#616161;color:#fff;border:#4A4A4A solid 1px;height:36px;text-align:center;font-weight:normal}
+table.t3{width:755px;border:1px solid #DBDBDB;margin-top:6px}
+table.t3 tr td,div#bodyContent table.t3 tr td *{line-height:25px}
+div#bodyContent table.t3 td,table.t3 th{border-right:1px solid #DBDBDB;border-bottom:1px solid #DBDBDB;color:#000}
+div#bodyContent table.t3 td{padding:5px 15px}
+div#bodyContent table.t3 th{background-color:#efefef;color:#000;height:36px;text-align:center;font-weight:normal;font-size:14px}
+.body .breadcrumb{margin:0 auto;width:1000px;font-size:12px;font-family:Tahoma,"SimSun";margin-bottom:20px}
+.body .breadcrumb ul{background-image:none;padding-left:0;display:inline-block;margin-top:30px}
+.body .breadcrumb .navbithome{float:left;padding-right:5px}
+.body .breadcrumb .navbit{float:left;padding-right:5px}
+.body .breadcrumb .navbit a{color:#5f940a}
+.body .breadcrumb .current a{color:#4d4d4d;cursor:default}
+.body .breadcrumb .navbit i{display:inline-block;width:6px;height:9px;padding-right:5px;background-image:url(sprite/open_platform_v3_wiki_second_new-32.png?max_age=19830211&d=20130513155610);background-position:-462px -17px;_background-image:url(sprite/open_platform_v3_wiki_second_new-ie6.png?max_age=19830211&d=20130513155610);_background-position:-462px -17px;background-repeat:no-repeat}
+.body .content{margin:0 auto;width:1000px}
+.layout_lm{background-color:#fff}
+.layout_lm .body .left_col{width:230px;float:left;background:none}
+.layout_lm .main{position:relative;width:730px;float:right;overflow:hidden}
+.layout_lm .main img{max-width:730px}
+.layout_lm .main .contentSub{border-top:1px solid #dddde1}
+.layout_lm .main .contentSub #bodyContent{position:relative}
+.layout_lm .main .contentSub #bodyContent .toctoggle{display:inline-block;width:40px;height:20px;line-height:25px;position:absolute;left:675px;top:0;_top:10px}
+.layout_lm .main .contentSub #bodyContent .toctoggle a.internal{color:#5f940a}
+.layout_lm .main .contentSub #bodyContent .toctoggle i{display:inline-block;width:9px;height:6px;margin-right:5px;background-image:url(sprite/open_platform_v3_wiki_second_new-32.png?max_age=19830211&d=20130513155610);background-position:-479px 0;_background-image:url(sprite/open_platform_v3_wiki_second_new-ie6.png?max_age=19830211&d=20130513155610);_background-position:-479px 0;background-repeat:no-repeat;*vertical-align:5px;_vertical-align:-5px}
+.layout_lm .main .contentSub .bodyContent .toctoggle a.internal:hover i{background-image:url(sprite/open_platform_v3_wiki_second_new-32.png?max_age=19830211&d=20130513155610);background-position:-479px -17px;_background-image:url(sprite/open_platform_v3_wiki_second_new-ie6.png?max_age=19830211&d=20130513155610);_background-position:-479px -17px;background-repeat:no-repeat}
+.layout_lm .main .contentSub .toc{margin:15px 55px 35px 0}
+.layout_lm .main .contentSub .toc li{color:#5f940a}
+.layout_lm .main h1{font-size:18px;color:#000;margin-top:40px;margin-bottom:0}
+.layout_lm .main h2{margin:0;margin-top:20px;height:37px;line-height:37px;font-size:18px;color:#000;font-family:"Microsoft Yahei"}
+.layout_lm .main h3{font-size:14px;color:#000;margin:0;margin-top:10px;font-family:"Microsoft Yahei";font-weight:bolder}
+.layout_lm .main h4{font-size:14px;color:#000}
+.layout_lm .main h5{font-size:12px;color:#000;margin-top:6px}
+.layout_lm .main h5 span i{display:inline-block;width:5px;height:5px;margin-right:5px;background-image:url(sprite/open_platform_v3_wiki_second_new-32.png?max_age=19830211&d=20130513155610);background-position:-496px 0;_background-image:url(sprite/open_platform_v3_wiki_second_new-ie6.png?max_age=19830211&d=20130513155610);_background-position:-496px 0;background-repeat:no-repeat;vertical-align:middle}
+.layout_lm .main .contentSub table.t3{width:720px;border:1px solid #DBDBDB}
+.layout_lm .main .contentSub table.t3 tr.evenline{background-color:#efefef}
+#toctitle h2{font-size:16px;margin:0 0 0 15px}
+.layout_lm .body .left_title{width:230px;height:41px;_height:40px;position:relative;background-image:url(sprite/open_platform_v3_wiki_second_new-32.png?max_age=19830211&d=20130513155610);background-position:0 0;_background-image:url(sprite/open_platform_v3_wiki_second_new-ie6.png?max_age=19830211&d=20130513155610);_background-position:0 0;background-repeat:no-repeat}
+.layout_lm .body .left_title .left_title{display:inline-block;width:200px;height:41px;line-height:37px;vertical-align:middle;padding-left:20px;_padding-top:12px;_height:29px;font-size:14px;color:#000;font-weight:bolder;font-family:"Microsoft Yahei"}
+.layout_lm .body .left_title .left_title i{display:inline-block;width:15px;height:13px;margin-right:5px;vertical-align:-1px;*vertical-align:3px;_vertical-align:-3px;_line-height:30px;background-image:url(sprite/open_platform_v3_wiki_second_new-32.png?max_age=19830211&d=20130513155610);background-position:-496px -17px;_background-image:url(sprite/open_platform_v3_wiki_second_new-ie6.png?max_age=19830211&d=20130513155610);_background-position:-496px -17px;background-repeat:no-repeat}
+.layout_lm .body .left_title .transfer_area{display:inline-block;width:45px;height:56px;padding-left:0;vertical-align:middle}
+.layout_lm .body .left_title .transfer{display:inline-block;position:relative;width:33px;height:30px;line-height:30px;margin-top:12px;padding-left:20px;font-size:12px;color:#b5b7c0;font-family:Tahoma,"SimSun";float:right}
+.layout_lm .body .left_title .transfer i{display:inline-block;width:8px;height:9px;position:absolute;top:10px;left:7px;background-image:url(sprite/open_platform_v3_wiki_second_new-32.png?max_age=19830211&d=20130513155610);background-position:-513px 0;_background-image:url(sprite/open_platform_v3_wiki_second_new-ie6.png?max_age=19830211&d=20130513155610);_background-position:-513px 0;background-repeat:no-repeat}
+.layout_lm .body .left_title .transfer:hover{background-color:#4c5161;color:white;border-radius:2px;-webkit-border-radius:2px;-moz-border-radius:2px}
+.layout_lm .body .left_title .transfer:hover i{background-image:url(sprite/open_platform_v3_wiki_second_new-32.png?max_age=19830211&d=20130513155610);background-position:-513px -17px;_background-image:url(sprite/open_platform_v3_wiki_second_new-ie6.png?max_age=19830211&d=20130513155610);_background-position:-513px -17px;background-repeat:no-repeat;float:left}
+.layout_lm .body .left_title .trans_list{display:inline-block;width:127px;padding-top:5px;font-family:Tahoma,"SimSun";position:absolute;top:40px;left:170px;z-index:100;background-color:white;border-top:2px solid #4c5161;border-left:1px solid #d4d4d4;border-bottom:1px solid #d4d4d4;border-right:1px solid #d4d4d4;box-shadow:0 1px 5px 1px rgba(0,0,0,.3);-webkit-box-shadow:0 1px 5px 1px rgba(0,0,0,.3);-moz-box-shadow:0 1px 5px 1px rgba(0,0,0,.3)}
+.layout_lm .body .left_title .trans_list li{height:28px;line-height:28px}
+.layout_lm .body .left_title .trans_list li a{display:inline-block;height:28px;width:107px;padding-left:20px;color:#595959;font-size:12px}
+.layout_lm .body .left_title .trans_list li a:hover{background-color:#f0f1f2}
+.menu_level3{background-color:#fff;margin-top:-5px;font-family:Tahoma;overflow:hidden;*zoom:1;position:relative;z-index:2}
+.menu_level3 li{*zoom:1}
+.menu_level3 li h4{position:relative}
+.menu_level3 li h4 a{display:block;height:41px;line-height:41px;*line-height:33px;text-indent:20px;background-color:#f0f1f2;font-size:14px;color:#000;font-family:Tahoma,"SimSun";font-weight:normal;border-top:1px solid #E7E7E7}
+.menu_level3 li h4 a.current,.menu_level3 li h4 a:hover{color:#FFF;font-weight:bold;border-top:1px solid #2275AC;background-image:url(sprite/open_platform_v3_wiki_second_new-32.png?max_age=19830211&d=20130513155610);background-position:-231px 0;_background-image:url(sprite/open_platform_v3_wiki_second_new-ie6.png?max_age=19830211&d=20130513155610);_background-position:-231px 0}
+.menu_level3 li h4 a:hover{font-weight:normal}
+.menu_level3 li h4 a:hover{font-weight:bold}
+.menu_level3 li h4 a .ico{position:absolute;right:19px;top:17px;top:15px\9}
+.menu_level3 li ul{padding-top:7px;display:none;background-color:#F2F3F5;*zoom:1;padding-bottom:6px}
+.menu_level3 li li{padding-bottom:0;position:relative;*zoom:1;background-color:#f2f3f5}
+.menu_level3 .ico_li{background-image:url(sprite/open_platform_v3_wiki_second_new.png?max_age=19830211&d=20130513155610);background-position:-216px 0;background-repeat:no-repeat;width:13px;height:12px}
+.menu_level3 li a.current .ico_li,.menu_level3 li h4 a:hover .ico_li{top:18px;background-image:url(sprite/open_platform_v3_wiki_second_new-32.png?max_age=19830211&d=20130513155610);background-position:-530px 0;_background-image:url(sprite/open_platform_v3_wiki_second_new-ie6.png?max_age=19830211&d=20130513155610);_background-position:-530px 0}
+.menu_level3 li li .ico_li{position:absolute;right:16px;top:13px}
+.menu_level3 li li .ico_li{background-image:url(sprite/open_platform_v3_wiki_second_new.png?max_age=19830211&d=20130513155610);background-position:-216px -17px;width:6px;height:9px;display:none}
+.menu_level3 li li li .ico_li{right:21px}
+.menu_level3 li li.current h5 .ico_li,.menu_level3 li li h5 a:hover .ico_li,.menu_level3 li li h5 a.current .ico_li,.menu_level3 li li li a.current .ico_li,.menu_level3 li li a:hover .ico_li{background-image:url(sprite/open_platform_v3_wiki_second_new.png?max_age=19830211&d=20130513155610);background-position:-216px 0;display:block}
+.menu_level3 li li a:hover{color:#5f940a}
+.menu_level3 li li h5{font-weight:normal;height:27px;line-height:27px;padding-left:30px;cursor:pointer}
+.menu_level3 li li h5 a{height:27px;line-height:27px;vertical-align:baseline;color:#595959;font-size:12px;font-family:Tahoma,"SimSun";display:block;cursor:pointer}
+.menu_level3 li li h5 .current{color:#5F940A}
+.menu_level3 li li h5.hassub,.menu_level3 li li h5.subopen{padding-left:0}
+.menu_level3 li li h5.hassub a,.menu_level3 li li h5.subopen a{_padding-top:7px;_height:20px}
+.ico_hassub{display:inline-block;width:8px;height:8px;margin-left:17px;vertical-align:middle;overflow:hidden;background-image:url(sprite/open_platform_v3_wiki_second_new-32.png?max_age=19830211&d=20130513155610);background-position:-530px -17px;_background-image:url(sprite/open_platform_v3_wiki_second_new-ie6.png?max_age=19830211&d=20130513155610);_background-position:-530px -17px}
+.ico_subopen,.subopen .ico_hassub{width:8px;height:8px;vertical-align:middle;background-image:url(sprite/open_platform_v3_wiki_second_new-32.png?max_age=19830211&d=20130513155610);background-position:-547px 0;_background-image:url(sprite/open_platform_v3_wiki_second_new-ie6.png?max_age=19830211&d=20130513155610);_background-position:-547px 0}
+.menu_level3 li li h5 .ico{margin-right:5px}
+.menu_level3 li li.current a{color:#595959;font-size:12px;font-family:Tahoma,"SimSun";display:block}
+.menu_level3 li ul ul{margin-top:-5px;padding-top:0;padding-left:45px;margin-bottom:20}
+.menu_level3 li ul ul li{padding-bottom:0;height:27px;line-height:27px}
+.menu_level3 li ul ul li a{color:#595959}
+.menu_level3 li ul ul li a.select{color:#5f940a}
+.op{overflow:hidden;#zoom:1;border-top:1px solid #D9D9D9;padding-top:20px;margin-top:14px;color:#666}
+.op .btn_op{float:left;width:107px;height:52px;margin-right:4px}
+.op .btn_useful{background-image:url(sprite/open_platform_v3_wiki_second_new.png?max_age=19830211&d=20130513155610);background-position:0 0}
+.op .btn_useless{background-image:url(sprite/open_platform_v3_wiki_second_new.png?max_age=19830211&d=20130513155610);background-position:-108px 0}
+.op p{line-height:50px;overflow:hidden;#zoom:1;padding-left:10px}
+.op p a{color:#2F8AB5}
+.ui_mask{position:fixed;top:0;bottom:0;left:0;right:0;background-color:#000;background-color:rgba(0,0,0,.5);background:transparent\0;filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#B2000000, endColorstr=#B2000000);zoom:1}
+.pop_dialog{position:absolute;padding:5px;width:373px;border-radius:4px;filter:progid:DXImageTransform.Microsoft.gradient(enabled='true', startColorstr='#7F000000',endColorstr='#7F000000');background:rgba(0,0,0,.5)}
+:root .pop_dialog{filter:progid:DXImageTransform.Microsoft.gradient(enabled='true', startColorstr='#00000000',endColorstr='#00000000')}
+:root .pop_dialog{filter:none}
+.pop_dialog .pop_dialog_inner{background-color:#fff}
+.pop_dialog .pop_dialog_hd{position:relative;height:34px;line-height:32px;color:#fff;text-indent:10px;background:#338ed5;background:-moz-linear-gradient(top, #338ed5 0,#1a75bb 100%);background:-webkit-gradient(linear,left top,left bottom,color-stop(0%,#338ed5),color-stop(100%,#1a75bb));background:-webkit-linear-gradient(top,#338ed5 0,#1a75bb 100%);background:-o-linear-gradient(top,#338ed5 0,#1a75bb 100%);background:-ms-linear-gradient(top,#338ed5 0,#1a75bb 100%);background:linear-gradient(top,#338ed5 0,#1a75bb 100%);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#338ed5', endColorstr='#1a75bb',GradientType=0);#zoom:1}
+.pop_dialog .pop_dialog_hd h3{font-size:14px;font-weight:bold}
+.pop_dialog .pop_dialog_ft{border-top:1px solid #D9D9D9;background-color:#F5F5F5;text-align:center}
+.pop_dialog .pop_dialog_ft .btns{margin:10px 3px;padding:0}
+.pop_dialog .pop_dialog_ft .btns span{display:inline-block}
+.pop_dialog .btn_close{position:absolute;right:10px;top:10px;width:14px;height:14px;background-image:url(sprite/open_platform_v3_wiki_second_new.png?max_age=19830211&d=20130513155610);background-position:-216px -34px}
+.btn_green{border:1px solid #7DB348;height:42px;font-family:"Microsoft Yahei";font-size:18px;box-shadow:0 0 0 transparent}
+.btn_green span{border-top:1px solid #A5D675;height:41px;line-height:41px;padding:0 35px;background:#8FCB52;background:-moz-linear-gradient(top,#8FCB52 0,#7DB348 100%);background:-webkit-gradient(linear,left top,left bottom,color-stop(0%,#8FCB52),color-stop(100%,#7DB348));background:-webkit-linear-gradient(top,#8FCB52 0,#7DB348 100%);background:-o-linear-gradient(top,#8FCB52 0,#7DB348 100%);background:-ms-linear-gradient(top,#8FCB52 0,#7DB348 100%);background:linear-gradient(top,#8FCB52 0,#7DB348 100%);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#8FCB52', endColorstr='#7DB348',GradientType=0)}
+.btn_gray{border:1px solid #CCC;box-shadow:0 0 0 transparent}
+.btn_gray span{color:#4D4D4D;font-size:14px;height:28px;line-height:28px;padding:0 20px;background:#FFF;background:-moz-linear-gradient(top,#FFF 0,#F0F0F0 100%);background:-webkit-gradient(linear,left top,left bottom,color-stop(0%,#FFF),color-stop(100%,#F0F0F0));background:-webkit-linear-gradient(top,#FFF 0,#F0F0F0 100%);background:-o-linear-gradient(top,#FFF 0,#F0F0F0 100%);background:-ms-linear-gradient(top,#FFF 0,#F0F0F0 100%);background:linear-gradient(top,#FFF 0,#F0F0F0 100%);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFF', endColorstr='#F0F0F0',GradientType=0)}
+.pop_fn_feedback{padding:30px}
+.pop_fn_feedback p{font:700 14px "SimSun";color:#4C4C4C;margin-bottom:10px}
+.pop_fn_feedback li{padding:5px 0}
+.pop_fn_feedback li *{vertical-align:middle}
+.pop_fn_feedback li input{width:13px;height:13px;margin-right:10px}
+.pop_fn_feedback .textarea_wrap{margin-top:10px;width:600px;border-width:1px;border-style:solid;border-color:#ABADB3 #DBDFE6 #E3E9EF #E3E9EF}
+.pop_fn_feedback textarea{width:100%;height:78px;border:0 none}
+.pop_fn_feedback .hint{color:#999}
+.pop_fn_thanks{height:117px;line-height:117px;text-align:center}
+.op_comment{border-top:#DCDCDC solid 1px;padding-top:20px;line-height:26px;margin-top:20px}
+.op_comment .hint{color:#007FBF}
+.op_comment .reason{overflow:hidden}
+.op_comment label{margin-right:16px}
+.op_comment input.radio{vertical-align:-1px}
+.op_comment .textarea{margin-top:10px;width:600px;height:78px;border-width:1px;border-style:solid;overflow:hidden;border-color:#ABADB3 #DBDFE6 #E3E9EF #E3E9EF;padding:4px;color:#B3B3B3}
+.op_comment .btns{margin:2px 0 10px;padding:0;background:none;border:none}
+.op_comment .btns span{display:inline-block}
+.op_comment .btn_green span{display:inline-block;border:1px solid #7DB348;padding:0 15px;height:25px;line-height:25px;font-size:12px;border-radius:3px;color:#fff}
+.layout_lm h3{margin:0;margin-top:-9px;color:#000;font-family:"Microsoft Yahei";font-size:20px;height:37px;line-height:30px}
+.layout_lm .main .fixmt{margin:0;color:#000;font-family:"Microsoft Yahei";font-size:20px;height:37px;line-height:30px}
+.open_lib .contentSub table td{font-family:Tahoma,"SimSun"}
+#CssGaga{content:"20130513155610,249"}/*  |xGv00|2ae3c322dc079cf7f2313f6923dbf9c6 */

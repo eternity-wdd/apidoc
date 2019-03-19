@@ -1,0 +1,80 @@
+@charset "utf-8";
+/* CSS Document */
+
+.query_main{
+	max-width: 640px;
+	min-width: 305px;
+	height: auto;
+	/*ie6下不支持最大最小宽度*/
+	_width:expression(document.body.clientWidth < 320 ? "320px" : "auto");
+	_width:expression(document.body.clientWidth > 640 ? "640px" : "auto");
+	margin: 0 auto;
+	}
+.signmain{
+	overflow-y: scroll;
+	background-color: #fff;
+	}
+
+.signmain .queryinfo{
+	border-bottom: thin solid #ccc;
+	}
+.signmain .queryinput,.signmain .querybutton{
+	height: 80px;
+	padding-left: 7px;
+	padding-right: 7px;
+	text-align:right;
+	}
+.queryinput .input{
+	width: 100%;
+	height: 50px;
+	margin-top: 15px;
+	padding-left: 5px;
+	border: thin solid #e3e3e3;
+	font-size: 16px;
+	}
+.querybutton .button{
+	width: 80%;
+	height: 50px;
+	font-size: 16px;
+	color: #fff;
+	text-align: center;
+	margin-top: 15px;
+	background-color: #33A3FF;
+	border-radius: 5px;
+	}
+
+.queryhist .history{
+	height: 50px;
+	line-height: 50px;
+	color: #000;
+	font-size: 18px;
+	font-weight: 500;
+	border-bottom: thin solid #ccc;
+	padding-left: 15px;
+	}
+.queryhist .hist_records{
+	margin-left: 15px;
+	margin-right: 15px;
+	}
+.hist_records ul li{
+	height: 35px;
+	line-height: 35px;
+	border-bottom: thin solid #ccc;
+	color: #000;
+	font-size: 15px;
+	padding-left: 10px;
+	overflow: hidden;
+	white-space: nowrap;
+	}
+.signmain .clearhist{
+	padding: 10px 15px;
+	margin-top: 15px;
+	}
+.clearhist input{
+	width: 100%;
+	height: 50px;
+	background-color: #33A3FF;
+	color: #fff;
+	font-size: 18px;
+	text-align: center;
+	}

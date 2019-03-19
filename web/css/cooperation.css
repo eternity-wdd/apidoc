@@ -1,0 +1,19 @@
+@charset "utf-8";
+/* CSS Document */
+
+.cooperate_main{
+	max-width: 640px;
+	min-width: 305px;
+	height: auto;
+	/*ie6下不支持最大最小宽度*/
+	_width:expression(document.body.clientWidth < 320 ? "320px" : "auto");
+	_width:expression(document.body.clientWidth > 640 ? "640px" : "auto");
+	margin: 10px auto;
+	}
+.cooperate_main .row{
+	padding: 10px 10px 6px 10px;
+	font-size: 18px;
+	color: #000;
+	font-weight: 500;
+	line-height: 28px;
+	}

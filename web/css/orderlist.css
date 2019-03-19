@@ -1,0 +1,127 @@
+@charset "utf-8";
+/* CSS Document */
+.orderlist_main{
+	max-width: 640px;
+	min-width: 305px;
+	height: auto;
+	/*ie6下不支持最大最小宽度*/
+	_width:expression(document.body.clientWidth < 320 ? "320px" : "auto");
+	_width:expression(document.body.clientWidth > 640 ? "640px" : "auto");
+	margin: 0 auto;
+	}
+.signmain{
+	overflow-y: scroll;
+	background-color: #fff;
+	}
+
+.signmain .listname{
+	width: 100%;
+	height: 50px;
+	line-height: 50px;
+	border-bottom: 1px solid #ccc;
+	}
+.signmain .listname ul li{
+	float:left;
+	width: 33%;
+	height: 49px;
+	line-height: 49px;
+	text-align: center;
+	color: #ccc;
+	font-size: 16px;
+	}
+.signmain .listname ul li:p:nth-of-type(1)  a{
+	border-left: none;
+	}
+.signmain .listname ul li a{
+	display: inline-block;
+	width: 100%;
+	height: 20px;
+	line-height: 20px;
+	color: #666;
+	
+	text-decoration: none;
+	border-left: thin solid #ccc;
+	}
+.signmain .listname ul li .current{
+	color: #33A3FF;
+	}
+.goods .goodallorder,.goods .goodpayment,.goods .goodpartpayment,.goods .gooddelivered,.goods .goodcompeletet{
+	display: none;
+	}
+.orderlist .orderitems{
+	border-bottom: 2px solid #ccc;
+	}
+.orderitems .orderdate{
+	height: 40px;
+	line-height: 40px;
+	color: #666;
+	font-size: 16px;
+	border-bottom: thin solid #e5e5e5;
+	}
+.orderitems .orderdate div{
+	padding: 0px;
+	padding-left: 14px;
+	}
+.orderitems .orderdate .date{
+	font-size: 14px;
+	color: #CC6600;
+	}
+.orderitems .orderdate .paystatus{
+	text-align: right;
+	padding-right: 17px;
+	background: url(../images/right.png) no-repeat right center;
+	color: #36A4FF; 
+	}
+.signmain .goodinfo{
+	padding: 7px;
+	color: #666;
+	font-size: 16px;
+	font-weight: 500;
+	}
+.goodinfo .goodbase{
+	border-bottom: thin solid #e5e5e5;
+	position: relative;
+		}
+.goodinfo .goodimg{
+	width: 120px;
+	height: 120px;
+	}
+.goodinfo .goodimg img {
+	width: 100%;
+	height: 100%;
+	}
+.goodmess .goodname,.goodmess .goodnum,.goodmess .goodprice{
+	height: 35px;
+	line-height: 35px;
+	font-size: 15px;
+	}
+
+.goodmess .goodprice{
+	color: #FF1143;
+	}
+.goodbase .goodmess{
+	padding-left: 10px;
+	}
+/*完成标志*/
+.goodbase .signet{
+	background: url(../images/complete.png) no-repeat;
+	background-size: 64px;
+	width: 64px;
+	height: 64px;
+	position: absolute;
+	right: 7px;
+	top: 20px;
+	}
+.goodbase .goodmess div,.goodprop div{
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	}
+.goodinfo .goodprop{
+	padding: 10px 0px 10px 7px;
+	font-size:15px;
+	}
+.goodprop div{
+	height: 32px;
+	line-height: 32px;
+	}
