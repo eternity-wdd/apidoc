@@ -32,8 +32,7 @@ $this->params['breadcrumbs'][] = $this->title.'接口管理';
 //             'id',
             'name',
             'label',
-            'group_id',
-            ['label' => Yii::t('app', 'Group'), 'attribute' => 'name',  'value' => 'group.name' ],
+            ['label' => Yii::t('app', 'Group'), 'attribute' => 'group_id',  'value' => 'group.name' ],
            /*  'module_id', */
             ['label' => Yii::t('app', 'Module'), 'attribute' => 'module_id',  'value' => 'module.label' ],
             // 'priority',

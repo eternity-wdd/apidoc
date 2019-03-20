@@ -111,7 +111,7 @@ div#bodyContent table.t td, table.t th{
 					<th><b>描述</b></th>
 				</tr>
 				<tr> 
-					<td> <b>ret</b></td>
+					<td> <b>code</b></td>
 					<td> 返回码。详见<a href="<?=Url::to('code')?>" title="公共返回码说明">公共返回码说明#OpenAPI V3.0 返回码</a>。</td>
 				</tr>
 				<?php foreach ($api->outputParams as $param):?>
