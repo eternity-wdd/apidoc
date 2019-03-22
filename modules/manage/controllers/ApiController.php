@@ -217,12 +217,9 @@ class ApiController extends BaseController
           
         if ($model->load(Yii::$app->request->post()) && $model->validate())
         {
-//            self::dump($params_type);
-            
+//             self::dump($params_type);exit;
 //             self::dump($params);exit;
-            
              $platforms = 0;
-            
             if($params['Api']['platforms'])
             {
                 foreach ($params['Api']['platforms'] as $k =>$v)
@@ -230,7 +227,6 @@ class ApiController extends BaseController
                     $platforms |= $v;  
                 }
             }
-            
             $model->platforms = $platforms;
             $methods = 0;
             if($params['Api']['method']){
@@ -239,9 +235,7 @@ class ApiController extends BaseController
                     $methods |= $v;
                 }
             }
-            
             $model->method = $methods;
-            
 //             self::dump($model->getErrors());exit;
             $outerTransaction = Yii::$app->db->beginTransaction();            
             try {
@@ -314,7 +308,7 @@ class ApiController extends BaseController
                     }                   
                 }
                 $outerTransaction->commit();
-                return $this->redirect(['view', 'id' => $model->id]);
+                return $this->redirect(['list', 'id' => $model->id]);
             }catch (\Exception $e) {
                 $outerTransaction->rollBack();
                 echo "<script>alert('接口表添加失败，请重新填写');history.back()</script>";

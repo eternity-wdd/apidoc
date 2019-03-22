@@ -71,7 +71,7 @@ use yii\helpers\ArrayHelper;
     <div class="form-group" style="margin-left:50px;float:left;width:200px;">
         <?= Html::submitButton(Yii::t('app', '搜索'), ['class' => 'btn btn-primary']) ?>
         <?= Html::resetButton(Yii::t('app', '重置'), ['class' => 'btn btn-default']) ?>
-         <?php echo Html::a('返回列表',  ['api/list', 'module_id' => $module], array( 'class' => 'btn btn-warning'))?>
+         <?php echo Html::a('返回列表',  ['api/list'], array( 'class' => 'btn btn-warning'))?>
     </div>
 
     <?php ActiveForm::end(); ?>
