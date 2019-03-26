@@ -131,7 +131,6 @@ div#bodyContent table.t td, table.t th{
             }'?>
             </pre>
 		</div>
-		
 		<a target="_blank" href="<?= Url::toRoute(['sandbox/'.$api->module_id,'id'=>$api->id])?>" class="y-btn-blue">接口测试</a>
 		
 		<!-- 

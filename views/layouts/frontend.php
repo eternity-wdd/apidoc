@@ -156,7 +156,7 @@ FrontendAsset::register($this);
 						
 				</p>
 				<p class="copyright">
-					CopyRight © 2009-2016 All rights reserved 鲁ICP备15033445号 
+					CopyRight © 2019-2025 All rights reserved 李ICP备65501833号
 					<span>
 						 <a href="" target="_blank">
 							<img src="/images/huizhang.png" style="display:inline-block;width: 22px;">

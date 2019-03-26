@@ -48,25 +48,24 @@ JQueryFormAsset::register($this, View::POS_READY);
 <div class="wrap">
 <div class="container">
 <form method="post" action="<?= Url::toRoute('request');?>" id="testForm" autocomplete="off">
-    <div>
-        <label>APPID:</label>
-        <input type="text" name="appid" value="2100001" />
-    </div>
-    <div>
-        <label>SECRET:</label>
-        <input type="text" name="secret" value="hh8bf094169a40a3bd188ba37ebe872v" />
-    </div>
+<!--    <div>-->
+<!--        <label>APPID:</label>-->
+<!--        <input type="text" name="appid" value="2100001" />-->
+<!--    </div>-->
+<!--    <div>-->
+<!--        <label>SECRET:</label>-->
+<!--        <input type="text" name="secret" value="hh8bf094169a40a3bd188ba37ebe872v" />-->
+<!--    </div>-->
     <div id="account-info">
         <div>
             <label>UID:</label>
             <input type="text" name="param[uid]" value="" />
         </div>
         <div>
-            <label>ACCESS_TOKEN:</label>
+            <label>TOKEN:</label>
             <input type="text" name="param[token]" value="" />
         </div>
     </div>
- 	
     <div>
     	<input type="hidden" name="m_id" value="<?php echo $_GET['id']?>"/>
         <label>接口</label>

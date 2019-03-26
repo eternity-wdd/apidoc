@@ -9,7 +9,6 @@ use yii\helpers\Url;
 /* @var $searchModel app\models\ApiSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-
 // $module_name = $_GET['module_id'];
 // $this->title = Yii::t('app', $module_name);
 $this->params['breadcrumbs'][] = $this->title.'接口管理';
@@ -32,12 +31,15 @@ $this->params['breadcrumbs'][] = $this->title.'接口管理';
 //             'id',
             'name',
             'label',
+//            'need_login',
+            ['label' => Yii::t('app', 'Need Login'), 'attribute' => 'need_login',  'value' => function($model) {
+                return $model->need_login == 1 ? "是" : "否";
+            }],
             ['label' => Yii::t('app', 'Group'), 'attribute' => 'group_id',  'value' => 'group.name' ],
            /*  'module_id', */
             ['label' => Yii::t('app', 'Module'), 'attribute' => 'module_id',  'value' => 'module.label' ],
             // 'priority',
             // 'description',
-
             ['class' => 'yii\grid\ActionColumn',
 /*                'template' => '{params} {view} {update} {delete}',
                'buttons'=>[

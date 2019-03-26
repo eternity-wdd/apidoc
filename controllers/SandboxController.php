@@ -69,7 +69,13 @@ class SandboxController extends \yii\web\Controller
             'apis' => $this->apis('deliver'),
         ]);
     }
-    
+    public function actionTradeApi()
+    {
+        //purchaser
+        return $this->render('dan', [
+            'apis' => $this->apis('trade-api'),
+        ]);
+    }
     /**
      * 获取接口的相关参数表单字段
      * @param int $id 接口ID
@@ -81,13 +87,14 @@ class SandboxController extends \yii\web\Controller
         $view = 'api/' . $api->module_id . '/' . str_replace('/', '_', $api->name);
         return $this->renderPartial($view);
     }
-    
-    
+
     //ajax获取参数html
     public function actionGethtml()
     {
         $res = ApiParam::find()->where(['api_id'=> $_POST['zhi'],'out'=>'0'])->orderBy(["priority"=>SORT_DESC])->asArray()->all();
-        $html = '';
+        $url = Api::findOne($_POST['zhi']);
+        $html = "";
+        $html.='<div><label>'.'URL'.'：</label> <input type="text" readonly="true" value="'.$url['name'].'" /></div>';
         foreach($res as $k=>$v){
 //             if($v['request']=='1'){
 //                 $html.='<div><label>'.$v['label'].'：</label> <input type="text" name="param['.$v['name'].']" value="" /> (必填)</div>';
@@ -185,8 +192,9 @@ class SandboxController extends \yii\web\Controller
 //         $sigStr = urldecode('&'.http_build_query($data));
         
         $data['s'] = base64_encode(hash_hmac('sha1', urlencode($sigStr), strtr($appkey, '-_', '+/'), true));
-       
-        $ret = NetworkHelper::makeRequest(\Yii::$app->params['api'][$api->module_id]['domain'], $data);
+
+//        echo "<pre>";print_r(\Yii::$app->params['api'][$api->module_id]);exit();
+        $ret = NetworkHelper::makeRequest(\Yii::$app->params['api'][$api->module_id], $data);
         echo '<br /><br />返回结果：<br /><br /><pre>'.$ret['msg'].'</pre>';
         
         echo '<h2>1、 构造源串</h2>';
@@ -202,14 +210,22 @@ class SandboxController extends \yii\web\Controller
         echo '请求URL演示：<br />http://'.\Yii::$app->params['api'][$api->module_id]['domain'].'?'.NetworkHelper::makeQueryString($data);
         
     }
-    
+
+    /**
+     * 选择模块（应用）
+     * @param $module
+     * @return array
+     * User: LiZheng  271648298@qq.com
+     * Date: 2019/3/24
+     */
     private function apis($module)
     {
-        return Api::find()
-            ->leftJoin(ApiGroup::tableName().' group', Api::tableName().'.group_id = group.id')
-            ->where([Api::tableName().'.module_id'=>$module])
-            ->orderBy('group.priority desc, priority desc')
+        $data = Api::find()
+            -> leftJoin(ApiGroup::tableName().' group', Api::tableName().'.group_id = group.id')
+            -> where([Api::tableName().'.module_id'=> $module])
+            -> orderBy('group.priority desc, priority desc')
             ->all();
+        return $data;
     }
     
     //格式化打印

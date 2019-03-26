@@ -6,7 +6,7 @@ return [
     'Request Example Code' =>'示例代码',
     'Publish' =>'是否公开显示在前台',
     'Method' =>'请求方式',
-    'Need Login' =>'需要登入,才能调用此接口',
+    'Need Login' =>'是否需要登录',
     'Platforms' =>'选择平台',
     'pt'=>'参数类型',
     'Pt ID' =>'参数类型',
