@@ -12,7 +12,7 @@ use yii\web\AssetBundle;
 /**
  * Asset bundle for the Masonry js file.
  *
- * @author Ldj <ldjbenben@sina.com>
+ * @author Ldj <coder_lizheng@163.com>
  */
 class MasonryAsset extends AssetBundle
 {

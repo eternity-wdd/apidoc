@@ -104,9 +104,9 @@ class SandboxController extends \yii\web\Controller
             
             if($v['showtype']=='1'){
                 if($v["request"]=="1"){
-                    $html.='<div><label>'.$v['label'].'：</label> <input type="text" name="param['.$v['name'].']" value="" />　(必填)</div>';
+                    $html.='<div><label>'.$v['label'].'：</label> <input type="text" name="param['.$v['name'].']" value="'.$v['val'].'" />　(必填)</div>';
                 }else{
-                    $html.='<div><label>'.$v['label'].'：</label> <input type="text" name="param['.$v['name'].']" value="" /></div>';
+                    $html.='<div><label>'.$v['label'].'：</label> <input type="text" name="param['.$v['name'].']" value="'.$v['val'].'" /></div>';
                 }
             }else if($v['showtype']=='2'){
                 if($v["request"]=="1"){

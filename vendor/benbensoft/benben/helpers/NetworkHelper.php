@@ -4,7 +4,7 @@ namespace benben\helpers;
 /**
  * 发送HTTP网络请求类
  *
- * @author ldjbenben@sina.com
+ * @author coder_lizheng@163.com
  */
 class NetworkHelper
 {

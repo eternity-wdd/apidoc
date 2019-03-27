@@ -12,7 +12,7 @@ use yii\web\AssetBundle;
 /**
  * Asset bundle for the JQuery Form plugin js file.
  *
- * @author ldj <ldjbenben@sina.com>
+ * @author ldj <coder_lizheng@163.com>
  */
 class JQueryFormAsset extends BenbenAsset
 {

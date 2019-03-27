@@ -57,14 +57,14 @@ JQueryFormAsset::register($this, View::POS_READY);
 <!--        <input type="text" name="secret" value="hh8bf094169a40a3bd188ba37ebe872v" />-->
 <!--    </div>-->
     <div id="account-info">
-        <div>
-            <label>UID:</label>
-            <input type="text" name="param[uid]" value="" />
-        </div>
-        <div>
-            <label>TOKEN:</label>
-            <input type="text" name="param[token]" value="" />
-        </div>
+<!--        <div>-->
+<!--            <label>UID:</label>-->
+<!--            <input type="text" name="param[uid]" value="" />-->
+<!--        </div>-->
+<!--        <div>-->
+<!--            <label>TOKEN:</label>-->
+<!--            <input type="text" name="param[token]" value="" />-->
+<!--        </div>-->
     </div>
     <div>
     	<input type="hidden" name="m_id" value="<?php echo $_GET['id']?>"/>

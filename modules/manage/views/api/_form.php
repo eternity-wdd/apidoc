@@ -154,6 +154,7 @@ foreach ($res as $k=>$v){
             <th class="cs_first">参数名称</th>
             <th>参数说明</th>
             <th>详细描述</th>
+            <th>测试数据</th>
             <th class="cs_th">参数类型</th>
             <th class="cs_th">优先级</th>
             <th class="cs_th">是否必填</th>
@@ -167,6 +168,7 @@ foreach ($res as $k=>$v){
                         <td class="cs_first"><input name="cs_name[]" value="<?php echo $v['name']?>" class="cs_input first_input" type="text"/></td>
                         <td><input name="cs_label[]" value="<?php echo $v['label']?>" class="cs_input" type="text"/></td>
                         <td><input name="cs_desc[]" value="<?php echo $v['desc']?>" class="cs_input" type="text"/></td>
+                        <td><input name="cs_val[]" value="<?php echo $v['val']?>" class="cs_input" type="text"/></td>
                         <td class="cs_th">
                         	<select name="cs_pt[]" class="cs_input">
                         	  <?php foreach ($params_type as $v2):?>
@@ -295,7 +297,7 @@ function domReady(){
 
 	$('.cs_add').click(function(){
 		num++;
-		$(this).parents('table').append("<tr data-tr='"+num+"'><td class='cs_first'><input name='cs_name[]' value='' class='cs_input first_input' type='text'/></td><td><input name='cs_label[]' value='' class='cs_input' type='text'/></td><td><input name='cs_desc[]' value='' class='cs_input' type='text'/></td><td class='cs_th'><select name='cs_pt[]' class='cs_input'><option value ='1'>string</option><option value ='2'>int</option><option value='3'>float</option><option value='4'>varchar</option><option value='5'>number</option></select></td><td class='cs_th'><input name='cs_priority[]' value='5' class='cs_input' type='number'/></td><td class='cs_th'><input name='cs_request["+num+"]' value='1' class='cs_checkbox' type='radio' checked/><span>是</span><input name='cs_request["+num+"]' value='0' class='cs_checkbox' type='radio'/><span>否</span></td><td class='cs_th'><select name='cs_showtype[]' class='cs_input showtype'><option value ='1'>input</option><option value ='2'>textarea</option><option value='3'>checkbox</option><option value ='4'>radio</option><option value='5'>select</option></select></td><td class='cs_th'><button type='button' class='btn btn-danger cs_del'>删除</button></td></tr>");
+		$(this).parents('table').append("<tr data-tr='"+num+"'><td class='cs_first'><input name='cs_name[]' value='' class='cs_input first_input' type='text'/></td><td><input name='cs_label[]' value='' class='cs_input' type='text'/></td><td><input name='cs_desc[]' value='' class='cs_input' type='text'/></td><td><input name='cs_val[]' value='' class='cs_input' type='text'/></td><td class='cs_th'><select name='cs_pt[]' class='cs_input'><option value ='1'>string</option><option value ='2'>int</option><option value='3'>float</option><option value='4'>varchar</option><option value='5'>number</option></select></td><td class='cs_th'><input name='cs_priority[]' value='5' class='cs_input' type='number'/></td><td class='cs_th'><input name='cs_request["+num+"]' value='1' class='cs_checkbox' type='radio' checked/><span>是</span><input name='cs_request["+num+"]' value='0' class='cs_checkbox' type='radio'/><span>否</span></td><td class='cs_th'><select name='cs_showtype[]' class='cs_input showtype'><option value ='1'>input</option><option value ='2'>textarea</option><option value='3'>checkbox</option><option value ='4'>radio</option><option value='5'>select</option></select></td><td class='cs_th'><button type='button' class='btn btn-danger cs_del'>删除</button></td></tr>");
 		
 	})
 	

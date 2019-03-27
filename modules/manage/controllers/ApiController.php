@@ -267,6 +267,7 @@ class ApiController extends BaseController
                             $param_model->api_id = $model->id;
                             $param_model->name = $params['cs_name'][$k];
                             $param_model->label = $params['cs_label'][$k];
+                            $param_model->val = $params['cs_val'][$k];
                             $param_model->request = $cs_request[$k];
                             $param_model->pt_id = $params['cs_pt'][$k];
                             $param_model->out = 0;
@@ -397,6 +398,7 @@ class ApiController extends BaseController
                             $param_model->api_id = $id;
                             $param_model->name = $params['cs_name'][$k];
                             $param_model->label = $params['cs_label'][$k];
+                            $param_model->val = $params['cs_val'][$k];
                             $param_model->request = $cs_request[$k];
                             $param_model->pt_id = $params['cs_pt'][$k];
                             $param_model->out = 0;

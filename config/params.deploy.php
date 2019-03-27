@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'adminEmail' => 'ldjbenben@sina.com',
+    'adminEmail' => 'coder_lizheng@163.com',
     'max_time_difference' => '300',
     'uploadUrl' => '_{{UPLOAD_URL}}_',
     'bannerImgUrl' => '_{{BANNER_URL}}_',

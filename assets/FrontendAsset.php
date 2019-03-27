@@ -10,7 +10,7 @@ namespace app\assets;
 use yii\web\AssetBundle;
 
 /**
- * @author Ldj <ldjbenben@sina.com>
+ * @author Ldj <coder_lizheng@163.com>
  * @since 2.0
  */
 class FrontendAsset extends AssetBundle

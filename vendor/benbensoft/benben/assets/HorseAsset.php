@@ -12,7 +12,7 @@ use yii\web\AssetBundle;
 /**
  * Asset bundle for the Horse js files.
  *
- * @author Shu Lin <ldjbenben@sina.com>
+ * @author Shu Lin <coder_lizheng@163.com>
  */
 class HorseAsset extends AssetBundle
 {
