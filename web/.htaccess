@@ -23,9 +23,6 @@ header set cache-control "max-age=29030400"
 </IfModule>
 
 
-
-
-
 <IfModule mod_expires.c>
 ExpiresActive On
 ExpiresByType "image/gif" A2592000

@@ -77,6 +77,13 @@ class SandboxController extends \yii\web\Controller
             'apis' => $this->apis('trade-api'),
         ]);
     }
+    public function actionFacility()
+    {
+        //purchaser
+        return $this->render('dan', [
+            'apis' => $this->apis('facility'),
+        ]);
+    }
     /**
      * 获取接口的相关参数表单字段
      * @param int $id 接口ID

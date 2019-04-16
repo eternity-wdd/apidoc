@@ -16,8 +16,8 @@ return [
             //'domain'=>'api.trade.klagri.com.cn/api'//本地 需要单独端口跑PHP
             'domain'=>'dev-api.trade.klagri.com.cn/api'//测试，供APP端使用
         ],
-        'inner'=>[
-            'domain'=>'self.inner.openapi.xunmall.com:88'
+        'facility'=>[
+            'domain'=>'self.facility-klagri.com/facility'
         ],
         'supplier'=>[
             'domain'=>'self.supplier.openapi.xunmall.com:88'
