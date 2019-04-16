@@ -1,7 +1,7 @@
 <?php
 namespace common\helpers;
-
-use common\models\Menu;
+use Yii;
+//use common\models\Menu;
 /**
  * @brief 菜单管理类
  * @version 1.0

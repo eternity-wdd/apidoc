@@ -4,8 +4,9 @@ namespace app\controllers;
 use app\models\Api;
 use app\models\ApiGroup;
 use app\models\ApiClient;
-use benben\helpers\NetworkHelper;
 use app\models\ApiParam;
+use common\helpers\NetworkHelper;
+use common\helpers\MenuHelper;
 
 class SandboxController extends \yii\web\Controller
 {
@@ -164,22 +165,17 @@ class SandboxController extends \yii\web\Controller
             OpenApiResponse::error(OpenApiError::SIGNATURE_ERROR, 'secret error');
             exit();
         } */
-        
         $appkey = \Yii::$app->request->post('secret') . '&';
         $data =  \Yii::$app->request->post('param');
-        
         $api = Api::findOne($data['api']);
-
         if(!$api) echo '<h3>接口不存在</h3>';
         
         $data['api'] = $api->name;
-        
         $data['appid'] = \Yii::$app->request->post('appid');
         $data['t'] = time();
         
         ksort($data);
 //         echo "<pre>";print_r($data);exit();
-
         $notSignParams = explode(',', $api->not_sign_params);
         $sigStr = '';
         foreach($data as $key=>$item)
@@ -192,9 +188,9 @@ class SandboxController extends \yii\web\Controller
 //         $sigStr = urldecode('&'.http_build_query($data));
         
         $data['s'] = base64_encode(hash_hmac('sha1', urlencode($sigStr), strtr($appkey, '-_', '+/'), true));
-
 //        echo "<pre>";print_r(\Yii::$app->params['api'][$api->module_id]);exit();
-        $ret = NetworkHelper::makeRequest(\Yii::$app->params['api'][$api->module_id], $data);
+        $ret = NetworkHelper::makeRequest(\Yii::$app->params['api'][$api->module_id]['domain'].'/'.$api->name, $data);
+        //(\Yii::$app->params['api'][$api->module_id]['domain'], $data)
         echo '<br /><br />返回结果：<br /><br /><pre>'.$ret['msg'].'</pre>';
         
         echo '<h2>1、 构造源串</h2>';

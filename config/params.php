@@ -7,13 +7,14 @@ return [
     'bannerImgUrl' => 'http://self.shop.xunmall.com:88/',
 /*     'email_validata'=>'http://self.documen' */
 	'reflshTime' => '500',
-    'md5_key' =>'xunmall_api',
+    'md5_key' =>'jinglan_api',
     'api'=>[
         'purchaser'=>[
             'domain'=>'self.openapi.xunmall.com'
         ],
-        'official'=>[
-            'domain'=>'self.crm.openapi.xunmall.co:88 '
+        'trade-api'=>[
+            //'domain'=>'api.trade.klagri.com.cn/api'//本地 需要单独端口跑PHP
+            'domain'=>'dev-api.trade.klagri.com.cn/api'//测试，供APP端使用
         ],
         'inner'=>[
             'domain'=>'self.inner.openapi.xunmall.com:88'

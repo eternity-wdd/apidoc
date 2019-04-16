@@ -6,7 +6,7 @@ return [
     'uploadUrl' => '_{{UPLOAD_URL}}_',
     'bannerImgUrl' => '_{{BANNER_URL}}_',
 	'reflshTime' => '500',
-	'md5_key' =>'xunmall_api',
+	'md5_key' =>'jinglan_api',
 	'email_address'=>'_{{MALL_URL}}_',
     'api'=>[
         'purchaser'=>[

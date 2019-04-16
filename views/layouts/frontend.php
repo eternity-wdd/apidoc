@@ -161,6 +161,9 @@ FrontendAsset::register($this);
 						 <a href="" target="_blank">
 							<img src="/images/huizhang.png" style="display:inline-block;width: 22px;">
 						 </a>
+                        <a href="" target="_blank">
+							<img src="/images/DKG131.jpg" style="display:inline-block;width: 22px;">
+						 </a>
 						 <a href="" target="_blank">
 							<img src="/images/djcp.png" style="display:inline-block;width: 22px;">
 						 </a>

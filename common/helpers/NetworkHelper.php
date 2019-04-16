@@ -1,5 +1,5 @@
 <?php
-namespace foundation;
+namespace common\helpers;
 /**
  * User: LiZheng  271648298@qq.com
  * Date: 2019/3/24
@@ -24,14 +24,13 @@ class NetworkHelper
         $query_string = self::makeQueryString($params);
         $cookie_string = self::makeCookieString($cookie);
         $ch = curl_init();
-
         if ('get' == $method)
         {
             curl_setopt($ch, CURLOPT_URL, "$url?$query_string");
         }
         else
         {
-            curl_setopt($ch, CURLOPT_URL, $url);
+            curl_setopt($ch, CURLOPT_URL, "$url");
             curl_setopt($ch, CURLOPT_POST, 1);
             curl_setopt($ch, CURLOPT_POSTFIELDS, $query_string);
         }
@@ -53,7 +52,7 @@ class NetworkHelper
             curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
             curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
         }
-
+//        $gf = curl_getinfo($ch);
         $ret = curl_exec($ch);
         $err = curl_error($ch);
 
@@ -72,7 +71,6 @@ class NetworkHelper
         }
 
         curl_close($ch);
-
         return array(
             'result' => true,
             'msg' => $ret,
@@ -86,6 +84,7 @@ class NetworkHelper
             return $params;
 
         $query_string = array();
+        unset($params['api']);
         foreach ($params as $key => $value)
         {
             array_push($query_string, rawurlencode($key) . '=' . rawurlencode($value));
@@ -100,6 +99,7 @@ class NetworkHelper
             return $params;
 
         $cookie_string = array();
+        unset($params['api']);
         foreach ($params as $key => $value)
         {
             array_push($cookie_string, $key . '=' . $value);
