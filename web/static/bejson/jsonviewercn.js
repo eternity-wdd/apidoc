@@ -315,6 +315,9 @@ Ext.onReady(function () {
 			{text: '格式化', handler: function () {
 				jsonviewer.format();
 			}},
+            {text: 'Unicode转中文', handler: function () {
+                    jsonviewer.unicodeChinese();
+                }},
 			'-',
 			{text: '删除空格', handler: function () {
 				jsonviewer.removeWhiteSpace();
@@ -581,7 +584,11 @@ Ext.onReady(function () {
 			removeZhuanyi: function (){
 				var a = edit.getValue().replace(/\\\\/g,"\\").replace(/\\\"/g,'\"');
 				edit.setValue(a);
-			}
+			},
+            unicodeChinese: function (){
+                var a = unescape(edit.getValue().replace(/\u/g, "%u").replace(/\\/g,''));
+                edit.setValue(a);
+            }
 			
 		};
 		

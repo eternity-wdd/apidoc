@@ -576,10 +576,18 @@ Ext.onReady(function () {
 				var a = jsonviewer.getRemoveWhiteSpace().replace(/\"/g,"\\\"");
 				edit.setValue(a);
 			},
-			removeZhuanyi: function (){
-				var a = edit.getValue().replace(/\\\\/g,"\\").replace(/\\\"/g,'\"');
-				edit.setValue(a);
-			}
+            removeZhuanyi: function (){
+                var a = edit.getValue().replace(/\\\\/g,"\\").replace(/\\\"/g,'\"');
+                edit.setValue(a);
+            },
+            unicodeChinese: function (){
+                var a = unescape(edit.getValue().replace(/\u/g, "%u"));
+                edit.setValue(a);
+            },
+            unicodeChinese: function (){
+                var a = unescape(edit.getValue().replace(/\u/g, "%u").replace(/\\/g,''));
+                edit.setValue(a);
+            }
 			
 		};
 	}();
