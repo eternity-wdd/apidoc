@@ -586,7 +586,7 @@ Ext.onReady(function () {
 				edit.setValue(a);
 			},
             unicodeChinese: function (){
-                var a = unescape(edit.getValue().replace(/\u/g, "%u").replace(/\\/g,''));
+                var a = unescape(edit.getValue().replace(/\\u/g, "%u").replace(/\\/g,''));
                 edit.setValue(a);
             }
 			
