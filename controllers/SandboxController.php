@@ -199,7 +199,6 @@ class SandboxController extends \yii\web\Controller
         $ret = NetworkHelper::makeRequest(\Yii::$app->params['api'][$api->module_id]['domain'].'/'.$api->name, $data);
         //(\Yii::$app->params['api'][$api->module_id]['domain'], $data)
         echo '<br /><br />返回结果：<br /><br /><pre>'.$ret['msg'].'</pre>';
-        //注释
         echo '<h2>1、 构造源串</h2>';
         echo '源串：'.$sigStr.'<br />';
         echo 'URL编码后：'.$sigStr.'<br />';
