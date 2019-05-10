@@ -136,6 +136,28 @@ class ApiController extends BaseController
     }
 
     /**
+     * ajax获取分组
+     * User: LiZheng  271648298@qq.com
+     * Date: 2019/5/10
+     */
+    public function actionGetgroups()
+    {
+        $module_id = $_POST['module_id'];
+        $groups = ApiGroup::find()->where(['module_id'=>$module_id])->all();
+        $data['option'] = '<option value>请选择</option>';
+        $data['item'] = "<li class='option-item option-selected option-hover' data-index='0' data-value>请选择</li>";
+        $i = 1;
+        foreach ($groups as $group)
+        {
+            $data['item'] .= "<li class='option-item' data-index={$i} data-value={$group['id']}>{$group['name']}</li>";
+            $i ++;
+            $data['option'] .= "<option value={$group['id']}>{$group['name']}</option>";
+        }
+        return json_encode($data, true);
+        echo $data; exit;  //这里直接向js输出
+    }
+
+    /**
      * 查看接口详情
      * @param $id
      * @return string
