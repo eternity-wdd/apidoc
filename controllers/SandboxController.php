@@ -10,66 +10,7 @@ use common\helpers\MenuHelper;
 
 class SandboxController extends \yii\web\Controller
 {
-    public function actionPurchaser()
-    {
-        return $this->render('purchaser', [
-            'apis' => $this->apis('purchaser'),
-        ]);
-    }
-    
-    public function actionOfficial()
-    {
-        return $this->render('purchaser', [
-            'apis' => $this->apis('official'),
-        ]);
-    }
-    
-    public function actionOfficialweb()
-    {
-        return $this->render('purchaser', [
-            'apis' => $this->apis('officialweb'),
-        ]);
-    }
-    
-    public function actionInner()
-    {
-        return $this->render('purchaser', [
-            'apis' => $this->apis('inner'),
-        ]);
-    }
-    
-    public function actionSupplier()
-    {
-        return $this->render('purchaser', [
-            'apis' => $this->apis('supplier'),
-        ]);
-    }
-    
-    public function actionCrmOpenapi()
-    {
-        return $this->render('purchaser', [
-            'apis' => $this->apis('official'),
-        ]);
-    }
-    
-    public function actionStandard()
-    {
-        return $this->render('purchaser', [
-            'apis' => $this->apis('standard'),
-        ]);
-    }
-    public function actionDatamap()
-    {
-        return $this->render('purchaser', [
-            'apis' => $this->apis('datamap'),
-        ]);
-    }
-    public function actionDeliver()
-    {
-        return $this->render('purchaser', [
-            'apis' => $this->apis('deliver'),
-        ]);
-    }
+
     public function actionTradeApi()
     {
         //purchaser
