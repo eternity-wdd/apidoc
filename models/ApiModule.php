@@ -59,6 +59,10 @@ class ApiModule extends \yii\db\ActiveRecord
     {
         return $this->hasMany(Api::className(), ['module_id' => 'name']);
     }
+    public function getGroups()
+    {
+        return $this->hasMany(ApiGroup::className(), ['module_id' => 'name']);
+    }
     
     /**
      * @return array

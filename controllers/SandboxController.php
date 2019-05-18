@@ -4,27 +4,41 @@ namespace app\controllers;
 use app\models\Api;
 use app\models\ApiGroup;
 use app\models\ApiClient;
+use app\models\ApiModule;
 use app\models\ApiParam;
 use common\helpers\NetworkHelper;
 use common\helpers\MenuHelper;
 
 class SandboxController extends \yii\web\Controller
 {
+    /**
+     * 修改为响应式渲染
+     * @return string
+     * User: LiZheng  271648298@qq.com
+     * Date: 2019/5/18
+     */
+    public function actionIndex()
+    {
+        $module_id = \Yii::$app->request->getQueryParam('module_id');
+        return $this->render('dan', [
+            'apis' => $this->apis($module_id),
+        ]);
+    }
 
-    public function actionTradeApi()
-    {
-        //purchaser
-        return $this->render('dan', [
-            'apis' => $this->apis('trade-api'),
-        ]);
-    }
-    public function actionFacility()
-    {
-        //purchaser
-        return $this->render('dan', [
-            'apis' => $this->apis('facility'),
-        ]);
-    }
+//    public function actionTradeApi()
+//    {
+//        //purchaser
+//        return $this->render('dan', [
+//            'apis' => $this->apis('trade-api'),
+//        ]);
+//    }
+//    public function actionFacility()
+//    {
+//        //purchaser
+//        return $this->render('dan', [
+//            'apis' => $this->apis('facility'),
+//        ]);
+//    }
     /**
      * 获取接口的相关参数表单字段
      * @param int $id 接口ID
@@ -113,6 +127,7 @@ class SandboxController extends \yii\web\Controller
             OpenApiResponse::error(OpenApiError::SIGNATURE_ERROR, 'secret error');
             exit();
         } */
+        $domain = \Yii::$app->request->post('env').\Yii::$app->request->post('host');
         $appkey = \Yii::$app->request->post('secret') . '&';
         $data =  \Yii::$app->request->post('param');
         $api = Api::findOne($data['api']);
@@ -137,7 +152,8 @@ class SandboxController extends \yii\web\Controller
         
         $data['s'] = base64_encode(hash_hmac('sha1', urlencode($sigStr), strtr($appkey, '-_', '+/'), true));
 //        echo "<pre>";print_r(\Yii::$app->params['api'][$api->module_id]);exit();
-        $ret = NetworkHelper::makeRequest(\Yii::$app->params['api'][$api->module_id]['domain'].'/'.$api->name, $data);
+//        $ret = NetworkHelper::makeRequest(\Yii::$app->params['api'][$api->module_id]['domain'].'/'.$api->name, $data);//替换为响应式
+        $ret = NetworkHelper::makeRequest($domain.'/'.$api->name, $data);
         //(\Yii::$app->params['api'][$api->module_id]['domain'], $data)
         echo '<br /><br />返回结果：<br /><br /><pre>'.$ret['msg'].'</pre>';
         echo '<h2>1、 构造源串</h2>';
@@ -150,7 +166,7 @@ class SandboxController extends \yii\web\Controller
         echo "签名函数(PHP代码)：hash_hmac('sha1', urlencode(\"".$sigStr."\"), strtr(\"".$appkey."\", '-_', '+/'), true)<br />";
         echo '签名值：'.$data['s'].'<br /><br /><br />';
         
-        echo '请求URL演示：<br />http://'.\Yii::$app->params['api'][$api->module_id]['domain'].'?'.NetworkHelper::makeQueryString($data);
+        echo '请求URL演示：<br />http://'.$domain.'?'.NetworkHelper::makeQueryString($data);
         
     }
 
@@ -164,9 +180,12 @@ class SandboxController extends \yii\web\Controller
     private function apis($module)
     {
         $data = Api::find()
+            ->select('xm_api.*, module.host as host')
+            -> leftJoin(ApiModule::tableName().' module', Api::tableName().'.module_id = module.name')
             -> leftJoin(ApiGroup::tableName().' group', Api::tableName().'.group_id = group.id')
-            -> where([Api::tableName().'.module_id'=> $module])
+            -> where(['module.name'=> $module])
             -> orderBy('group.priority desc, priority desc')
+            -> asArray()
             ->all();
         return $data;
     }

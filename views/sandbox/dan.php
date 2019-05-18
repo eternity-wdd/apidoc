@@ -16,6 +16,16 @@
 	width: 200px;
 	height: 24px;
 }
+#host input[type='text']
+{
+    width: 200px;
+    height: 27px;
+}
+#env input[type='text']
+{
+    width: 200px;
+    height: 27px;
+}
 .combo-select{
 	display: inline-block;
 	border: 1px solid #999;;
@@ -68,13 +78,18 @@ JQueryFormAsset::register($this, View::POS_READY);
     </div>
     <div>
     	<input type="hidden" name="m_id" value="<?php echo $_GET['id']?>"/>
-        <label>接口</label>
+        <div id="host"><label>Host：</label>  <input type="text" name="host" readonly="true" value=<?= $apis[0]['host']; ?> />&nbsp;&nbsp;&nbsp;(生产地址)</div>
+        <div id="env"><label>前缀：</label>  <input type="text" name="env" placeholder="比如: dev-" value="" />&nbsp;&nbsp;&nbsp;(非必填)</div>
+
+        <label>接口：</label>
         <select id="api-selector" name="param[api]">
             <option>选择测试接口</option>
         <?php foreach ($apis as $i=>$api):?>
             <option value="<?= $api['id']; ?>" <?php if($api['id'] == $_GET['id']){?>selected<?php }?>><?= $api['label']; ?></option>
+
         <?php endforeach;?>
         </select>
+
     </div>
     <div id="params"></div>
     <div><input class="btn btn-primary" type="button" onclick="formSubmit()" value="测试"/></div>

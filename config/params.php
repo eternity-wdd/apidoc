@@ -9,24 +9,12 @@ return [
 	'reflshTime' => '500',
     'md5_key' =>'jinglan_api',
     'api'=>[
-        'purchaser'=>[
-            'domain'=>'self.openapi.xunmall.com'
-        ],
         'trade-api'=>[
             //'domain'=>'api.trade.klagri.com.cn/api'//本地 需要单独端口跑PHP
             'domain'=>'dev-api.trade.klagri.com.cn/api'//测试，供APP端使用
         ],
         'facility'=>[
             'domain'=>'self.facility-klagri.com/facility'
-        ],
-        'supplier'=>[
-            'domain'=>'self.supplier.openapi.xunmall.com:88'
-        ],
-        'standard'=>[
-            'domain'=>'self.glib.openapi.xunmall.com:88'
-        ],
-        'datamap' =>[
-            'domain'=>'self.datamap.openapi.xunmall.com:88'
         ]
     ],
     'email_address'=>'lz.apidoc.xunmall.com',
