@@ -16,13 +16,7 @@ use yii\helpers\Url;
 /* @var $form yii\widgets\ActiveForm */
 $model->platforms = MathHelper::bitOrToArr($model->platforms);
 $model->method = MathHelper::bitOrToArr($model->method);
- $res = ApiGroup::find()->select(['id','name'])->asArray()->all();
-/* $result = ApiClientPlatform::find()->select(['name'])->all();
-$client = []; */
-$options = [];
-foreach ($res as $k=>$v){
-    $options[$v['id']] = $v['name'];
-}
+
 /* foreach ($result as $k=>$v){
     $client[$k+1] = $v['name'];
 }  */
@@ -126,16 +120,24 @@ foreach ($res as $k=>$v){
     <?= $form->field($model, 'description')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'module_id')->radioList(ApiModule::loadOptions())?>
-
     <?php
-    if($model->module_id){
+    if(is_string($model->module_id)){
+        $res = ApiGroup::find()->select(['id','name'])->where(['module_id'=>$model->module_id])->asArray()->all();
+        $options = [];
+        foreach ($res as $k=>$v){
+            $options[$v['id']] = $v['name'];
+        }
         ?>
     <?= $form->field($model, 'platforms')->checkboxList(ApiClientPlatform::loadBitOptions($model->module_id)) ?>
-    <?php }else{ ?>
-
-    <?php }?>
-    
     <?= $form->field($model, 'group_id')->dropDownList($options, ['prompt'=>'请选择','class'=>"xiala"]) ?>
+    <?php
+
+    }else{
+
+    ?>
+        <?= $form->field($model, 'platforms')->checkboxList(ApiClientPlatform::loadBitOptions($model->module_id)) ?>
+        <?= $form->field($model, 'group_id')->dropDownList([], ['prompt'=>'请选择','class'=>"xiala"]) ?>
+    <?php }?>
 
     <?= $form->field($model, 'version')->input('number',['class'=>"xiala"]) ?>
     
@@ -289,6 +291,20 @@ function domReady(){
 	            	$('#api-platforms').html(data);
 	            }
 	        });
+            $.ajax({
+                type:"POST",
+                url:"<?php echo Url::toRoute('api/getgroups'); ?>",
+                data:{"module_id":zhi},
+                async:false,
+                error:function(data){
+                    alert('有误');
+                },
+                success:function(data){
+                    data = JSON.parse(data);
+                    $('#api-group_id').html(data['option']);
+                    $('.combo-dropdown').html(data['item']);
+                }
+            });
 		}
 	})
 	
