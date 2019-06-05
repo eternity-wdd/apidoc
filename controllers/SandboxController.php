@@ -127,10 +127,19 @@ class SandboxController extends \yii\web\Controller
             OpenApiResponse::error(OpenApiError::SIGNATURE_ERROR, 'secret error');
             exit();
         } */
-        $domain = \Yii::$app->request->post('env').\Yii::$app->request->post('host');
+        $cookie = '';
+        $protocol = str_replace('://','',\Yii::$app->request->post('http'));
+        $domain = \Yii::$app->request->post('http').\Yii::$app->request->post('env').\Yii::$app->request->post('host');
         $appkey = \Yii::$app->request->post('secret') . '&';
         $data =  \Yii::$app->request->post('param');
         $api = Api::findOne($data['api']);
+        if($api['method'] == 1)
+        {
+            $method = 'post';
+        }else
+        {
+            $method = 'get';
+        }
         if(!$api) echo '<h3>接口不存在</h3>';
         
         $data['api'] = $api->name;
@@ -149,11 +158,16 @@ class SandboxController extends \yii\web\Controller
             }
         }
 //         $sigStr = urldecode('&'.http_build_query($data));
-        
-        $data['s'] = base64_encode(hash_hmac('sha1', urlencode($sigStr), strtr($appkey, '-_', '+/'), true));
+        if($method == 'post')
+        {
+            $data['s'] = base64_encode(hash_hmac('sha1', urlencode($sigStr), strtr($appkey, '-_', '+/'), true));
+        }
+
+//        $sigStr = urldecode('&'.http_build_query($data));
+//        file_put_contents("d:/lizheng.log", "\n\n".print_r($data, true),8);
 //        echo "<pre>";print_r(\Yii::$app->params['api'][$api->module_id]);exit();
 //        $ret = NetworkHelper::makeRequest(\Yii::$app->params['api'][$api->module_id]['domain'].'/'.$api->name, $data);//替换为响应式
-        $ret = NetworkHelper::makeRequest($domain.'/'.$api->name, $data);
+        $ret = NetworkHelper::makeRequest($domain.'/'.$api->name, $data, $cookie , $method, $protocol);
         //(\Yii::$app->params['api'][$api->module_id]['domain'], $data)
         echo '<br /><br />返回结果：<br /><br /><pre>'.$ret['msg'].'</pre>';
         echo '<h2>1、 构造源串</h2>';

@@ -78,6 +78,7 @@ JQueryFormAsset::register($this, View::POS_READY);
     </div>
     <div>
     	<input type="hidden" name="m_id" value="<?php echo $_GET['id']?>"/>
+        <div id="http"><label>协议名称：</label>  <input type="text" name="http" placeholder="比如: https://," value="http://" />&nbsp;&nbsp;&nbsp;(非必填)</div>
         <div id="env"><label>Host前缀：</label>  <input type="text" name="env" placeholder="比如: dev-" value="" />&nbsp;&nbsp;&nbsp;(非必填)</div>
         <div id="host"><label>Host：</label>  <input type="text" name="host" readonly="true" value=<?= $apis[0]['host']; ?> />&nbsp;&nbsp;&nbsp;(生产地址)</div>
 

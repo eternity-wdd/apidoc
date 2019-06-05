@@ -21,6 +21,10 @@ class NetworkHelper
      */
     static public function makeRequest($url, $params, $cookie = '', $method='post', $protocol='http')
     {
+//        file_put_contents("d:/lizheng.log", "\n\n".print_r($url, true),8);
+//        file_put_contents("d:/lizheng.log", "\n\n".print_r($params, true),8);
+//        file_put_contents("d:/lizheng.log", "\n\n".print_r($method, true),8);
+//        file_put_contents("d:/lizheng.log", "\n\n".print_r($protocol, true),8);
         $query_string = self::makeQueryString($params);
         $cookie_string = self::makeCookieString($cookie);
         $ch = curl_init();
@@ -52,6 +56,7 @@ class NetworkHelper
             curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
         }
         $gf = curl_getinfo($ch);
+//        file_put_contents("d:/lizheng.log", "\n\n".print_r($gf, true),8);
         $ret = curl_exec($ch);
         $err = curl_error($ch);
 
