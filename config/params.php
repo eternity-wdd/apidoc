@@ -15,7 +15,13 @@ return [
         ],
         'facility'=>[
             'domain'=>'self.facility-klagri.com/facility'
-        ]
+        ],
+        'decision'=>[
+            'domain'=>'self.decision-klagri.com/facility'
+        ],
+        'cloud-weather'=>[
+            'domain'=>'https://apiwx.klagri.com.cn/weather/v1/'
+        ],
     ],
     'email_address'=>'lz.apidoc.xunmall.com',
 
