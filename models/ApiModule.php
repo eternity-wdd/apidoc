@@ -37,7 +37,7 @@ class ApiModule extends \yii\db\ActiveRecord
     {
         return [
             [['name', 'label'], 'required'],
-            [['name', 'label'], 'string', 'max' => 50]
+            [['name', 'label', 'host'], 'string', 'max' => 50]
         ];
     }
 
@@ -49,6 +49,7 @@ class ApiModule extends \yii\db\ActiveRecord
         return [
             'name' => Yii::t('app', 'Name'),
             'label' => Yii::t('app', 'Label'),
+            'host' => Yii::t('app', 'Host'),
         ];
     }
 
