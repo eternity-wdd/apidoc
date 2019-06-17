@@ -78,8 +78,10 @@ class HostsController extends Controller
      */
     public function actionDeploy()
     {
-        $message = shell_exec("sudo /bin/bash /shell/deploy/update_hosts.sh");
-        var_dump($message);
+//        $message = shell_exec("sudo /bin/bash /shell/deploy/update_hosts.sh");
+        $res = http_get("http://172.168.50.41:9999/job/deployHosts_dev/build?token=624715C440DB0CBF14C5FDAC57DF7147");
+
+        var_dump($res);
     }
 
     /**
