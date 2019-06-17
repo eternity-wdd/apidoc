@@ -37,7 +37,7 @@ class ApiModule extends \yii\db\ActiveRecord
     {
         return [
             [['name', 'label'], 'required'],
-            [['name', 'label', 'host'], 'string', 'max' => 50]
+            [['name', 'label', 'domain'], 'string', 'max' => 50]
         ];
     }
 
