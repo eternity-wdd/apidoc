@@ -129,7 +129,7 @@ class SandboxController extends \yii\web\Controller
         } */
         $cookie = '';
         $protocol = str_replace('://','',\Yii::$app->request->post('http'));
-        $domain = \Yii::$app->request->post('http').\Yii::$app->request->post('env').\Yii::$app->request->post('host');
+        $domain = \Yii::$app->request->post('http').\Yii::$app->request->post('env').\Yii::$app->request->post('domain');
         $appkey = \Yii::$app->request->post('secret') . '&';
         $data =  \Yii::$app->request->post('param');
         $api = Api::findOne($data['api']);
@@ -194,7 +194,7 @@ class SandboxController extends \yii\web\Controller
     private function apis($module)
     {
         $data = Api::find()
-            ->select('xm_api.*, module.host as host')
+            ->select('xm_api.*, module.domain as domain')
             -> leftJoin(ApiModule::tableName().' module', Api::tableName().'.module_id = module.name')
             -> leftJoin(ApiGroup::tableName().' group', Api::tableName().'.group_id = group.id')
             -> where(['module.name'=> $module])

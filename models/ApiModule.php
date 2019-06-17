@@ -49,7 +49,7 @@ class ApiModule extends \yii\db\ActiveRecord
         return [
             'name' => Yii::t('app', 'Name'),
             'label' => Yii::t('app', 'Label'),
-            'host' => Yii::t('app', 'Host'),
+            'domain' => Yii::t('app', 'Domain'),
         ];
     }
 
