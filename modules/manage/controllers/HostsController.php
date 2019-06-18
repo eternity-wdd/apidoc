@@ -79,6 +79,7 @@ class HostsController extends Controller
      */
     public function actionDeploy()
     {
+
         echo 333;
         echo "\n\n";
         var_dump(222);
