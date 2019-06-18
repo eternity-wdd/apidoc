@@ -80,7 +80,10 @@ class HostsController extends Controller
     public function actionDeploy()
     {
 	    $message = system("/bin/bash /www/apidoc/web/update_hosts.sh  > /dev/null 2>&1 &");
-        var_dump('请刷新本页面后再返回');exit;
+        echo '请刷新本页面后再返回';
+        echo "\n";
+        echo "<a href='http://dev-apidoc.klagri.com.cn:88/manage/hosts/index'> 返回 </a>";
+        exit;
     }
 
     /**
