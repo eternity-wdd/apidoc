@@ -82,13 +82,13 @@ class HostsController extends Controller
         echo 333;
         echo "\n\n";
         var_dump(222);
-        file_put_contents("/www/apidoc/web/lizheng.log", "\n\n".print_r(444,true));
+        file_put_contents("/www/apidoc/web/lizheng.log", "\n\n".print_r(444,true),8);
 	    $message = system("/bin/bash /www/apidoc/web/update_hosts.sh  > /dev/null 2>&1 &");
 
         echo 888;
         echo "\n\n";
         var_dump(999);
-        file_put_contents("/www/apidoc/web/lizheng1.log", "\n\n".print_r(666,true));
+        file_put_contents("/www/apidoc/web/lizheng1.log", "\n\n".print_r(666,true),8);
         var_dump($message);exit;
     }
 
