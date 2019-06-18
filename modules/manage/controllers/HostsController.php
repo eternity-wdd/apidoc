@@ -79,7 +79,7 @@ class HostsController extends Controller
      */
     public function actionDeploy()
     {
-        #echo 333;exit;
+        #echo 333; exit;
 	$message = system("/bin/bash /www/apidoc/web/update_hosts.sh");
         var_dump($message);exit;
     }
