@@ -81,7 +81,7 @@ class HostsController extends Controller
     {
 	    $message = system("/bin/bash /www/apidoc/web/update_hosts.sh  > /dev/null 2>&1 &");
         echo '请刷新本页面后再返回';
-        echo "\n";
+        echo "<br>";
         echo "<a href='http://dev-apidoc.klagri.com.cn:88/manage/hosts/index'> 返回 </a>";
         exit;
     }
