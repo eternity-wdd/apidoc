@@ -17,7 +17,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <p>
         <?= Html::a(Yii::t('app', 'Create Hosts'), ['create'], ['class' => 'btn btn-success']) ?>
-        <botton><a target="_blank" href="http://dev-apidoc.klagri.com.cn:88/manage/hosts/deploy">部署hosts</a></botton>
+        <?= Html::a(Yii::t('app', 'Deploy Hosts'), ['deploy'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?= GridView::widget([
