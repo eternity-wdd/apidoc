@@ -7,6 +7,7 @@ PASSWORD="root"		#密码
 DBNAME="xm_api_document"   #数据库名称
 TABLENAME="hosts"	#数据库中表的名称
 
+sudo rm -rf /etc/hosts_bak
 sudo cp /etc/hosts /etc/hosts_bak
 
 select_sql="select CONCAT_WS(' ',ip,domain,',') as rows from ${TABLENAME}"
