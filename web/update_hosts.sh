@@ -1,4 +1,6 @@
 #!/bin/bash
+
+sudo touch /www/apidoc/web/0618.log
 HOSTNAME="127.0.0.1"    #数据库主机IP
 PORT="3306"		#端口号
 USERNAME="root"		#用户名
