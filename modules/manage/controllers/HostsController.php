@@ -79,7 +79,8 @@ class HostsController extends Controller
      */
     public function actionDeploy()
     {
-        $message = system("sudo /bin/bash /shell/deploy/update_hosts.sh");
+        #echo 333;exit;
+	$message = system("/bin/bash /www/apidoc/web/update_hosts.sh");
         var_dump($message);exit;
     }
 

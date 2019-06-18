@@ -1,0 +1,22 @@
+127.0.0.1  localhost  localhost.localdomain  localhost4  localhost4.localdomain4  
+
+::1  localhost  localhost.localdomain  localhost6  localhost6.localdomain6  
+
+172.168.50.240  dev-api.trade.klagri.com.cn  
+
+172.168.10.100  self-api.trade.klagri.com.cn  
+
+172.168.10.100  lz-apifacility.klagri.com.cn  
+
+172.168.10.100  self-apifacility.klagri.com.cn  
+
+172.168.50.40  dev-apifacility.klagri.com.cn  
+
+172.168.50.240  show-apifacility.klagri.com.cn  
+
+172.168.10.100  self-apiwx.klagri.com.cn  
+
+127.0.0.1  bch-mantis.klagri.com.cn  
+
+172.168.10.110  test.com  
+
