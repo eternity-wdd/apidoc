@@ -18,7 +18,7 @@ SET NAMES utf8mb4;
 SET FOREIGN_KEY_CHECKS = 0;
 
 -- ----------------------------
--- Table structure for hosts
+-- Table structure for hosts_bak
 -- ----------------------------
 DROP TABLE IF EXISTS `hosts`;
 CREATE TABLE `hosts`  (
@@ -31,7 +31,7 @@ CREATE TABLE `hosts`  (
 ) ENGINE = InnoDB AUTO_INCREMENT = 11 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = 'hosts表, 给APIDoc提供不同的测试环境' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
--- Records of hosts
+-- Records of hosts_bak
 -- ----------------------------
 INSERT INTO `hosts` VALUES (1, '127.0.0.1', 'localhost localhost.localdomain localhost4 localhost4.localdomain4', '本机localhost', NULL);
 INSERT INTO `hosts` VALUES (2, '::1', 'localhost localhost.localdomain localhost6 localhost6.localdomain6', '本机localhost', NULL);
@@ -994,7 +994,7 @@ INSERT INTO `xm_menus` VALUES (18, 1, '分配权限', '/rbac-admin/assignment', 
 INSERT INTO `xm_menus` VALUES (19, 1, '权限列表', '/rbac-admin/permission', 1, 500, 'fa fa-list-ul', 0);
 INSERT INTO `xm_menus` VALUES (20, 1, '规则列表', '/rbac-admin/rule', 1, 500, 'fa fa-outdent', 0);
 INSERT INTO `xm_menus` VALUES (21, 1, '用户管理', '/manage/member/index', 0, 500, 'fa fa-github-alt', 0);
-INSERT INTO `xm_menus` VALUES (22, 1, 'hosts管理', '/manage/hosts/index', 0, 500, 'fa fa-outdent', 0);
+INSERT INTO `xm_menus` VALUES (22, 1, 'hosts管理', '/manage/hosts_bak/index', 0, 500, 'fa fa-outdent', 0);
 
 -- ----------------------------
 -- Table structure for xm_users

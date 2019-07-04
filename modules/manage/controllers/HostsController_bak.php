@@ -3,17 +3,17 @@
 namespace app\modules\manage\controllers;
 
 use Yii;
-use app\models\Hosts;
-use app\models\HostsSearch;
+use app\models\HostsBak;
+use app\models\HostsBakSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use common\helpers\NetworkHelper;
 
 /**
- * HostsController implements the CRUD actions for Hosts model.
+ * HostsControllerBak implements the CRUD actions for HostsBak model.
  */
-class HostsController extends Controller
+class HostsControllerBak extends Controller
 {
     public function behaviors()
     {
@@ -28,12 +28,12 @@ class HostsController extends Controller
     }
 
     /**
-     * Lists all Hosts models.
+     * Lists all HostsBak models.
      * @return mixed
      */
     public function actionIndex()
     {
-        $searchModel = new HostsSearch();
+        $searchModel = new HostsBakSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
@@ -43,7 +43,7 @@ class HostsController extends Controller
     }
 
     /**
-     * Displays a single Hosts model.
+     * Displays a single HostsBak model.
      * @param integer $id
      * @return mixed
      */
@@ -55,13 +55,13 @@ class HostsController extends Controller
     }
 
     /**
-     * Creates a new Hosts model.
+     * Creates a new HostsBak model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new Hosts();
+        $model = new HostsBak();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
@@ -82,12 +82,12 @@ class HostsController extends Controller
 	    $message = system("/bin/bash /www/apidoc/web/update_hosts.sh  > /dev/null 2>&1 &");
         echo '请刷新本页面后再返回';
         echo "<br>";
-        echo "<a href='http://dev-apidoc.klagri.com.cn:88/manage/hosts/index'> 返回 </a>";
+        echo "<a href='http://dev-apidoc.klagri.com.cn:88/manage/hosts_bak/index'> 返回 </a>";
         exit;
     }
 
     /**
-     * Updates an existing Hosts model.
+     * Updates an existing HostsBak model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
      * @return mixed
@@ -106,7 +106,7 @@ class HostsController extends Controller
     }
 
     /**
-     * Deletes an existing Hosts model.
+     * Deletes an existing HostsBak model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
@@ -119,15 +119,15 @@ class HostsController extends Controller
     }
 
     /**
-     * Finds the Hosts model based on its primary key value.
+     * Finds the HostsBak model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return Hosts the loaded model
+     * @return HostsBak the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = Hosts::findOne($id)) !== null) {
+        if (($model = HostsBak::findOne($id)) !== null) {
             return $model;
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');
