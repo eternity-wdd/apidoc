@@ -52,6 +52,7 @@ class ApiController extends BaseController
     public function actionView()
     {
         $api = Api::findOne(\Yii::$app->request->get('id'));
+//        echo "<pre>";var_dump($api);exit;
         return $this->render('view', [
             'api'=>$api,
         ]);

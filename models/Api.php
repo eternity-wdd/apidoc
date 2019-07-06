@@ -161,7 +161,7 @@ class Api extends \yii\db\ActiveRecord
      */
     public function getOutputParams()
     {
-        return ApiParam::find()->where(['api_id'=>$this->id, 'out'=>1])->all();
+        return ApiParam::find()->where(['api_id'=>$this->id, 'out'=>1])->orderBy('priority')->all();
     }
     
     public static function methodOptions()
