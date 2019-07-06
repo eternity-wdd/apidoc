@@ -361,7 +361,7 @@ class ApiController extends BaseController
         $params_type = ApiParamType::find()->asArray()->all();
         $module_id = Api::find()->select(['module_id'])->where(['id' => $id])->one();
         $module = $module_id['module_id'];
-        $params_model = ApiParam::find()->where(['api_id'=>$id])->asArray()->all();
+        $params_model = ApiParam::find()->where(['api_id'=>$id])->orderBy('priority')->asArray()->all();
         
         $model = Api::findOne($id);  
         if ($model->load(Yii::$app->request->post()) && $model->validate())
