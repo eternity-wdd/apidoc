@@ -18,6 +18,9 @@ table tr:nth-child(odd) {
 table tr:nth-child(even) {
     background-color:#fff;
 }
+.t .default-data_row {
+    /*background-color:green;*/
+}
 </style>
 <div class="contentSub">
 	<div id="bodyContent">
@@ -120,22 +123,22 @@ table tr:nth-child(even) {
                     <th width="20%"><b>参数说明</b></th>
 					<th><b>详细描述</b></th>
 				</tr>
-				<tr> 
+				<tr class="default-data_row">
 					<td class="text-center"> <b>code</b></td>
                     <td class="text-center" style="font-style: italic"> int </td>
-                    <td class="text-center"> 状态返回码 </td>
+                    <td class="text-center"> <b>状态返回码</b> </td>
 					<td> 返回码。详见<a href="<?=Url::to('code')?>" title="公共返回码说明">公共返回码说明#OpenAPI V3.0 返回码</a>。</td>
 				</tr>
-                <tr>
+                <tr class="default-data_row">
                     <td class="text-center"> <b>msg</b></td>
                     <td class="text-center" style="font-style: italic"> string</td>
-                    <td class="text-center"> 接口返回消息</td>
+                    <td class="text-center"> <b>接口返回消息</b></td>
                     <td> 接口返回消息</td>
                 </tr>
-                <tr>
+                <tr class="default-data_row" style="border-bottom: #cbddf3 solid 3px;">
                     <td class="text-center"> <b>data</b></td>
                     <td class="text-center" style="font-style: italic"> array</td>
-                    <td class="text-center"> 接口返回数据</td>
+                    <td class="text-center">  <b>接口返回数据</b></td>
                     <td> 接口返回数据，包含以下所有字段，数据结构见下方<a href="#return_example">返回示例</a>。</td>
                 </tr>
 				<?php foreach ($api->outputParams as $param):?>
