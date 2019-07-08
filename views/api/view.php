@@ -89,13 +89,15 @@ div#bodyContent table.t td, table.t th{
 					<th width="10%"><b>参数名称</b></th>
 					<th width="10%"><b>是否必须</b></th>
 					<th width="10%"><b>类型</b></th>
-					<th> <b>描述</b></th>
+                    <th width="20%"><b>参数说明</b></th>
+					<th> <b>详细描述</b></th>
 				</tr>
 				<?php foreach ($api->inParams as $param):?>
 				<tr>
-					<td> <b><?= $param->name;?></b></td>
-					<td><font color="red"><?= $param->request ? '是' : ''?></font></td>
-					<td> <?= $param->pt->name;?></td>
+					<td class="text-center"> <b><?= $param->name;?></b></td>
+					<td class="text-center"><font color="red"><?= $param->request ? '是' : ''?></font></td>
+					<td class="text-center"> <?= $param->pt->name;?></td>
+                    <td class="text-center">  <?=  $param->label ?>
 					<td>  <?=/*  $param->label.'<br />'. */$param->desc;?>
 					</td>
 				</tr>
@@ -107,23 +109,41 @@ div#bodyContent table.t td, table.t th{
 		<table class="t">
 			<tbody>
 				<tr>
-					<th width="20%"><b>参数名称</b></th>
-					<th><b>描述</b></th>
+					<th width="15%"><b>参数名称</b></th>
+                    <th width="8%"><b>类型</b></th>
+                    <th width="20%"><b>参数说明</b></th>
+					<th><b>详细描述</b></th>
 				</tr>
 				<tr> 
-					<td> <b>code</b></td>
+					<td class="text-center"> <b>code</b></td>
+                    <td class="text-center"> int </td>
+                    <td class="text-center"> 状态返回码 </td>
 					<td> 返回码。详见<a href="<?=Url::to('code')?>" title="公共返回码说明">公共返回码说明#OpenAPI V3.0 返回码</a>。</td>
 				</tr>
+                <tr>
+                    <td class="text-center"> <b>msg</b></td>
+                    <td class="text-center"> string</td>
+                    <td class="text-center"> 接口返回消息</td>
+                    <td> 接口返回消息</td>
+                </tr>
+                <tr>
+                    <td class="text-center"> <b>data</b></td>
+                    <td class="text-center"> array</td>
+                    <td class="text-center"> 接口返回数据</td>
+                    <td> 接口返回数据，包含以下所有字段，数据结构见下方<a href="#return_example">返回示例</a>。</td>
+                </tr>
 				<?php foreach ($api->outputParams as $param):?>
 				<tr>
-					<td> <b><?= $param->name?></b></td>
+					<td class="text-center">  <b><?= $param->name?></b></td>
+                    <td class="text-center"><?= $param->pt->name?></td>
+                    <td class="text-center"><?= $param->label?></td>
 					<td><?= $param->desc?></td>
 				</tr>
 				<?php endforeach;?>
 			</tbody>
 		</table>
 
-		<h3> <span class="mw-headline">正确返回示例</span><span style="color:#888;font-size:14px;"> JSON示例:</span></h3>
+		<h3><a name="return_example"></a> <span class="mw-headline">正确返回示例</span><span style="color:#888;font-size:14px;"> JSON示例:</span></h3>
 		
 		<div class="code">
 			<pre><?= $api->response ? : '{
