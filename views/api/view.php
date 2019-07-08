@@ -12,6 +12,12 @@ div#bodyContent table.t td, table.t th{
 	height:30px;
 	padding-left:10px;
 }
+table tr:nth-child(odd) {
+    background-color:#F5F5F5;
+}
+table tr:nth-child(even) {
+    background-color:#fff;
+}
 </style>
 <div class="contentSub">
 	<div id="bodyContent">
@@ -96,7 +102,7 @@ div#bodyContent table.t td, table.t th{
 				<tr>
 					<td class="text-center"> <b><?= $param->name;?></b></td>
 					<td class="text-center"><font color="red"><?= $param->request ? '是' : ''?></font></td>
-					<td class="text-center"> <?= $param->pt->name;?></td>
+					<td class="text-center" style="font-style: italic"> <?= $param->pt->name;?></td>
                     <td class="text-center">  <?=  $param->label ?>
 					<td>  <?=/*  $param->label.'<br />'. */$param->desc;?>
 					</td>
@@ -116,26 +122,26 @@ div#bodyContent table.t td, table.t th{
 				</tr>
 				<tr> 
 					<td class="text-center"> <b>code</b></td>
-                    <td class="text-center"> int </td>
+                    <td class="text-center" style="font-style: italic"> int </td>
                     <td class="text-center"> 状态返回码 </td>
 					<td> 返回码。详见<a href="<?=Url::to('code')?>" title="公共返回码说明">公共返回码说明#OpenAPI V3.0 返回码</a>。</td>
 				</tr>
                 <tr>
                     <td class="text-center"> <b>msg</b></td>
-                    <td class="text-center"> string</td>
+                    <td class="text-center" style="font-style: italic"> string</td>
                     <td class="text-center"> 接口返回消息</td>
                     <td> 接口返回消息</td>
                 </tr>
                 <tr>
                     <td class="text-center"> <b>data</b></td>
-                    <td class="text-center"> array</td>
+                    <td class="text-center" style="font-style: italic"> array</td>
                     <td class="text-center"> 接口返回数据</td>
                     <td> 接口返回数据，包含以下所有字段，数据结构见下方<a href="#return_example">返回示例</a>。</td>
                 </tr>
 				<?php foreach ($api->outputParams as $param):?>
 				<tr>
 					<td class="text-center">  <b><?= $param->name?></b></td>
-                    <td class="text-center"><?= $param->pt->name?></td>
+                    <td class="text-center" style="font-style: italic"><?= $param->pt->name?></td>
                     <td class="text-center"><?= $param->label?></td>
 					<td><?= $param->desc?></td>
 				</tr>
