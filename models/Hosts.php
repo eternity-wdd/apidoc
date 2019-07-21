@@ -5,7 +5,7 @@ namespace app\models;
 use Yii;
 
 /**
- * This is the model class for table "hosts_bak".
+ * This is the model class for table "hosts".
  *
  * @property integer $id
  * @property string $ip
@@ -20,7 +20,7 @@ class HostsBak extends \yii\db\ActiveRecord
      */
     public static function tableName()
     {
-        return 'hosts_bak';
+        return 'hosts';
     }
 
     /**
