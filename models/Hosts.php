@@ -13,7 +13,7 @@ use Yii;
  * @property string $alias
  * @property string $remark
  */
-class HostsBak extends \yii\db\ActiveRecord
+class Hosts extends \yii\db\ActiveRecord
 {
     /**
      * @inheritdoc

@@ -3,17 +3,17 @@
 namespace app\modules\manage\controllers;
 
 use Yii;
-use app\models\HostsBak;
-use app\models\HostsBakSearch;
+use app\models\Hosts;
+use app\models\HostsSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use common\helpers\NetworkHelper;
 
 /**
- * HostsControllerBak implements the CRUD actions for HostsBak model.
+ * HostsControllerBak implements the CRUD actions for Hosts model.
  */
-class HostsControllerBak extends Controller
+class HostsController extends Controller
 {
     public function behaviors()
     {
@@ -28,12 +28,12 @@ class HostsControllerBak extends Controller
     }
 
     /**
-     * Lists all HostsBak models.
+     * Lists all Hosts models.
      * @return mixed
      */
     public function actionIndex()
     {
-        $searchModel = new HostsBakSearch();
+        $searchModel = new HostsSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
@@ -43,7 +43,7 @@ class HostsControllerBak extends Controller
     }
 
     /**
-     * Displays a single HostsBak model.
+     * Displays a single Hosts model.
      * @param integer $id
      * @return mixed
      */
@@ -55,13 +55,13 @@ class HostsControllerBak extends Controller
     }
 
     /**
-     * Creates a new HostsBak model.
+     * Creates a new Hosts model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new HostsBak();
+        $model = new Hosts();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
@@ -87,7 +87,7 @@ class HostsControllerBak extends Controller
     }
 
     /**
-     * Updates an existing HostsBak model.
+     * Updates an existing Hosts model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
      * @return mixed
@@ -106,7 +106,7 @@ class HostsControllerBak extends Controller
     }
 
     /**
-     * Deletes an existing HostsBak model.
+     * Deletes an existing Hosts model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
@@ -119,15 +119,15 @@ class HostsControllerBak extends Controller
     }
 
     /**
-     * Finds the HostsBak model based on its primary key value.
+     * Finds the Hosts model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return HostsBak the loaded model
+     * @return Hosts the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = HostsBak::findOne($id)) !== null) {
+        if (($model = Hosts::findOne($id)) !== null) {
             return $model;
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');
