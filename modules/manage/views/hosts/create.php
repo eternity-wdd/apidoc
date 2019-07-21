@@ -4,10 +4,10 @@ use yii\helpers\Html;
 
 
 /* @var $this yii\web\View */
-/* @var $model app\models\HostsBak */
+/* @var $model app\models\Hosts */
 
-$this->title = Yii::t('app', 'Create HostsBak');
-$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'HostsBak'), 'url' => ['index']];
+$this->title = Yii::t('app', 'Create Hosts');
+$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Hosts'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="hosts-create">

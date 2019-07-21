@@ -4,10 +4,10 @@ use yii\helpers\Html;
 use yii\grid\GridView;
 
 /* @var $this yii\web\View */
-/* @var $searchModel app\models\HostsBakSearch */
+/* @var $searchModel app\models\HostsSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = Yii::t('app', 'HostsBak');
+$this->title = Yii::t('app', 'Hosts');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="hosts-index">
@@ -16,8 +16,8 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a(Yii::t('app', 'Create HostsBak'), ['create'], ['class' => 'btn btn-success']) ?>
-        <?= Html::a(Yii::t('app', 'Deploy HostsBak'), ['deploy'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a(Yii::t('app', 'Create Hosts'), ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a(Yii::t('app', 'Deploy Hosts'), ['deploy'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?= GridView::widget([
