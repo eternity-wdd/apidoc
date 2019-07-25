@@ -67,15 +67,15 @@ class SandboxController extends \yii\web\Controller
             
             if($v['showtype']=='1'){
                 if($v["request"]=="1"){
-                    $html.='<div><label>'.$v['label'].'：</label> <input type="text" name="param['.$v['name'].']" value="'.$v['val'].'" />　(必填)（'.$v['name'].'）</div>';
+                    $html.='<div><label>'.$v['label'].'：</label> <input type="text" name="param['.$v['name'].']" value="'.$v['val'].'" />　(必填)<span style="font-weight: bold">（'.$v['name'].'）</span></div>';
                 }else{
-                    $html.='<div><label>'.$v['label'].'：</label> <input type="text" name="param['.$v['name'].']" value="'.$v['val'].'" />（'.$v['name'].'）</div>';
+                    $html.='<div><label>'.$v['label'].'：</label> <input type="text" name="param['.$v['name'].']" value="'.$v['val'].'" /><span style="font-weight: bold">（'.$v['name'].'）</span></div>';
                 }
             }else if($v['showtype']=='2'){
                 if($v["request"]=="1"){
-                    $html.='<div><label class="mylabel">'.$v['label'].'：</label> <textarea class="mytext" type="text" name="param['.$v['name'].']" /></textarea>　(必填)（'.$v['name'].'）</div>';
+                    $html.='<div><label class="mylabel">'.$v['label'].'：</label> <textarea class="mytext" type="text" name="param['.$v['name'].']" /></textarea>　(必填)<span style="font-weight: bold">（'.$v['name'].'）</span></div>';
                 }else{
-                    $html.='<div><label class="mylabel">'.$v['label'].'：</label> <textarea class="mytext" type="text" name="param['.$v['name'].']" /></textarea> （'.$v['name'].'）</div>';
+                    $html.='<div><label class="mylabel">'.$v['label'].'：</label> <textarea class="mytext" type="text" name="param['.$v['name'].']" /></textarea><span style="font-weight: bold">（'.$v['name'].'）</span></div>';
                 }
             }else if($v['showtype']=='3'){
                 $html.='<div><label>'.$v['label'].'：</label>';
@@ -83,9 +83,9 @@ class SandboxController extends \yii\web\Controller
                     $html.=' <input type="checkbox" name="param['.$v['name'].']" value="'.$k2.'" /> '.$v2;
                 }
                 if($v["request"]=="1"){
-                    $html.='　　(必选)（'.$v['name'].'）</div>';
+                    $html.='　　(必选)<span style="font-weight: bold">（'.$v['name'].'）</span></div>';
                 }else{
-                    $html.='（'.$v['name'].'）</div>';
+                    $html.='<span style="font-weight: bold">（'.$v['name'].'）</span></div>';
                 }                
             }else if($v['showtype']=='4'){
                 $html.='<div><label>'.$v['label'].'：</label>';
@@ -93,9 +93,9 @@ class SandboxController extends \yii\web\Controller
                     $html.=' <input type="radio" name="param['.$v['name'].']" value="'.$k2.'"  if($k2==k2){ checked }/>'.$v2;
                 }
                 if($v["request"]=="1"){
-                    $html.='　(必选)（'.$v['name'].'）</div>';
+                    $html.='　(必选)<span style="font-weight: bold">（'.$v['name'].'）</span></div>';
                 }else{
-                    $html.='（'.$v['name'].'）</div>';
+                    $html.='<span style="font-weight: bold">（'.$v['name'].'）</span></div>';
                 }
             }else if($v['showtype']=='5'){
                 $html.='<div><label>'.$v['label'].'：</label> ';
@@ -104,9 +104,9 @@ class SandboxController extends \yii\web\Controller
                     $html.='<option value ="'.$k2.'">'.$v2.'</option>';
                 }
                 if($v["request"]=="1"){
-                    $html.='</select>　(必选)（'.$v['name'].'）</div>';
+                    $html.='</select>　(必选)<span style="font-weight: bold">（'.$v['name'].'）</span></div>';
                 }else{
-                    $html.='</select>（'.$v['name'].'）</div>';
+                    $html.='</select><span style="font-weight: bold">（'.$v['name'].'）</span></div>';
                 }
             }
         }
