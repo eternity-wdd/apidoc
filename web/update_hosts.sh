@@ -5,7 +5,7 @@ PORT="3306"		#端口号
 USERNAME="root"		#用户名
 PASSWORD="root"		#密码
 
-DBNAME="xm_api_document"   #数据库名称
+DBNAME="jl_api_document"   #数据库名称
 TABLENAME="hosts"	#数据库中表的名称
 
 sudo rm -rf /etc/hosts_bak

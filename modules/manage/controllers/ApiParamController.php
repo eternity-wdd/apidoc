@@ -52,8 +52,8 @@ class ApiParamController extends BaseController
         
         /*  $res = (new \yii\db\Query())
         ->select('t2.label')
-        ->from('xm_api t1')
-        ->leftjoin('xm_api_module t2', 't1.module_id=t2.name')
+        ->from('jl_api t1')
+        ->leftjoin('jl_api_module t2', 't1.module_id=t2.name')
         ->where('t1.id=:id', array(':id'=>$api_id))
         ->one(); 
          var_dump($res); */

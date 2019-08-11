@@ -6,5 +6,5 @@ return [
     'username' => '_{{DB_USER}}_',
     'password' => '_{{DB_PASSWORD}}_',
     'charset' => 'utf8',
-    'tablePrefix' => 'xm_',
+    'tablePrefix' => 'jl_',
 ];

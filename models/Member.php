@@ -5,7 +5,7 @@ namespace app\models;
 use Yii;
 
 /**
- * This is the model class for table "xm_member".
+ * This is the model class for table "jl_member".
  *
  * @property string $id
  * @property string $email
@@ -23,7 +23,7 @@ class Member extends \yii\db\ActiveRecord
      */
     public static function tableName()
     {
-        return 'xm_member';
+        return 'jl_member';
     }
 
     /**

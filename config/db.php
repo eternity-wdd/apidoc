@@ -2,9 +2,9 @@
 
 return [
     'class' => 'yii\db\Connection',
-    'dsn' => 'mysql:host=localhost;dbname=xm_api_document',
+    'dsn' => 'mysql:host=localhost;dbname=jl_api_document',
     'username' => 'root',
     'password' => 'root',
     'charset' => 'utf8',
-    'tablePrefix' => 'xm_',
+    'tablePrefix' => 'jl_',
 ];

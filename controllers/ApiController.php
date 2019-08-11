@@ -32,8 +32,8 @@ class ApiController extends BaseController
         $groups = ApiGroup::find()->where(['module_id'=>\Yii::$app->request->get('m')])->all();
         $apis = Api::find()->where(['module_id'=>\Yii::$app->request->get('m')])->all();
         $rows = Api::findBySql('SELECT t2.*,t1.publish
-                                FROM xm_api t1 
-                                LEFT JOIN xm_api_group t2 ON t1.group_id = t2.id
+                                FROM jl_api t1 
+                                LEFT JOIN jl_api_group t2 ON t1.group_id = t2.id
                                 WHERE t1.module_id = "'.$module.'"
                                 GROUP BY t1.group_id') ->all();
 //         echo "<pre>";print_r($rows);exit();

@@ -58,31 +58,29 @@ JQueryFormAsset::register($this, View::POS_READY);
 <div class="wrap">
 <div class="container">
 <form method="post" action="<?= Url::toRoute('request');?>" id="testForm" autocomplete="off">
-<!--    <div>-->
-<!--        <label>APPID:</label>-->
-<!--        <input type="text" name="appid" value="2100001" />-->
-<!--    </div>-->
-<!--    <div>-->
-<!--        <label>SECRET:</label>-->
-<!--        <input type="text" name="secret" value="hh8bf094169a40a3bd188ba37ebe872v" />-->
-<!--    </div>-->
+    <div>
+        <label>APPID:</label>
+        <input type="text" name="appid" value="SSNY_WEB001" />
+    </div>
+    <div>
+        <label>SECRET:</label>
+        <input type="text" name="secret" value="hh8bf094169a40a3bd188ba37ebe872v" />
+    </div>
     <div id="account-info">
 <!--        <div>-->
 <!--            <label>UID:</label>-->
 <!--            <input type="text" name="param[uid]" value="" />-->
 <!--        </div>-->
-<!--        <div>-->
-<!--            <label>TOKEN:</label>-->
-<!--            <input type="text" name="param[token]" value="" />-->
-<!--        </div>-->
+        <div>
+            <label>TOKEN:</label>
+            <input type="text" name="param[access_token]" value="" />
+        </div>
     </div>
     <div>
     	<input type="hidden" name="m_id" value="<?php echo $_GET['id']?>"/>
         <div id="http"><label>协议名称：</label>  <input type="text" name="http" placeholder="比如: https://," value="http://" />&nbsp;&nbsp;&nbsp;(非必填)</div>
         <div id="env"><label>域名前缀：</label>  <input type="text" name="env" placeholder="比如: dev-" value="" />&nbsp;&nbsp;&nbsp;(非必填)</div>
         <div id="host"><label>域名：</label>  <input type="text" name="domain" readonly="true" value=<?= $apis[0]['domain']; ?> />&nbsp;&nbsp;&nbsp;(生产地址)</div>
-
-
         <label>接口：</label>
         <select id="api-selector" name="param[api]">
             <option>选择测试接口</option>

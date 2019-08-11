@@ -115,37 +115,45 @@ class SandboxController extends \yii\web\Controller
     
     public function actionRequest()
     {
-/*         $client = ApiClient::findOne(\Yii::$app->request->post('appid'));
-       
-        if(!$client || $client->appkey == \Yii::$app->request->post('secret'))
+        $client = ApiClient::findOne(\Yii::$app->request->post('appid'));
+        if(!$client)
         {
-            
+            $ret['msg'] = json_encode(['code'=>-23, 'msg'=>'应用不存在'], true);
+            echo '<br /><br />返回结果：<br /><br /><pre>'.$ret['msg'].'</pre>'; exit;
         }
-        
-        if(!empty($_REQUEST['secret']) && $appkey != $_REQUEST['secret'])
+        $appkey = $client -> appkey;
+        if(empty($_REQUEST['secret']) || $appkey != $_REQUEST['secret'])
         {
-            OpenApiResponse::error(OpenApiError::SIGNATURE_ERROR, 'secret error');
-            exit();
-        } */
+            $ret['msg'] = json_encode(['code'=>-27, 'msg'=>'Secret Error'], true);
+            echo '<br /><br />返回结果：<br /><br /><pre>'.$ret['msg'].'</pre>'; exit;
+        }
         $cookie = '';
         $protocol = str_replace('://','',\Yii::$app->request->post('http'));
         $domain = \Yii::$app->request->post('http').\Yii::$app->request->post('env').\Yii::$app->request->post('domain');
-        $appkey = \Yii::$app->request->post('secret') . '&';
         $data =  \Yii::$app->request->post('param');
         $api = Api::findOne($data['api']);
         if($api['method'] == 1)
         {
             $method = 'post';
-        }else
+        }elseif($api['method'] == 2)
         {
             $method = 'get';
+        }else
+        {
+            $method = 'post';
         }
         if(!$api) echo '<h3>接口不存在</h3>';
         
-        $data['api'] = $api->name;
+        $data['api_url'] = $api->name;
+        unset($data['api']);
         $data['appid'] = \Yii::$app->request->post('appid');
-        $data['t'] = time();
-        
+        $data['secret'] = \Yii::$app->request->post('secret');
+
+        if($api['need_login'] != 1)
+        {
+            unset($data['access_token']);
+        }
+        $data['t'] = (string)floor(microtime(true)*1000);
         ksort($data);
 //         echo "<pre>";print_r($data);exit();
         $notSignParams = explode(',', $api->not_sign_params);
@@ -158,11 +166,11 @@ class SandboxController extends \yii\web\Controller
             }
         }
 //         $sigStr = urldecode('&'.http_build_query($data));
-        if($method == 'post')
-        {
-            $data['s'] = base64_encode(hash_hmac('sha1', urlencode($sigStr), strtr($appkey, '-_', '+/'), true));
-        }
-
+//        if($method == 'post')
+//        {
+//            $data['s'] = base64_encode(hash_hmac('sha1', urlencode($sigStr), strtr($appkey, '-_', '+/'), true));
+//        }
+        $data['s'] = base64_encode(hash_hmac('sha256', urlencode(str_replace(array("/",":"),array('%2F','%3A'),ltrim($sigStr, '&'))), $appkey, true));
 //        $sigStr = urldecode('&'.http_build_query($data));
 //        file_put_contents("d:/lizheng.log", "\n\n".print_r($data, true),8);
 //        echo "<pre>";print_r(\Yii::$app->params['api'][$api->module_id]);exit();
@@ -194,7 +202,7 @@ class SandboxController extends \yii\web\Controller
     private function apis($module)
     {
         $data = Api::find()
-            ->select('xm_api.*, module.domain as domain')
+            ->select('jl_api.*, module.domain as domain')
             -> leftJoin(ApiModule::tableName().' module', Api::tableName().'.module_id = module.name')
             -> leftJoin(ApiGroup::tableName().' group', Api::tableName().'.group_id = group.id')
             -> where(['module.name'=> $module])

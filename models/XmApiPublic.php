@@ -5,7 +5,7 @@ namespace app\models;
 use Yii;
 
 /**
- * This is the model class for table "xm_api_public".
+ * This is the model class for table "jl_api_public".
  *
  * @property string $paramname
  * @property string $require
@@ -19,7 +19,7 @@ class XmApiPublic extends \yii\db\ActiveRecord
      */
     public static function tableName()
     {
-        return 'xm_api_public';
+        return 'jl_api_public';
     }
 
     /**

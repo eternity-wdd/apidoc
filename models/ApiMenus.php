@@ -5,7 +5,7 @@ namespace app\models;
 use Yii;
 
 /**
- * This is the model class for table "xm_menus".
+ * This is the model class for table "jl_menus".
  *
  * @property string $id
  * @property integer $group
@@ -23,7 +23,7 @@ class ApiMenus extends \yii\db\ActiveRecord
      */
     public static function tableName()
     {
-        return 'xm_menus';
+        return 'jl_menus';
     }
 
     /**
@@ -67,7 +67,7 @@ class ApiMenus extends \yii\db\ActiveRecord
     
     public static function getMenuTree($group)
     {
-        $query = "SELECT m.* FROM xm_menus AS m
+        $query = "SELECT m.* FROM jl_menus AS m
 	               WHERE m.group=:group
 	               AND m.status=0
 	               ORDER BY `sort` asc, `id` asc";
