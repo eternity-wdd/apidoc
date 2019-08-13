@@ -17,7 +17,7 @@ use app\models\ApiParamType;
 
 /**
  * 接口控制器
- * ApiController implements the CRUD actions for Api model.
+ * ApiControllerBak implements the CRUD actions for Api model.
  */
 class ApiController extends BaseController
 {

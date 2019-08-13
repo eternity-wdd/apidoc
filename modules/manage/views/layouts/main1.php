@@ -10,7 +10,6 @@ use yii\bootstrap\Alert;
 use app\assets\AdminLTEAsset;
 use app\models\ApiModule;
 use app\models\ApiMenus;
-
 $menuData = ApiMenus::getMenuTree(1);
 AppAsset::register($this);
 ?>

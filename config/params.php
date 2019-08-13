@@ -23,6 +23,6 @@ return [
             'domain'=>'https://apiwx.klagri.com.cn/weather/v1/'
         ],
     ],
-    'email_address'=>'lz.apidoc.xunmall.com',
+    'email_address'=>'zheng.li-yz@kinglandgroup.com',
 
 ];

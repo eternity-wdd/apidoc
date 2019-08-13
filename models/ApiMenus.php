@@ -71,7 +71,6 @@ class ApiMenus extends \yii\db\ActiveRecord
 	               WHERE m.group=:group
 	               AND m.status=0
 	               ORDER BY `sort` asc, `id` asc";
-         
         $command = Yii::$app->db->createCommand($query, array(':group'=>$group));
         $data = $command->queryAll();
         $tmp = array();

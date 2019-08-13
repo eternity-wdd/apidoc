@@ -33,6 +33,7 @@ class HostsController extends Controller
      */
     public function actionIndex()
     {
+        $this->layout = "main1";
         $searchModel = new HostsSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
@@ -49,6 +50,7 @@ class HostsController extends Controller
      */
     public function actionView($id)
     {
+        $this->layout = "main1";
         return $this->render('view', [
             'model' => $this->findModel($id),
         ]);
@@ -61,6 +63,7 @@ class HostsController extends Controller
      */
     public function actionCreate()
     {
+        $this->layout = "main1";
         $model = new Hosts();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
@@ -79,6 +82,7 @@ class HostsController extends Controller
      */
     public function actionDeploy()
     {
+        $this->layout = "main1";
 	    $message = system("/bin/bash /www/apidoc/web/update_hosts.sh  > /dev/null 2>&1 &");
         echo '请刷新本页面后再返回';
         echo "<br>";
@@ -94,6 +98,7 @@ class HostsController extends Controller
      */
     public function actionUpdate($id)
     {
+        $this->layout = "main1";
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
@@ -113,6 +118,7 @@ class HostsController extends Controller
      */
     public function actionDelete($id)
     {
+        $this->layout = "main1";
         $this->findModel($id)->delete();
 
         return $this->redirect(['index']);

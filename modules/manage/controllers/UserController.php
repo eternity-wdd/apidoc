@@ -32,6 +32,7 @@ class UserController extends BaseController
      */
     public function actionIndex()
     {
+        $this->layout = "main1";
         $searchModel = new UserSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
@@ -48,6 +49,7 @@ class UserController extends BaseController
      */
     public function actionView($id)
     {
+        $this->layout = "main1";
         return $this->render('view', [
             'model' => $this->findModel($id),
         ]);
@@ -60,6 +62,7 @@ class UserController extends BaseController
      */
     public function actionCreate()
     {
+        $this->layout = "main1";
         $model = new User();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
@@ -79,6 +82,7 @@ class UserController extends BaseController
      */
     public function actionUpdate($id)
     {
+        $this->layout = "main1";
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
@@ -98,6 +102,7 @@ class UserController extends BaseController
      */
     public function actionDelete($id)
     {
+        $this->layout = "main1";
         $this->findModel($id)->delete();
 
         return $this->redirect(['index']);

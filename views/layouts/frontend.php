@@ -72,7 +72,7 @@ FrontendAsset::register($this);
 		<div class="y-row y-clear">
 			<ul class="y-left y-clear mynav">
 				<li class="y-left action">
-					<a href="<?= Url::toRoute('site/index')?>">接口中心</a>
+					<a href="<?= Url::toRoute('site/index')?>">应用研发中心</a>
 				</li>
 				<?php $modules = ApiModule::find()->all();?>
 				<?php foreach ($modules as $k=>$module):?>
@@ -82,7 +82,6 @@ FrontendAsset::register($this);
 				</li>
 				<?php } ?>
 				<?php endforeach;?>
-				
 				<div class="mylastli">
 				<?php foreach ($modules as $k=>$module):?>
 				<?php if($k>6){?>
@@ -95,7 +94,6 @@ FrontendAsset::register($this);
 				<!-- <li class="y-left">
 					<a href="">联系客服</a>
 				</li>  -->
-	   			
 			</ul>
 			<!-- <ul class="y-right y-clear">
 			    <li class="y-left">
@@ -112,10 +110,33 @@ FrontendAsset::register($this);
 					<a class="tab" href="">
 						<img src="/images/tool3.png">上云培训
 					</a>
-				</li>  -->
-		  
-			</ul>
+				</li>
+            </ul>-->
 	  	</div>
+        <div class="y-row y-clear">
+            <ul class="y-left y-clear mynav">
+                <li class="y-left action">
+                    <a href="<?= Url::toRoute('site/index')?>">数据中台</a>
+                </li>
+                <?php $modules = ApiModule::find()->all();?>
+                <?php foreach ($modules as $k=>$module):?>
+                    <?php if($k<=6){?>
+                        <li class="y-left">
+                            <a href="<?= Url::toRoute(['api/index', 'm'=>$module->name])?>"><?= $module->label?></a>
+                        </li>
+                    <?php } ?>
+                <?php endforeach;?>
+                <div class="mylastli">
+                    <?php foreach ($modules as $k=>$module):?>
+                        <?php if($k>6){?>
+                            <li class="">
+                                <a href="<?= Url::toRoute(['api/index', 'm'=>$module->name])?>"><?= $module->label?></a>
+                            </li>
+                        <?php } ?>
+                    <?php endforeach;?>
+                </div>
+            </ul>
+        </div>
 	</div>
 	<!--end help-tab-box-->
 	<div class="help-body y-row"><?= $content ?></div>

@@ -8,6 +8,9 @@ $config = [
         'manage' => [
             'class' => 'app\modules\manage\Module',
         ],
+        'admin' => [
+            'class' => 'app\modules\admin\Module',
+        ],
     ],
     'components' => [
         'QR' => [

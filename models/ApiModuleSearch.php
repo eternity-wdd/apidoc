@@ -8,7 +8,7 @@ use yii\data\ActiveDataProvider;
 use app\models\ApiModule;
 
 /**
- * ApiModuleSearch represents the model behind the search form about `app\models\ApiModule`.
+ * ApiServiceSearch represents the model behind the search form about `app\models\ApiService`.
  */
 class ApiModuleSearch extends ApiModule
 {

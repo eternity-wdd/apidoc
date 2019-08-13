@@ -47,8 +47,8 @@ class ApiModule extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'name' => Yii::t('app', 'Name'),
-            'label' => Yii::t('app', 'Label'),
+            'name' => Yii::t('app', 'Module Name'),
+            'label' => Yii::t('app', 'Module Label'),
             'domain' => Yii::t('app', 'Domain'),
         ];
     }
