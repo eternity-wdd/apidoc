@@ -19,7 +19,7 @@ class ApiDomainSearch extends ApiDomain
     {
         return [
             [['id'], 'integer'],
-            [['system_id', 'env', 'domain'], 'safe'],
+            [['system_id', 'name', 'env', 'domain'], 'safe'],
         ];
     }
 
@@ -61,6 +61,7 @@ class ApiDomainSearch extends ApiDomain
 
         $query->andFilterWhere(['like', 'system_id', $this->system_id])
             ->andFilterWhere(['like', 'env', $this->env])
+            ->andFilterWhere(['like', 'name', $this->domain])
             ->andFilterWhere(['like', 'domain', $this->domain]);
 
         return $dataProvider;

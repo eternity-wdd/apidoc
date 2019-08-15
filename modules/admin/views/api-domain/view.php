@@ -29,9 +29,11 @@ $this->params['breadcrumbs'][] = $model->system_id.' - '.$model->env;
         'model' => $model,
         'attributes' => [
             'id',
+            'name',
             'system_id',
             'env',
             'domain',
+            'type',
         ],
     ]) ?>
 

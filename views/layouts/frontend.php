@@ -53,15 +53,7 @@ FrontendAsset::register($this);
 					<a class="btn search-product-btn" href="javascript:;" style="display: none;">搜本产品</a>
 		    	</div>
 		    	<div class="hot-search">
-					<!-- <label>搜索热词：</label>
-					<ul class="y-clear">
-			 			<li class="y-left"><a href="">远程连接服务器</a></li>
-						<li class="y-left"><a href="">挂载数据盘</a></li>
-						<li class="y-left"><a href="">域名解析</a></li>
-						<li class="y-left"><a href="">ssd云盘</a></li>
-						<li class="y-left"><a href="">实名认证</a></li>
-						<li class="y-left"><a href="">忘记密码</a></li>    
-					</ul> -->
+
 		    	</div>
 		    	
 		 	</div>
@@ -91,38 +83,22 @@ FrontendAsset::register($this);
 				<?php } ?>
 				<?php endforeach;?>
 				</div>
-				<!-- <li class="y-left">
-					<a href="">联系客服</a>
-				</li>  -->
 			</ul>
-			<!-- <ul class="y-right y-clear">
-			    <li class="y-left">
-					<a class="tab" href="">
-						<img src="/images/tool1.png"/>开发者资源
-					</a>
-				</li>
-				<li class="y-left">
-					<a class="tab" href="">
-						<img src="/images/tool2.png">社区问答
-					</a>
-				</li>
-				<li class="y-left">
-					<a class="tab" href="">
-						<img src="/images/tool3.png">上云培训
-					</a>
-				</li>
-            </ul>-->
 	  	</div>
+
+	</div>
+
+    <div class="help-tab-box">
         <div class="y-row y-clear">
             <ul class="y-left y-clear mynav">
                 <li class="y-left action">
                     <a href="<?= Url::toRoute('site/index')?>">数据中台</a>
                 </li>
-                <?php $modules = ApiModule::find()->all();?>
+                <?php $modules = \app\modules\admin\models\ApiService::find()->all();?>
                 <?php foreach ($modules as $k=>$module):?>
                     <?php if($k<=6){?>
                         <li class="y-left">
-                            <a href="<?= Url::toRoute(['api/index', 'm'=>$module->name])?>"><?= $module->label?></a>
+                            <a href="<?= Url::toRoute(['dc-api/index', 'm'=>$module->name])?>"><?= $module->label?></a>
                         </li>
                     <?php } ?>
                 <?php endforeach;?>
@@ -130,21 +106,21 @@ FrontendAsset::register($this);
                     <?php foreach ($modules as $k=>$module):?>
                         <?php if($k>6){?>
                             <li class="">
-                                <a href="<?= Url::toRoute(['api/index', 'm'=>$module->name])?>"><?= $module->label?></a>
+                                <a href="<?= Url::toRoute(['dc-api/index', 'm'=>$module->name])?>"><?= $module->label?></a>
                             </li>
                         <?php } ?>
                     <?php endforeach;?>
                 </div>
             </ul>
         </div>
-	</div>
+    </div>
 	<!--end help-tab-box-->
 	<div class="help-body y-row"><?= $content ?></div>
 	<div id="guid-280222" class="aliyun-lego-www-common-register J_Module">
 		<div class="module-wrap J_tb_lazyload">
 			<div class="y-row" id="J_homePageRegister" style="display: block;">
 				<p style="border-top:0;padding:32px 0" class="y-align-center home-page-register">
-					<a target="_blank" href="<?= Url::toRoute(['member/signup'])?>" class="y-btn-blue">免费注册<!-- ，享新手礼包 --></a>
+					<a target="_blank" href="<?= Url::toRoute(['member/signup'])?>" class="y-btn-blue">免费注册</a>
 					<?php 
 					if (!Yii::$app->user->isGuest) { ?>
                         <a target="_blank" href="<?= Url::toRoute(['member/logout'])?>" class="y-btn-blue">用户注销</a>
@@ -162,14 +138,6 @@ FrontendAsset::register($this);
 		<div class="copyright-100 " data-spm="100">
 			<div data-spm="25" class="y-row copyright">
 			 	<p class="big">
-					<!-- <a href="" target="_blank">关于我们</a>
-						
-					<a href="" target="_blank">法律声明</a>
-						
-					<a href="" target="_blank">廉正举报</a>
-						
-					<a href="" target="_blank">友情链接</a> -->
-						
 				 </p>
 				 <p class="link-wrap">
 						
@@ -177,7 +145,7 @@ FrontendAsset::register($this);
 						
 				</p>
 				<p class="copyright">
-					CopyRight © 2019-2025 All rights reserved 李ICP备65501833号
+					CopyRight © 2019-2025 All rights reserved LICP备65501833号
 					<span>
 						 <a href="" target="_blank">
 							<img src="/images/huizhang.png" style="display:inline-block;width: 22px;">
