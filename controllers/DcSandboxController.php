@@ -69,7 +69,7 @@ class DcSandboxController extends \yii\web\Controller
         $html .= "<option>选择服务</option>";
         foreach ($res as $key => $val)
         {
-            $html .= "<option value='".$val['name']."' ";
+            $html .= "<option value='".$val['service_url']."' ";
             if($val['name'] == $old_service_id)
             {
                 $html .= 'select ';
@@ -77,6 +77,26 @@ class DcSandboxController extends \yii\web\Controller
             $html .= '>'.$val['label']." </option>";
         }
         $html .= "</select>";
+        return $html;
+    }
+    public function actionGetclientidhtml()
+    {
+        $params = $_POST;
+        $res = ApiClient::find()->select('client_id, secret')
+            ->where(['system_id'=> $params['system'],'env'=>$params['env'],'from'=>$params['client']])
+            ->asArray()->one();
+
+        $html = "<div>
+	<label>client_id：</label> 
+	<input type=\"text\" id='client_id' name=\"param[client_id]\" value=\"".$res['client_id']."\" />　(必填)
+	<span style=\"font-weight: bold\">（client_id）</span>
+</div>
+
+<div>
+	<label>client_secret：</label> 
+	<input type=\"text\" id=\"client_secret\" name=\"param[client_secret]\" value=\"".$res['secret']."\" />　(必填)
+	<span style=\"font-weight: bold\">（client_secret）</span>
+</div>";
         return $html;
     }
     public function actionGetclientid()
@@ -113,12 +133,53 @@ class DcSandboxController extends \yii\web\Controller
         $view = 'api/' . $api->module_id . '/' . str_replace('/', '_', $api->name);
         return $this->renderPartial($view);
     }
+    //获取前台显示的域名
+    public function actionGetdomain()
+    {
+        $params = $_POST;
+        $system = ApiDomain::find()->where(['system_id'=>$params['system'], 'env'=>$params['env']])->asArray()->all();
+        $domains = array_column($system,'domain');
+        $html = "<label>域名:</label>
+        <select style='height:30px; width: 200px; ' id=\"api-service-selector\" type=\"select\" name=\"domain\">";
+        $html .= "<option selected>选择domain</option>";
+        foreach ($domains as $key => $val)
+        {
+            if(isset($params['service']) && $params['service'])
+            {
+                $domains[$key] .= '/'.$params['service'];
+            }
+            $domains[$key] .= '/';
+
+            $html .= "<option value='".$domains[$key]."' ";
+            $html .= '>'.$domains[$key]." </option>";
+        }
+        $html .= "</select>";
+        return $html;
+//        $service = ApiDomain::find()->where(['system_id'=>$params['system'], 'env'=>$params['env']])->asArray()->one();
+
+    }
+
+    // 获取接口列表
+    public function actionGetapi()
+    {
+        $service = ApiService::find()->where(['service_url'=> $_POST['service_id']])->asArray()->one();
+        $res = Api::find()->where(['service_id'=> $service['name'],'publish'=>'1'])->orderBy(["priority"=>SORT_DESC])->asArray()->all();
+        $html = "<label>接口：</label>
+        <select id='api-selector' style='height: 30px; width: 200px' name='api_url'>
+            <option>选择测试接口</option>
+            ";
+        foreach ($res as $key => $val){
+            $html .= "<option value='".$val['id']."'>".$val['label']."</option>";
+        }
+        $html .= "</select>";
+        return $html;
+    }
 
     //ajax获取参数html
     public function actionGethtml()
     {
         $res = ApiParam::find()->where(['api_id'=> $_POST['zhi'],'out'=>'0'])->orderBy(["priority"=>SORT_DESC])->asArray()->all();
-        $url = Api::findOne($_POST['zhi']);
+        $url = Api::find()->where(['id'=> $_POST['zhi']])->asArray()->one();
         $html = "";
         $html.='<div><label>'.'URL'.'：</label> <input type="text" readonly="true" value="'.$url['name'].'" /></div>';
         foreach($res as $k=>$v){
@@ -197,12 +258,8 @@ class DcSandboxController extends \yii\web\Controller
             $domain = $domain.'/'.$service_id;
         }
         $domain .= '/'.$api['name'];
-
         $data =  \Yii::$app->request->post('param');
-        if($api['method'] == 1)
-        {
-            $method = 'post';
-        }elseif($api['method'] == 2)
+        if($api['method'] == 2)
         {
             $method = 'get';
         }else
@@ -212,7 +269,19 @@ class DcSandboxController extends \yii\web\Controller
 
 //        echo "<pre>";print_r(\Yii::$app->params['api'][$api->module_id]);exit();
 //        $ret = NetworkHelper::makeRequest(\Yii::$app->params['api'][$api->module_id]['domain'].'/'.$api->name, $data);//替换为响应式
-        $ret = BaseData::makeRequest($domain, $data, $cookie , $method, $protocol);
+
+        if($system_id != 'AUTH_WEB001')
+        {
+            $client_id = ApiClient::find()->where(['system_id'=>$system_id, 'from'=>\Yii::$app->request->post('app_id'), 'env'=>$env])->asArray()->one();
+//            $secret = \Yii::$app->request->post('secret');
+            $aHeader = array('Content-Type: application/json;charset=UTF-8','clientId: '.$client_id['client_id']);
+            $type=1;
+        }else
+        {
+            $aHeader = array('Expect:');
+            $type = 0;
+        }
+        $ret = BaseData::makeRequest($domain, $data, $cookie , $method, $protocol, $type, $aHeader);
         //(\Yii::$app->params['api'][$api->module_id]['domain'], $data)
         echo '<br /><br />返回结果：<br /><br /><pre>'.$ret['msg'].'</pre>';
         echo '<h2>1、 构造源串</h2>';

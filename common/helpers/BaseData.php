@@ -19,12 +19,16 @@ class BaseData
      * @param string	$protocol http协议类型 http / https
      * @return array 结果数组
      */
-    static public function makeRequest($url, $params, $cookie = '', $method='post', $protocol='http')
+    static public function makeRequest($url, $params, $cookie = '', $method='post', $protocol='http', $type=0, $aHeader=array('Expect:'))
     {
 //        file_put_contents("d:/lizheng.log", "\n\n".print_r($url, true),8);
 //        file_put_contents("d:/lizheng.log", "\n\n".print_r($params, true),8);
 //        file_put_contents("d:/lizheng.log", "\n\n".print_r($method, true),8);
 //        file_put_contents("d:/lizheng.log", "\n\n".print_r($protocol, true),8);
+        if($type)
+        {
+            $params = json_encode($params, true);
+        }
         $query_string = self::makeQueryString($params);
         $cookie_string = self::makeCookieString($cookie);
         $ch = curl_init();
@@ -38,12 +42,16 @@ class BaseData
             curl_setopt($ch, CURLOPT_POST, 1);
             curl_setopt($ch, CURLOPT_POSTFIELDS, $query_string);
         }
-        curl_setopt($ch, CURLOPT_HEADER, false);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 3);
+//        curl_setopt($ch, CURLOPT_HEADER, true);  // 获取返回的header
+        curl_setopt($ch, CURLOPT_HTTPHEADER, $aHeader);
+//        curl_setopt($ch, CURLINFO_HEADER_OUT, TRUE );
+        curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 10);
+
+
 
         // disable 100-continue
-        curl_setopt($ch, CURLOPT_HTTPHEADER, array('Expect:'));
+//        curl_setopt($ch, CURLOPT_HTTPHEADER, array('Expect:'));
 
         if (!empty($cookie_string))
         {
@@ -58,6 +66,8 @@ class BaseData
         $gf = curl_getinfo($ch);
 //        file_put_contents("d:/lizheng.log", "\n\n".print_r($gf, true),8);
         $ret = curl_exec($ch);
+//        $request_header = curl_getinfo( $ch, CURLINFO_HEADER_OUT);
+//        file_put_contents("d:/lizheng.log", "\n\n".print_r($request_header, true));
         $err = curl_error($ch);
 
         if (false === $ret || !empty($err))

@@ -94,22 +94,15 @@ JQueryFormAsset::register($this, View::POS_READY);
     <div id = 'api-env'>
         <label>环境配置:</label>
         <select id="api-env-selector" name="env">
-            <option>选择环境</option>
+            <option selected>选择环境</option>
             <option value="dev" >env</option>
             <option value="online" >online</option>
         </select>
     </div>
-<!--    <div id="account-info">-->
-<!--        <div>-->
-<!--            <label>TOKEN:</label>-->
-<!--            <input type="text" name="param[access_token]" value="" />-->
-<!--        </div>-->
-<!--    </div>-->
-    <div>
+    <div id = 'api-domain'>
+    </div>
+    <div id = 'api-list'>
     	<input type="hidden" name="m_id" value="<?php echo $_GET['id']?>"/>
-<!--        <div id="http"><label>协议名称：</label>  <input type="text" name="http" placeholder="比如: https://," value="http://" />&nbsp;&nbsp;&nbsp;(非必填)</div>-->
-<!--        <div id="env"><label>域名前缀：</label>  <input type="text" name="env" placeholder="比如: dev-" value="" />&nbsp;&nbsp;&nbsp;(非必填)</div>-->
-<!--        <div id="host"><label>域名：</label>  <input type="text" name="domain" readonly="true" value=--><?//= $apis[0]['domain']; ?><!-- />&nbsp;&nbsp;&nbsp;(生产地址)</div>-->
         <label>接口：</label>
         <select id="api-selector" name="api_url">
             <option>选择测试接口</option>
@@ -139,7 +132,6 @@ JQueryFormAsset::register($this, View::POS_READY);
             ?>
         </div>
     <div id = "params">
-
     </div>
     </div>
     <div><input class="btn btn-primary" type="button" onclick="formSubmit()" value="测试"/></div>
@@ -165,17 +157,19 @@ function domReady()
 //  		$('#api-selector').trigger("change");
 //  	 }
 
- 	$('body').on("myEvent", function(){ 
+ 	$('body').on("myEvent", function(){
  		$('#api-selector').trigger("change");
 	});
 	$('body').trigger("myEvent");
 
 	var a = $('#api-selector').val();
+    // var system = $('#api-system-selector').val();
+    // var service = $('#api-service-selector').val();
 	if(a){
 			$.ajax({
 				   type: "POST",
 				   url: "<?= Url::toRoute('dc-sandbox/gethtml')?>",
-				   data:{"zhi":a, "system":system, "service":service},
+				   data:{"zhi":a},
 				   dataType: "html",
 				   error:function(data){
 		            	alert('有误');
@@ -193,54 +187,76 @@ function domReady()
 		var a= $(this).val();
 
 		$.ajax({
-			   type: "POST",
-			   url: "<?= Url::toRoute('dc-sandbox/gethtml')?>",
-                data:{"zhi":a},
-			   dataType: "html",
-			   error:function(data){
-	            	alert('有误');
-	            },
-			   success: function(response){
-			       $('#params').html();
-				   $('#params').html(response);
-			   }
-			});
+            type: "POST",
+            url: "<?= Url::toRoute('dc-sandbox/gethtml')?>",
+            data:{"zhi":a},
+            dataType: "html",
+           error:function(data){
+                alert('有误');
+           },
+           success: function(response){
+               $('#params').html();
+               $('#params').html(response);
+           }
+        });
 	})
+
     $('#api-system-selector').change(function(){
+        $('#params').empty();
+        $('#api-domain').empty();
+        $('#system-auth').empty();
+        $('#api-env').empty();
+        $("#api-env").html("<label>环境配置:</label>" +
+            "<select style='margin-left:4px; height: 30px; width: 200px' id=\"api-env-selector\" name=\"env\">" +
+            "<option selected>选择环境</option>\n" +
+            "            <option value=\"dev\" >env</option>\n" +
+            "            <option value=\"online\" >online</option>" +
+            "</select>");
         var system= $(this).val();
         var old_service_id = $('#old-service-id').val();
         var service_id = $('#api-system-selector').val();
+        $('#api-env-selector').change(function () {
 
-        if(system != 'AUTH_WEB001')
-        {
-            $('#system-auth').empty();
-        }else
-        {
+            var system = $('#api-system-selector').val();
+            var service = $('#api-service-selector').val();
             var client = $('#api-client-selector').val();
-            var env = $('#api-env-selector').val();
-            $('#system-auth').empty();
-            if(client && env)
+            var env = $(this).val();
+            if(!system || (!service && system != 'AUTH_WEB001') || client=='选择应用')
             {
-                // TODO 重新选择client_id
+                alert("请填写正确的配置！")
+                return false;
+            }
+            if(system == 'AUTH_WEB001')
+            {
                 $.ajax({
                     type: "POST",
-                    url: "<?= Url::toRoute('dc-sandbox/getclientid')?>",
-                    data:{"system":system,"service":service_id, "client":client, "env":env},
-                    dataType: "Json",
+                    url: "<?= Url::toRoute('dc-sandbox/getclientidhtml')?>",
+                    data:{"system":system,"service":service, "client":client, "env":env},
+                    dataType: "html",
                     error:function(response){
-                        alert('有误:getclientid');
+                        alert('有误:getclientid22');
                     },
                     success: function(response){
-                        // $("#client_id").val();
-                        // $("#client_secret").val(response.secret);
-                        $('#system-auth').html("<div id='api-client-id'>\n        <label>client_id:</label>\n        <input type=\"text\" id='client_id' name=\"client_id\" value="+response.client_id+" />\n    </div>\n    <div id='api-client-secret'>\n        <label>client_secret:</label>\n        <input type=\"text\" id='client_secret' name=\"client_secret\" value="+response.secret+" />\n    </div>");
+                        $("#system-auth").html(response);
                     }
                 });
-            }else
-            {
-                $('#system-auth').html("<div id='api-client-id'>\n        <label>client_id:</label>\n        <input type=\"text\" id='client_id' name=\"client_id\" value=\"请确认配置\" />\n    </div>\n    <div id='api-client-secret'>\n        <label>client_secret:</label>\n        <input type=\"text\" id='client_secret' name=\"client_secret\" value=\"请确认配置\" />\n    </div>");
             }
-        }
+            // 域名
+            $.ajax({
+                type: "POST",
+                url: "<?= Url::toRoute('dc-sandbox/getdomain')?>",
+                data:{"system":system,"service":service, "client":client, "env":env},
+                dataType: "text",
+                error:function(response){
+                    alert('有误:getdomain');
+                },
+                success: function(response){
+                    $('#api-domain').html(response);
+                }
+            });
+
+        });
+
         $.ajax({
             type: "POST",
             url: "<?= Url::toRoute('dc-sandbox/gettype')?>",
@@ -266,21 +282,58 @@ function domReady()
             success: function(response){
                 $('#api-service').empty();
                 $('#api-service').html(response);
+                $('#api-service-selector').change(function () {
+                    var service_id = $(this).val();
+
+                    $.ajax({
+                        type: "POST",
+                        url: "<?= Url::toRoute('dc-sandbox/getapi')?>",
+                        data:{"service_id":service_id},
+                        dataType: "html",
+                        error:function(data){
+                            alert('有误apilist');
+                        },
+                        success: function(response){
+                            $('#api-list').empty();
+                            $('#api-list').html(response);
+                            $('#api-selector').change(function(){
+
+                                var api_a= $(this).val();
+
+                                $.ajax({
+                                    type: "POST",
+                                    url: "<?= Url::toRoute('dc-sandbox/gethtml')?>",
+                                    data:{"zhi":api_a},
+                                    dataType: "html",
+                                    error:function(data){
+                                        alert('有误');
+                                    },
+                                    success: function(response){
+                                        $('#params').html();
+                                        $('#params').html(response);
+                                    }
+                                });
+                            })
+                        }
+                    });
+                });
             }
         });
     })
+
 	$('#api-env-selector').change(function () {
+
         var system = $('#api-system-selector').val();
         var service = $('#api-service-selector').val();
         var client = $('#api-client-selector').val();
-        if(!system || !client)
+        var env = $(this).val();
+        if(!system || (!service && system != 'AUTH_WEB001') || client=='选择应用')
         {
             alert("请填写正确的配置！")
             return false;
         }
         if(system == 'AUTH_WEB001')
         {
-            var env = $(this).val();
             $.ajax({
                 type: "POST",
                 url: "<?= Url::toRoute('dc-sandbox/getclientid')?>",
@@ -290,14 +343,50 @@ function domReady()
                     alert('有误:getclientid');
                 },
                 success: function(response){
-                    $("#client_id").val(response.client_id);
-                    $("#client_secret").val(response.secret);
+                    if(response.client_id)
+                    {
+                        $("#client_id").val(response.client_id);
+                        $("#client_secret").val(response.secret);
+                    }else
+                    {
+                        $("#system-auth").html(response)
+                    }
+
                 }
             });
         }
+        // 域名
+        $.ajax({
+            type: "POST",
+            url: "<?= Url::toRoute('dc-sandbox/getdomain')?>",
+            data:{"system":system,"service":service, "client":client, "env":env},
+            dataType: "text",
+            error:function(response){
+                alert('有误:getdomain');
+            },
+            success: function(response){
+                $('#api-domain').html(response);
+            }
+        });
 
     });
-	
+
+	$('#api-service-selector').change(function () {
+        var service_id = $(this).val();
+        $.ajax({
+            type: "POST",
+            url: "<?= Url::toRoute('dc-sandbox/getapi')?>",
+            data:{"service_id":service_id},
+            dataType: "html",
+            error:function(data){
+                alert('有误apilist');
+            },
+            success: function(response){
+                $('#api-list').empty();
+                $('#api-list').html(response);
+            }
+        });
+    });
 }
 
 function apiSelect(obj)
