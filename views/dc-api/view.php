@@ -115,6 +115,20 @@ table tr:nth-child(even) {
 		</table>
 		
 		<h3> <span class="mw-headline">响应数据</span></h3>
+        <?php
+        if($system_id == 'AUTH_WEB001')
+        {
+           ?>
+            <tr class="default-data_row" style="border-top: #cbddf3 solid 3px;">
+                <td class="text-center"> <b>错误类型列表</b></td>
+                <td class="text-center" style="font-style: italic"> Array</td>
+                <td class="text-center">  <b>错误信息</b></td>
+                <td> 接口返回的错误信息，错误码对照表参考<a href="<?=Url::to('errcode')?>">错误列表</a>。</td>
+            </tr>
+        <?php
+        }
+        ?>
+
 		<table class="t">
 			<tbody>
 				<tr>
@@ -123,24 +137,36 @@ table tr:nth-child(even) {
                     <th width="20%"><b>参数说明</b></th>
 					<th><b>详细描述</b></th>
 				</tr>
-				<tr class="default-data_row">
-					<td class="text-center"> <b>code</b></td>
-                    <td class="text-center" style="font-style: italic"> int </td>
-                    <td class="text-center"> <b>状态返回码</b> </td>
-					<td> 返回码。详见<a href="<?=Url::to('code')?>" title="公共返回码说明">公共返回码说明#OpenAPI V3.0 返回码</a>。</td>
-				</tr>
-                <tr class="default-data_row">
-                    <td class="text-center"> <b>msg</b></td>
-                    <td class="text-center" style="font-style: italic"> string</td>
-                    <td class="text-center"> <b>接口返回消息</b></td>
-                    <td> 接口返回消息</td>
-                </tr>
-                <tr class="default-data_row" style="border-bottom: #cbddf3 solid 3px;">
-                    <td class="text-center"> <b>data</b></td>
-                    <td class="text-center" style="font-style: italic"> array</td>
-                    <td class="text-center">  <b>接口返回数据</b></td>
-                    <td> 接口返回数据，包含以下所有字段，数据结构见下方<a href="#return_example">返回示例</a>。</td>
-                </tr>
+                <?php
+                    if($system_id != 'AUTH_WEB001')
+                    { ?>
+                        <tr class="default-data_row">
+                            <td class="text-center"> <b>status</b></td>
+                            <td class="text-center" style="font-style: italic"> string </td>
+                            <td class="text-center"> <b>调用返回码</b> </td>
+                            <td> SUCCESS/ERROR。</td>
+                        </tr>
+                        <tr class="default-data_row">
+                            <td class="text-center"> <b>status_code</b></td>
+                            <td class="text-center" style="font-style: italic"> int </td>
+                            <td class="text-center"> <b>状态返回码</b> </td>
+                            <td> 返回码。详见<a href="<?=Url::to('code')?>" title="公共返回码说明">公共返回码说明#OpenAPI V3.0 返回码</a>。</td>
+                        </tr>
+                        <tr class="default-data_row">
+                            <td class="text-center"> <b>msg</b></td>
+                            <td class="text-center" style="font-style: italic"> string</td>
+                            <td class="text-center"> <b>状态信息</b></td>
+                            <td> 接口返回消息</td>
+                        </tr>
+                        <tr class="default-data_row" style="border-bottom: #cbddf3 solid 3px;">
+                            <td class="text-center"> <b>data</b></td>
+                            <td class="text-center" style="font-style: italic"> array</td>
+                            <td class="text-center">  <b>接口返回数据</b></td>
+                            <td> 接口返回数据，包含以下所有字段，数据结构见下方<a href="#return_example">返回示例</a>。</td>
+                        </tr>
+                 <?php   }
+
+                ?>
 				<?php foreach ($api->outputParams as $param):?>
 				<tr>
 					<td class="text-center">  <b><?= $param->name?></b></td>

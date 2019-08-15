@@ -3,6 +3,9 @@
 namespace app\controllers;
 
 use app\modules\admin\models\Api;
+use app\modules\admin\models\ApiCode;
+use app\modules\admin\models\ApiErrcode;
+use app\modules\admin\models\ApiService;
 use Yii;
 use app\controllers\DefaultController;
 use yii\web\Controller;
@@ -46,16 +49,25 @@ class DcApiController extends BaseController
     public function actionView()
     {
         $api = Api::findOne(\Yii::$app->request->get('id'));
-//        echo "<pre>";var_dump($api);exit;
+
+        $service_id = $api['service_id'];
+        $service = ApiService::find()->where(['name'=>$service_id])->asArray()->one();
+//        echo "<pre>";var_dump($service);exit;
         return $this->render('view', [
             'api'=>$api,
+            'system_id'=>$service['system_id'],
         ]);
     }
     public function actionCode()
     {
         $code = ApiCode::find()->all();
-    
         return $this->render('code', ['code'=>$code]);
+    }
+
+    public function actionErrcode()
+    {
+        $code = ApiErrcode::find()->all();
+        return $this->render('errcode', ['code'=>$code]);
     }
     
     public function actionPublic(){
