@@ -104,7 +104,6 @@ class ApiClientController extends Controller
     {
         $this->layout = "main1";
         $this->findModel($id)->delete();
-
         return $this->redirect(['index']);
     }
 

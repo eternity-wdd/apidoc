@@ -151,7 +151,7 @@ class SandboxController extends \yii\web\Controller
 
         if($api['need_login'] != 1)
         {
-            unset($data['access_token']);
+//            unset($data['access_token']);
         }
         $data['t'] = (string)floor(microtime(true)*1000);
         ksort($data);
