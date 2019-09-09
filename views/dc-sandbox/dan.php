@@ -209,7 +209,7 @@ function domReady()
         $("#api-env").html("<label>环境配置:</label>" +
             "<select style='margin-left:4px; height: 30px; width: 200px' id=\"api-env-selector\" name=\"env\">" +
             "<option selected>选择环境</option>\n" +
-            "            <option value=\"dev\" >env</option>\n" +
+            "            <option value=\"dev\" >dev</option>\n" +
             "            <option value=\"online\" >online</option>" +
             "</select>");
         var system= $(this).val();
