@@ -95,7 +95,7 @@ JQueryFormAsset::register($this, View::POS_READY);
         <label>环境配置:</label>
         <select id="api-env-selector" name="env">
             <option selected>选择环境</option>
-            <option value="dev" >env</option>
+            <option value="dev" >dev</option>
             <option value="online" >online</option>
         </select>
     </div>
