@@ -11,7 +11,7 @@
  Target Server Version : 50726
  File Encoding         : 65001
 
- Date: 15/08/2019 16:56:04
+ Date: 09/09/2019 15:30:16
 */
 
 SET NAMES utf8mb4;
@@ -38,14 +38,17 @@ CREATE TABLE `dc_api`  (
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `module`(`service_id`) USING BTREE,
   CONSTRAINT `dc_api_ibfk_1` FOREIGN KEY (`service_id`) REFERENCES `dc_api_service` (`name`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE = InnoDB AUTO_INCREMENT = 6 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 11 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of dc_api
 -- ----------------------------
-INSERT INTO `dc_api` VALUES (1, 'apidoc/test', 'apidoc文档测试', 'auth', 1, 1, 1, 8, 50, 'apidoc文档测试', NULL, 'success\r\ncode\r\nmsg', 'aaaaaaaaaaaaaaa');
-INSERT INTO `dc_api` VALUES (2, 'oauth/token', '单点-获取token（移动端）', 'auth', 1, 1, 1, 23, 50, '通过用户名密码获取token', NULL, '{\r\n    \"access_token\": \"d8f7b312-aea3-44d0-b0be-2b650cc4653f\",\r\n    \"token_type\": \"bearer\",\r\n    \"refresh_token\": \"f969b081-3b7e-402b-b499-5c0cf7110a36\",\r\n    \"expires_in\": 3599,\r\n    \"scope\": \"app\"\r\n}', 'http://172.168.50.231/oauth/token\r\n\r\nclient_id:cidJLPLATFormJKDFDkTlFGV0dfFORFJPSTRmNDgFDFJTdYUEzOdfGVjZ=\r\nclient_secret:4PXKUnLRttsm3cOER\r\ngrant_type:password\r\nscope:app\r\nusername:admin\r\npassword:88888888\r\nauth_type:user\r\nvc_code:5321');
+INSERT INTO `dc_api` VALUES (2, 'oauth/token', '单点-获取token（移动端）', 'SSO', 1, 1, 1, 23, 50, '通过用户名密码获取token', NULL, '{\r\n    \"access_token\": \"d8f7b312-aea3-44d0-b0be-2b650cc4653f\",\r\n    \"token_type\": \"bearer\",\r\n    \"refresh_token\": \"f969b081-3b7e-402b-b499-5c0cf7110a36\",\r\n    \"expires_in\": 3599,\r\n    \"scope\": \"app\"\r\n}', 'http://172.168.50.231/oauth/token\r\n\r\nclient_id:cidJLPLATFormJKDFDkTlFGV0dfFORFJPSTRmNDgFDFJTdYUEzOdfGVjZ=\r\nclient_secret:4PXKUnLRttsm3cOER\r\ngrant_type:password\r\nscope:app\r\nusername:admin\r\npassword:88888888\r\nauth_type:user\r\nvc_code:5321');
 INSERT INTO `dc_api` VALUES (5, 'user/selectUserDetailByUserName', '通过用户名获取用户信息', 'user', 1, 1, 1, 2, 50, '通过用户名获取用户信息', NULL, '', '');
+INSERT INTO `dc_api` VALUES (6, 'oauth/authorize', '单点 - 获取code授权码', 'SSO', 1, 1, 3, 0, 50, '获取code授权码', NULL, '', 'https://auth.klagri.com.cn/oauth/authorize?client_id=xxx&client_secret=xxx&response_type=code&scope=app&redirect_uri=http://xxxxxx；');
+INSERT INTO `dc_api` VALUES (7, 'oauth/token', '单点-通过code获取token', 'SSO', 1, 1, 1, 0, 50, '通过授权码获取token', NULL, '{\r\n\"access_token\": \"xxxxxxx\",\r\n\"token_type\": \"bearer\",\r\n\"refresh_token\": \"xxxxx\",\r\n\"expires_in\": 3599,\r\n\"scope\": \"app\"\r\n}\r\n', 'client_id=xxx\r\nclient_secret=xxxx\r\ngrant_type=authorization_code\r\nredirect_url=xxxxx\r\n\r\ncode:xxxxxx\r\n');
+INSERT INTO `dc_api` VALUES (9, 'user/me', '用户身份凭证端点', 'auth', 1, 1, 1, 8, 50, '通过token获取用户名', NULL, '{\r\n\"password\": null,\r\n\"username\": \"xxxxx\",\r\n\"authorities\": [],\r\n\"accountNonExpired\": true,\r\n\"accountNonLocked\": true,\r\n\"credentialsNonExpired\": true,\r\n\"enabled\": true\r\n}\r\n', 'access_token=xxxx');
+INSERT INTO `dc_api` VALUES (10, 'permitAll /logout', '单点-注销登录', 'SSO', 1, 1, 2, 0, 50, '注销登录', NULL, '', 'http://172.168.50.231/ permitAll /logout?from=YZYP_WEB001');
 
 -- ----------------------------
 -- Table structure for dc_api_client
@@ -63,7 +66,7 @@ CREATE TABLE `dc_api_client`  (
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `platform`(`system_id`) USING BTREE,
   INDEX `index_from`(`from`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 7 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 8 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of dc_api_client
@@ -72,6 +75,7 @@ INSERT INTO `dc_api_client` VALUES (1, '设施管理平台', 'cidJLPLATFormY2lkU
 INSERT INTO `dc_api_client` VALUES (2, '设施管理平台', 'cidJLPLATFormJKDFDkTlFGV0dfFORFJPSTRmNDgFDFJTdYUEzOdfGVjZ=', '4PXKUnLRttsm3cOER', 1, 'AUTH_WEB001', 'dev', 'SSNY_WEB001');
 INSERT INTO `dc_api_client` VALUES (4, '设施管理平台', 'cidSSNYWEB001Y2lkU1NOWVdFQjAwMTg5NDNlOTg4ZGViZGFlNDQ0NmNiZDg=', '4PXKUnLRttsm3cOER', 1, 'SERVER_WEB001', 'online', 'SSNY_WEB001');
 INSERT INTO `dc_api_client` VALUES (5, '设施管理平台', 'cidtest000000Y2lkdGVzdDAwMDAwMDQ3NDRhMDhjMjMyZTU4ZTQ0MjEwYzk=', '4PXKUnLRttsm3cOER', 1, 'SERVER_WEB001', 'dev', 'SSNY_WEB001');
+INSERT INTO `dc_api_client` VALUES (7, '云智网盘', 'cidJLPLATFormJKDFDkTlFGV0dfFORFJPSTRmNDgFDFJTdYUEzOdfGVjZ=', '4PXKUnLRttsm3cOER', 1, 'AUTH_WEB001', 'dev', 'YZYP_WEB001');
 
 -- ----------------------------
 -- Table structure for dc_api_code
@@ -190,15 +194,11 @@ CREATE TABLE `dc_api_params`  (
   INDEX `pt_id`(`pt_id`) USING BTREE,
   CONSTRAINT `dc_api_params_ibfk_1` FOREIGN KEY (`api_id`) REFERENCES `dc_api` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `dc_api_params_ibfk_2` FOREIGN KEY (`pt_id`) REFERENCES `dc_api_param_type` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE = InnoDB AUTO_INCREMENT = 68 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 118 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of dc_api_params
 -- ----------------------------
-INSERT INTO `dc_api_params` VALUES (9, 1, 'qqqqq', 'sss', 1, 1, 0, 'sss', 5, 1, '大大', '0');
-INSERT INTO `dc_api_params` VALUES (10, 1, 'sdfsdf', 'sdffs', 1, 1, 0, 'sdf', 5, 1, 'fssdffsdf', '0');
-INSERT INTO `dc_api_params` VALUES (11, 1, '23423', '4234', 1, 1, 1, '2342', 5, 0, '', '');
-INSERT INTO `dc_api_params` VALUES (12, 1, 'sdfsdfsdf', 'sdfsdf', 1, 1, 1, 'sdf', 5, 0, '', '');
 INSERT INTO `dc_api_params` VALUES (35, 2, 'grant_type', '授权类型', 1, 1, 0, '固定password', 5, 1, 'password', '0');
 INSERT INTO `dc_api_params` VALUES (36, 2, 'scope', '访问方位', 1, 1, 0, '固定app', 5, 1, 'app', '0');
 INSERT INTO `dc_api_params` VALUES (37, 2, 'username', '用户名', 1, 1, 0, '用户名', 5, 1, 'admin', '0');
@@ -211,6 +211,25 @@ INSERT INTO `dc_api_params` VALUES (43, 2, 'refresh_token', 'Refresh token,默�
 INSERT INTO `dc_api_params` VALUES (44, 2, 'expires_in', 'token有效时间，默认有效时间为3600秒', 1, 1, 1, 'token有效时间，默认有效时间为3600秒', 5, 0, '', '');
 INSERT INTO `dc_api_params` VALUES (45, 2, 'scope', '授权范围', 1, 1, 1, '授权范围', 5, 0, '', '');
 INSERT INTO `dc_api_params` VALUES (67, 5, 'username', '用户名', 1, 1, 0, '用户名', 5, 1, 'admin', '0');
+INSERT INTO `dc_api_params` VALUES (97, 9, 'access_token', 'Token值', 1, 1, 0, 'Token值', 5, 1, '请登录获取token值', '0');
+INSERT INTO `dc_api_params` VALUES (98, 9, 'password', '用户密码', 1, 1, 1, '用户密码，固定为null', 5, 0, '', '');
+INSERT INTO `dc_api_params` VALUES (99, 9, 'username', '身份凭证', 1, 1, 1, '身份凭证，（用户名）', 5, 0, '', '');
+INSERT INTO `dc_api_params` VALUES (100, 9, 'authorities', '权限信息', 1, 1, 1, '权限信息，固定为空', 5, 0, '', '');
+INSERT INTO `dc_api_params` VALUES (101, 9, 'accountNonExpired', '未知', 1, 1, 1, '未知', 5, 0, '', '');
+INSERT INTO `dc_api_params` VALUES (102, 9, 'accountNonLocked', '未知', 1, 1, 1, '未知', 5, 0, '', '');
+INSERT INTO `dc_api_params` VALUES (103, 9, 'credentialsNonExpired', '未知', 1, 1, 1, '未知', 5, 0, '', '');
+INSERT INTO `dc_api_params` VALUES (104, 9, 'enabled', '账户是否有效', 1, 1, 1, '账户是否有效', 5, 0, '', '');
+INSERT INTO `dc_api_params` VALUES (107, 6, 'response_type', '响应类型', 1, 1, 0, '响应类型', 5, 1, 'code', '0');
+INSERT INTO `dc_api_params` VALUES (108, 6, 'redirect_uri', '回调地址', 1, 1, 0, '回调地址', 5, 1, 'baidu.com', '0');
+INSERT INTO `dc_api_params` VALUES (109, 7, 'grant_type', '授权类型', 1, 1, 0, '授权类型，固定authorization_code', 5, 1, 'authorization_code', '0');
+INSERT INTO `dc_api_params` VALUES (110, 7, 'redirect_url', '回调地址', 1, 1, 0, '业务系统接受验证服务回调的路径,必须和访问authorize端点的参数一致', 5, 1, 'http://baidu.com', '0');
+INSERT INTO `dc_api_params` VALUES (111, 7, 'code', '授权码', 1, 1, 0, '访问authorize端点后得到的授权码', 5, 1, '5F2Vjk', '0');
+INSERT INTO `dc_api_params` VALUES (112, 7, 'access_token', 'Token值', 1, 1, 1, 'Token值', 5, 0, '', '');
+INSERT INTO `dc_api_params` VALUES (113, 7, 'token_type', 'Token类型', 1, 1, 1, 'Token类型', 5, 0, '', '');
+INSERT INTO `dc_api_params` VALUES (114, 7, 'refresh_token', 'Refresh token,默认有效时间24小时', 1, 1, 1, 'Refresh token,默认有效时间24小时', 5, 0, '', '');
+INSERT INTO `dc_api_params` VALUES (115, 7, 'expires_in', 'token有效时间，默认有效时间为7200秒（2小时）', 1, 1, 1, 'token有效时间，默认有效时间为7200秒（2小时）', 5, 0, '', '');
+INSERT INTO `dc_api_params` VALUES (116, 7, 'scope', '授权范围', 1, 1, 1, '授权范围', 5, 0, '', '');
+INSERT INTO `dc_api_params` VALUES (117, 10, 'from', '系统来源', 1, 1, 0, '系统来源，与登录时一致', 5, 1, 'YZYP_WEB001', '0');
 
 -- ----------------------------
 -- Table structure for dc_api_public
@@ -228,15 +247,7 @@ CREATE TABLE `dc_api_public`  (
 -- ----------------------------
 -- Records of dc_api_public
 -- ----------------------------
-INSERT INTO `dc_api_public` VALUES (1, 'appid', '必须', 'unsigned int', '应用的唯一ID。（由于目前未使用API开放平台的结构模式，暂不启用）');
-INSERT INTO `dc_api_public` VALUES (2, 'secret', '必须', 'unsigned int', '应用秘钥。（由于目前未使用API开放平台的结构模式，暂不启用）');
-INSERT INTO `dc_api_public` VALUES (3, 's', '否', 'string', '请求串的签名。（首先剔除非签名参数，所有参数从小到大排序，通过 ‘&’ 拼接，md5生成签名）');
-INSERT INTO `dc_api_public` VALUES (4, 't', '必须', 'unsigned int', '请求时间戳，平台会验证此时间戳与服务器时间的差值，如果超过1秒，就会返回-21错误码。');
-INSERT INTO `dc_api_public` VALUES (5, 'f', '必须', 'unsigned int', '1：Android\r\n2：IOS\r\n，3：Web，4：小程序， 5：H5');
-INSERT INTO `dc_api_public` VALUES (6, 'v', '必须', 'string', '版本号（主要针对移动端，做版本隔离）');
-INSERT INTO `dc_api_public` VALUES (7, 'api', '否', 'string', '接口名称.  格式为 login/login ');
-INSERT INTO `dc_api_public` VALUES (8, 'uid', '否', 'unsigned int', '用户ID。使用token验证的接口无需传入用户ID');
-INSERT INTO `dc_api_public` VALUES (9, 'token', '必须（除登录接口）', 'unsigned int', '用户登录验证令牌。');
+INSERT INTO `dc_api_public` VALUES (1, '暂无', '暂无', 'string', '暂无');
 
 -- ----------------------------
 -- Table structure for dc_api_service
@@ -253,7 +264,8 @@ CREATE TABLE `dc_api_service`  (
 -- ----------------------------
 -- Records of dc_api_service
 -- ----------------------------
-INSERT INTO `dc_api_service` VALUES ('auth', '认证服务', '', 'AUTH_WEB001');
+INSERT INTO `dc_api_service` VALUES ('auth', '认证服务', 'api/auth', 'SERVER_WEB001');
+INSERT INTO `dc_api_service` VALUES ('SSO', '单点登录', '', 'AUTH_WEB001');
 INSERT INTO `dc_api_service` VALUES ('user', '用户服务', 'api/user', 'SERVER_WEB001');
 
 -- ----------------------------
