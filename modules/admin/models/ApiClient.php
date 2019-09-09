@@ -15,9 +15,6 @@ use Yii;
  * @property string $system_id
  * @property string $env
  * @property string $from
- *
- * @property App $from0
- * @property DcApiService $system
  */
 class ApiClient extends \yii\db\ActiveRecord
 {
@@ -35,8 +32,8 @@ class ApiClient extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['id', 'client_id', 'secret', 'system_id'], 'required'],
-            [['id', 'status'], 'integer'],
+            [['client_id', 'secret', 'system_id'], 'required'],
+            [['status'], 'integer'],
             [['name', 'client_id'], 'string', 'max' => 64],
             [['secret'], 'string', 'max' => 32],
             [['system_id'], 'string', 'max' => 50],
@@ -52,29 +49,13 @@ class ApiClient extends \yii\db\ActiveRecord
     {
         return [
             'id' => Yii::t('app', 'ID'),
-            'name' => Yii::t('app', 'Client Name'),
-            'client_id' => Yii::t('app', 'Client ID'),
-            'secret' => Yii::t('app', 'Secret'),
-            'status' => Yii::t('app', 'Status'),
-            'system_id' => Yii::t('app', 'System ID'),
-            'env' => Yii::t('app', 'Env'),
-            'from' => Yii::t('app', 'From'),
+            'name' => Yii::t('app', '应用名称'),
+            'client_id' => Yii::t('app', '客户应用ID'),
+            'secret' => Yii::t('app', '应用密钥'),
+            'status' => Yii::t('app', '1表示可用，其它不可用'),
+            'system_id' => Yii::t('app', '所属平台'),
+            'env' => Yii::t('app', '所属环境'),
+            'from' => Yii::t('app', 'from来源'),
         ];
-    }
-
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getFrom0()
-    {
-        return $this->hasOne(App::className(), ['appid' => 'from']);
-    }
-
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getSystem()
-    {
-        return $this->hasOne(DcApiService::className(), ['name' => 'system_id']);
     }
 }

@@ -5,7 +5,7 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\modules\admin\models\ApiClient */
 
-$this->title = Yii::t('app', 'Update :', [
+$this->title = Yii::t('app', 'Update {modelClass}: ', [
     'modelClass' => 'Api Client',
 ]) . ' ' . $model->name;
 $this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Api Clients'), 'url' => ['index']];

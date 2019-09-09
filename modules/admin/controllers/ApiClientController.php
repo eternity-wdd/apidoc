@@ -32,7 +32,6 @@ class ApiClientController extends Controller
      */
     public function actionIndex()
     {
-        $this->layout = "main1";
         $searchModel = new ApiClientSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
@@ -49,7 +48,6 @@ class ApiClientController extends Controller
      */
     public function actionView($id)
     {
-        $this->layout = "main1";
         return $this->render('view', [
             'model' => $this->findModel($id),
         ]);
@@ -62,7 +60,6 @@ class ApiClientController extends Controller
      */
     public function actionCreate()
     {
-        $this->layout = "main1";
         $model = new ApiClient();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
@@ -82,7 +79,6 @@ class ApiClientController extends Controller
      */
     public function actionUpdate($id)
     {
-        $this->layout = "main1";
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
@@ -102,8 +98,8 @@ class ApiClientController extends Controller
      */
     public function actionDelete($id)
     {
-        $this->layout = "main1";
         $this->findModel($id)->delete();
+
         return $this->redirect(['index']);
     }
 
