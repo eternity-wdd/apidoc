@@ -319,6 +319,10 @@ Ext.onReady(function () {
                     jsonviewer.unicodeChinese();
                 }},
 			'-',
+            {text: '实体字符转Html', handler: function () {
+                    jsonviewer.unicodeChinese();
+                }},
+            '-',
 			{text: '删除空格', handler: function () {
 				jsonviewer.removeWhiteSpace();
 			}},
@@ -586,6 +590,10 @@ Ext.onReady(function () {
 				edit.setValue(a);
 			},
             unicodeChinese: function (){
+                var a = unescape(edit.getValue().replace(/\\u/g, "%u").replace(/\\/g,''));
+                edit.setValue(a);
+            },
+            transHtml: function (){
                 var a = unescape(edit.getValue().replace(/\\u/g, "%u").replace(/\\/g,''));
                 edit.setValue(a);
             }

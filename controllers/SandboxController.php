@@ -160,9 +160,14 @@ class SandboxController extends \yii\web\Controller
         $sigStr = '';
         foreach($data as $key=>$item)
         {
+            if($item === false)
+            {
+                continue;
+            }
             if(!in_array($key, $notSignParams))
             {
-                $sigStr .= '&'.$key.'='.$item;
+                $sigStr .= "&".$key.'='.urlencode($item);
+//                $sigStr .= '&'.$key.'='.$item;
             }
         }
 //         $sigStr = urldecode('&'.http_build_query($data));
